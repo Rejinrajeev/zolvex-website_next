@@ -7,8 +7,13 @@
     "dev:client": "npm --prefix client run dev",
     "dev:server": "npm --prefix server run dev",
     "seed": "npm --prefix server run seed",
-    "build": "npm --prefix server run build && npm --prefix client run build",
-    "start": "concurrently \"npm --prefix client run start\" \"npm --prefix server run start\""
+    "build": "cd client && npm install && npm run build",
+    "start": "cd client && npm run start"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
