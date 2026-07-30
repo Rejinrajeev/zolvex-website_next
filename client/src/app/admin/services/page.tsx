@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Sparkles, Plus, Edit, Trash2, Search, CheckCircle2, XCircle, Clock, Star, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { fetchWithAuth } from "@/lib/api";
 
 interface Service {
   _id: string;
@@ -48,7 +49,7 @@ export default function AdminServicesPage() {
   const fetchAdminServices = async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/v1/admin/services");
+      const res = await fetchWithAuth("/api/v1/admin/services");
       const json = await res.json();
       if (json.success && json.data) {
         setServices(json.data);
@@ -63,9 +64,8 @@ export default function AdminServicesPage() {
   const handleCreateService = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/v1/admin/services", {
+      const res = await fetchWithAuth("/api/v1/admin/services", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
       const json = await res.json();
@@ -83,9 +83,8 @@ export default function AdminServicesPage() {
     if (!editingService) return;
 
     try {
-      const res = await fetch(`/api/v1/admin/services/${editingService._id}`, {
+      const res = await fetchWithAuth(`/api/v1/admin/services/${editingService._id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
       const json = await res.json();
@@ -102,7 +101,7 @@ export default function AdminServicesPage() {
     if (!confirm("Are you sure you want to delete this service?")) return;
 
     try {
-      const res = await fetch(`/api/v1/admin/services/${id}`, {
+      const res = await fetchWithAuth(`/api/v1/admin/services/${id}`, {
         method: "DELETE"
       });
       const json = await res.json();

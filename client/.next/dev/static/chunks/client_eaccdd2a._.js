@@ -26,7 +26,7 @@ var _s = __turbopack_context__.k.signature();
 function AdminLoginPage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("admin@zolvex.com");
+    const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [mfaCode, setMfaCode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [mfaRequired, setMfaRequired] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -50,17 +50,19 @@ function AdminLoginPage() {
             });
             const json = await res.json();
             if (!res.ok || !json.success) {
-                throw new Error(json.message || "Invalid credentials.");
+                throw new Error("Invalid email or password.");
             }
             if (json.data?.mfaRequired) {
                 setMfaRequired(true);
                 setMfaTempToken(json.data.mfaTempToken);
             } else {
                 localStorage.setItem("zolvex_token", json.data.accessToken);
+                localStorage.setItem("accessToken", json.data.accessToken);
+                localStorage.setItem("token", json.data.accessToken);
                 router.push("/admin");
             }
         } catch (err) {
-            setErrorMsg(err.message);
+            setErrorMsg(err.message || "Invalid email or password.");
         } finally{
             setLoading(false);
         }
@@ -82,12 +84,13 @@ function AdminLoginPage() {
             });
             const json_0 = await res_0.json();
             if (!res_0.ok || !json_0.success) {
-                throw new Error(json_0.message || "Invalid MFA code.");
+                throw new Error("Invalid verification code.");
             }
             localStorage.setItem("zolvex_token", json_0.data.accessToken);
+            localStorage.setItem("accessToken", json_0.data.accessToken);
             router.push("/admin");
         } catch (err_0) {
-            setErrorMsg(err_0.message);
+            setErrorMsg(err_0.message || "Invalid verification code.");
         } finally{
             setLoading(false);
         }
@@ -99,7 +102,7 @@ function AdminLoginPage() {
                 className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                lineNumber: 78,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -114,12 +117,12 @@ function AdminLoginPage() {
                                     className: "w-6 h-6"
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 88,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 84,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -131,27 +134,27 @@ function AdminLoginPage() {
                                         children: "Admin Portal"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 91,
                                         columnNumber: 20
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 87,
+                                lineNumber: 90,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xs text-neutral-400 font-medium",
-                                children: "Bank-Level 256-bit Encrypted Enterprise Access"
+                                children: "Bank-Level Encrypted Authorization Access"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 90,
+                                lineNumber: 93,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                        lineNumber: 83,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this),
                     errorMsg && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -161,20 +164,20 @@ function AdminLoginPage() {
                                 className: "w-4 h-4 flex-shrink-0"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 96,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: errorMsg
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 97,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                        lineNumber: 95,
+                        lineNumber: 98,
                         columnNumber: 22
                     }, this),
                     !mfaRequired ? /* Step 1: Email & Password Form */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -189,7 +192,7 @@ function AdminLoginPage() {
                                         children: "Administrator Email"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -199,7 +202,7 @@ function AdminLoginPage() {
                                                 className: "w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                                lineNumber: 106,
+                                                lineNumber: 109,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -211,19 +214,19 @@ function AdminLoginPage() {
                                                 placeholder: "admin@zolvex.com"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 110,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 108,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 103,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -234,7 +237,7 @@ function AdminLoginPage() {
                                         children: "Password"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 115,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -244,7 +247,7 @@ function AdminLoginPage() {
                                                 className: "w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                                lineNumber: 114,
+                                                lineNumber: 117,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -256,19 +259,19 @@ function AdminLoginPage() {
                                                 placeholder: "••••••••••••"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 118,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 116,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 111,
+                                lineNumber: 114,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -280,26 +283,26 @@ function AdminLoginPage() {
                                         children: "Authenticate Session"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 119,
+                                lineNumber: 122,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                        lineNumber: 101,
+                        lineNumber: 104,
                         columnNumber: 7
                     }, this) : /* Step 2: TOTP 6-Digit Verification */ /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                         onSubmit: handleMFAVerify,
@@ -312,7 +315,7 @@ function AdminLoginPage() {
                                         className: "w-6 h-6 text-primary mx-auto mb-1"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 128,
+                                        lineNumber: 131,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -320,7 +323,7 @@ function AdminLoginPage() {
                                         children: "Two-Factor Authentication Required"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 132,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -328,13 +331,13 @@ function AdminLoginPage() {
                                         children: "Enter the 6-digit TOTP code from Google Authenticator or your emergency recovery code."
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 133,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 127,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -345,7 +348,7 @@ function AdminLoginPage() {
                                         children: "6-Digit TOTP / Recovery Code"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 136,
+                                        lineNumber: 139,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -358,13 +361,13 @@ function AdminLoginPage() {
                                         placeholder: "123456"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 140,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 135,
+                                lineNumber: 138,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -374,29 +377,29 @@ function AdminLoginPage() {
                                 children: "Verify 2FA & Log In"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                                lineNumber: 140,
+                                lineNumber: 143,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/login/page.tsx",
-                        lineNumber: 125,
+                        lineNumber: 128,
                         columnNumber: 7
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/client/src/app/admin/login/page.tsx",
-                lineNumber: 80,
+                lineNumber: 83,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/client/src/app/admin/login/page.tsx",
-        lineNumber: 75,
+        lineNumber: 78,
         columnNumber: 10
     }, this);
 }
-_s(AdminLoginPage, "M0Dy2tyuLDPyDBvibi+E/sABJwI=", false, function() {
+_s(AdminLoginPage, "0GREatnpUCFCtiL9L7Gp3aSx5lA=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];

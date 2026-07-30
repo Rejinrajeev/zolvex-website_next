@@ -60,7 +60,10 @@ function BookingFlowModal({ isOpen, onClose, service }) {
             setCreatedBooking(null);
             // Set default variation
             if (service.variations && service.variations.length > 0) {
-                setSelectedVariationId(service.variations[0].id);
+                const firstVar = service.variations[0];
+                setSelectedVariationId(firstVar.id || firstVar._id || "var-101");
+            } else {
+                setSelectedVariationId("var-101");
             }
             // Default date to tomorrow formatted YYYY-MM-DD
             const tomorrow = new Date();
@@ -97,7 +100,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
     };
     // Recalculate price whenever variation or addons change
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (isOpen && service && selectedVariationId) {
+        if (isOpen && service) {
             calculateLivePrice();
         }
     }, [
@@ -107,9 +110,12 @@ function BookingFlowModal({ isOpen, onClose, service }) {
         isOpen
     ]);
     const calculateLivePrice = async ()=>{
-        if (!service || !selectedVariationId) return;
+        if (!service) return;
         setCalcLoading(true);
         try {
+            const targetServiceId = service.id || service._id || service.slug || "srv-001";
+            const firstVar = service.variations?.[0];
+            const targetVarId = selectedVariationId || (firstVar ? firstVar.id || firstVar._id : "var-101");
             const addonsPayload = Object.entries(selectedAddons).filter(([_, item])=>item.quantity > 0).map(([addonId, item])=>({
                     addonId,
                     variationId: item.variationId,
@@ -121,8 +127,8 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    serviceId: service.id,
-                    variationId: selectedVariationId,
+                    serviceId: targetServiceId,
+                    variationId: targetVarId,
                     addons: addonsPayload
                 })
             });
@@ -183,6 +189,9 @@ function BookingFlowModal({ isOpen, onClose, service }) {
         }
         setLoading(true);
         try {
+            const targetServiceId = service.id || service._id || service.slug || "srv-001";
+            const firstVar = service.variations?.[0];
+            const targetVarId = selectedVariationId || (firstVar ? firstVar.id || firstVar._id : "var-101");
             const addonsPayload = Object.entries(selectedAddons).filter(([_, item])=>item.quantity > 0).map(([addonId, item])=>({
                     addonId,
                     variationId: item.variationId,
@@ -194,8 +203,8 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    serviceId: service.id,
-                    variationId: selectedVariationId,
+                    serviceId: targetServiceId,
+                    variationId: targetVarId,
                     customerName,
                     customerPhone,
                     customerEmail,
@@ -261,12 +270,12 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 306,
+                                        lineNumber: 317,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 305,
+                                    lineNumber: 316,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -276,7 +285,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Booking Service"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 309,
+                                            lineNumber: 320,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -284,19 +293,19 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: service.name
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 321,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 308,
+                                    lineNumber: 319,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 304,
+                            lineNumber: 315,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -307,18 +316,18 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                lineNumber: 319,
+                                lineNumber: 330,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 314,
+                            lineNumber: 325,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                    lineNumber: 303,
+                    lineNumber: 314,
                     columnNumber: 9
                 }, this),
                 step < 5 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -332,7 +341,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                     children: step
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 327,
+                                    lineNumber: 338,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -344,13 +353,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 330,
+                                    lineNumber: 341,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 326,
+                            lineNumber: 337,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -364,18 +373,18 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                     className: `h-1.5 rounded-full transition-all ${s === step ? "w-6 bg-primary" : s < step ? "w-3 bg-foreground/40" : "w-2 bg-border"}`
                                 }, s, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 350,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 337,
+                            lineNumber: 348,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                    lineNumber: 325,
+                    lineNumber: 336,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -388,20 +397,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                     className: "w-5 h-5 flex-shrink-0 text-red-500 mt-0.5"
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 355,
+                                    lineNumber: 366,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: errorMsg
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 356,
+                                    lineNumber: 367,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 354,
+                            lineNumber: 365,
                             columnNumber: 13
                         }, this),
                         step === 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -414,7 +423,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Select Property Size / Service Scope"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 364,
+                                            lineNumber: 375,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -422,13 +431,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Choose the variation that matches your space for an accurate quote."
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 365,
+                                            lineNumber: 376,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 363,
+                                    lineNumber: 374,
                                     columnNumber: 15
                                 }, this),
                                 service.variations && service.variations.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -448,12 +457,12 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                 className: "w-3 h-3 text-foreground font-bold"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                lineNumber: 386,
+                                                                lineNumber: 397,
                                                                 columnNumber: 44
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 383,
+                                                            lineNumber: 394,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -461,13 +470,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: varItem.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 388,
+                                                            lineNumber: 399,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 382,
+                                                    lineNumber: 393,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -478,19 +487,19 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 390,
+                                                    lineNumber: 401,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, varItem.id, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 373,
+                                            lineNumber: 384,
                                             columnNumber: 23
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 369,
+                                    lineNumber: 380,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "p-4 rounded-xl bg-secondaryBg/30 text-sm text-muted",
@@ -501,13 +510,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: service.price || "₹2,999"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 397,
+                                            lineNumber: 408,
                                             columnNumber: 48
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 396,
+                                    lineNumber: 407,
                                     columnNumber: 17
                                 }, this),
                                 service.inclusions && service.inclusions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -520,20 +529,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-4 h-4 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 405,
+                                                    lineNumber: 416,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Included in this package"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 406,
+                                                    lineNumber: 417,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 404,
+                                            lineNumber: 415,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -545,37 +554,37 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             className: "w-4 h-4 text-primary flex-shrink-0 mt-0.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 411,
+                                                            lineNumber: 422,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: inc.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 412,
+                                                            lineNumber: 423,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, inc.id || i, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 410,
+                                                    lineNumber: 421,
                                                     columnNumber: 23
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 408,
+                                            lineNumber: 419,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 403,
+                                    lineNumber: 414,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 362,
+                            lineNumber: 373,
                             columnNumber: 13
                         }, this),
                         step === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -588,7 +597,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Enhance Your Cleaning (Optional Add-ons)"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 425,
+                                            lineNumber: 436,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -596,13 +605,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Select additional specialized cleaning services for best results."
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 426,
+                                            lineNumber: 437,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 424,
+                                    lineNumber: 435,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -629,7 +638,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                             children: addon.name
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                            lineNumber: 444,
+                                                                            lineNumber: 455,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         addon.is_per_unit && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -640,13 +649,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                            lineNumber: 446,
+                                                                            lineNumber: 457,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                    lineNumber: 443,
+                                                                    lineNumber: 454,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -654,7 +663,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                     children: addon.description
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                    lineNumber: 451,
+                                                                    lineNumber: 462,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -665,13 +674,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                    lineNumber: 452,
+                                                                    lineNumber: 463,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 442,
+                                                            lineNumber: 453,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -686,12 +695,12 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                             className: "w-3.5 h-3.5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                            lineNumber: 463,
+                                                                            lineNumber: 474,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                        lineNumber: 459,
+                                                                        lineNumber: 470,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -699,7 +708,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                         children: currentAddon.quantity
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                        lineNumber: 465,
+                                                                        lineNumber: 476,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -709,18 +718,18 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                             className: "w-3.5 h-3.5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                            lineNumber: 472,
+                                                                            lineNumber: 483,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                        lineNumber: 468,
+                                                                        lineNumber: 479,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                lineNumber: 458,
+                                                                lineNumber: 469,
                                                                 columnNumber: 29
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                                 onClick: ()=>handleAddonQuantityChange(addon.id, 1),
@@ -730,31 +739,31 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                         className: "w-3.5 h-3.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                        lineNumber: 480,
+                                                                        lineNumber: 491,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: "Add"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                        lineNumber: 481,
+                                                                        lineNumber: 492,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                lineNumber: 476,
+                                                                lineNumber: 487,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 456,
+                                                            lineNumber: 467,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 441,
+                                                    lineNumber: 452,
                                                     columnNumber: 23
                                                 }, this),
                                                 isSelected && addon.variations && addon.variations.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -765,7 +774,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Choose Treatment Option:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 490,
+                                                            lineNumber: 501,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -782,36 +791,36 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                     ]
                                                                 }, v.id, true, {
                                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                    lineNumber: 499,
+                                                                    lineNumber: 510,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 493,
+                                                            lineNumber: 504,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 489,
+                                                    lineNumber: 500,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, addon.id, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 435,
+                                            lineNumber: 446,
                                             columnNumber: 21
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 429,
+                                    lineNumber: 440,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 423,
+                            lineNumber: 434,
                             columnNumber: 13
                         }, this),
                         step === 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -824,7 +833,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Schedule Your Cleaning Slot"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 517,
+                                            lineNumber: 528,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -832,13 +841,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Select your preferred date and time for technician arrival."
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 518,
+                                            lineNumber: 529,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 516,
+                                    lineNumber: 527,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -851,20 +860,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-4 h-4 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 524,
+                                                    lineNumber: 535,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Preferred Date"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 525,
+                                                    lineNumber: 536,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 523,
+                                            lineNumber: 534,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -875,13 +884,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             className: "w-full p-3 rounded-xl border border-border bg-white text-sm font-semibold text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 527,
+                                            lineNumber: 538,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 522,
+                                    lineNumber: 533,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -894,20 +903,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-4 h-4 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 539,
+                                                    lineNumber: 550,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Arrival Time Slot"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 540,
+                                                    lineNumber: 551,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 538,
+                                            lineNumber: 549,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,43 +933,43 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                                 className: "w-2.5 h-2.5 text-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                                lineNumber: 559,
+                                                                lineNumber: 570,
                                                                 columnNumber: 42
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 556,
+                                                            lineNumber: 567,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: slot
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 561,
+                                                            lineNumber: 572,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, slot, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 547,
+                                                    lineNumber: 558,
                                                     columnNumber: 23
                                                 }, this);
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 543,
+                                            lineNumber: 554,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 537,
+                                    lineNumber: 548,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 515,
+                            lineNumber: 526,
                             columnNumber: 13
                         }, this),
                         step === 4 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -973,7 +982,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Enter Contact & Location Details"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 574,
+                                            lineNumber: 585,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -981,13 +990,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "We will send booking confirmation & technician details to this phone number."
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 575,
+                                            lineNumber: 586,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 573,
+                                    lineNumber: 584,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1003,20 +1012,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             className: "w-3.5 h-3.5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 581,
+                                                            lineNumber: 592,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Full Name *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 582,
+                                                            lineNumber: 593,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 580,
+                                                    lineNumber: 591,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1027,13 +1036,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 584,
+                                                    lineNumber: 595,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 579,
+                                            lineNumber: 590,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1046,20 +1055,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             className: "w-3.5 h-3.5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 595,
+                                                            lineNumber: 606,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Phone Number (for SMS & WhatsApp) *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 596,
+                                                            lineNumber: 607,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 594,
+                                                    lineNumber: 605,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1070,13 +1079,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 598,
+                                                    lineNumber: 609,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 593,
+                                            lineNumber: 604,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1089,20 +1098,20 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             className: "w-3.5 h-3.5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 609,
+                                                            lineNumber: 620,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Complete Address (House/Flat No, Building, Street, Area) *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 610,
+                                                            lineNumber: 621,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 608,
+                                                    lineNumber: 619,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1113,13 +1122,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 612,
+                                                    lineNumber: 623,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 607,
+                                            lineNumber: 618,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1130,7 +1139,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     children: "Special Instructions / Gate Code (Optional)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 622,
+                                                    lineNumber: 633,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1141,25 +1150,25 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                     className: "w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 623,
+                                                    lineNumber: 634,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 621,
+                                            lineNumber: 632,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 578,
+                                    lineNumber: 589,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 572,
+                            lineNumber: 583,
                             columnNumber: 13
                         }, this),
                         step === 5 && createdBooking && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1171,12 +1180,12 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                         className: "w-10 h-10"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 639,
+                                        lineNumber: 650,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 638,
+                                    lineNumber: 649,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1186,7 +1195,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Booking Confirmed"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 643,
+                                            lineNumber: 654,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1198,7 +1207,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 646,
+                                            lineNumber: 657,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1206,13 +1215,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             children: "Your cleaning service has been scheduled successfully."
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 647,
+                                            lineNumber: 658,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 642,
+                                    lineNumber: 653,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1228,7 +1237,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Booking Reference"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 654,
+                                                            lineNumber: 665,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1236,13 +1245,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: createdBooking.booking_number
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 655,
+                                                            lineNumber: 666,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 653,
+                                                    lineNumber: 664,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1253,32 +1262,32 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             className: "w-3.5 h-3.5 text-emerald-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 661,
+                                                            lineNumber: 672,
                                                             columnNumber: 34
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                                             className: "w-3.5 h-3.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 661,
+                                                            lineNumber: 672,
                                                             columnNumber: 87
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: copiedRef ? "Copied" : "Copy"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 662,
+                                                            lineNumber: 673,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 657,
+                                                    lineNumber: 668,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 652,
+                                            lineNumber: 663,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1291,7 +1300,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Scheduled Date:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 668,
+                                                            lineNumber: 679,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1299,13 +1308,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: createdBooking.preferred_date
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 669,
+                                                            lineNumber: 680,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 667,
+                                                    lineNumber: 678,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1315,7 +1324,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Time Slot:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 672,
+                                                            lineNumber: 683,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1323,13 +1332,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: createdBooking.preferred_time
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 673,
+                                                            lineNumber: 684,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 671,
+                                                    lineNumber: 682,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1339,7 +1348,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Total Amount:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 676,
+                                                            lineNumber: 687,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1350,13 +1359,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 677,
+                                                            lineNumber: 688,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 675,
+                                                    lineNumber: 686,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,7 +1375,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Payment Mode:"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 680,
+                                                            lineNumber: 691,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1374,25 +1383,25 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                             children: "Pay After Service"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                            lineNumber: 681,
+                                                            lineNumber: 692,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                    lineNumber: 679,
+                                                    lineNumber: 690,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 666,
+                                            lineNumber: 677,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 651,
+                                    lineNumber: 662,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1402,32 +1411,32 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                             className: "w-4 h-4 text-primary flex-shrink-0 mt-0.5"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 687,
+                                            lineNumber: 698,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Our technician team lead will call you 1 hour before arrival. You can track your booking status anytime on our website!"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                            lineNumber: 688,
+                                            lineNumber: 699,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 686,
+                                    lineNumber: 697,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                            lineNumber: 637,
+                            lineNumber: 648,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                    lineNumber: 351,
+                    lineNumber: 362,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1445,7 +1454,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                 children: "Estimated Total"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                lineNumber: 702,
+                                                lineNumber: 713,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1459,7 +1468,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                        lineNumber: 704,
+                                                        lineNumber: 715,
                                                         columnNumber: 21
                                                     }, this),
                                                     calcLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1467,19 +1476,19 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                         children: "updating..."
                                                     }, void 0, false, {
                                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                        lineNumber: 707,
+                                                        lineNumber: 718,
                                                         columnNumber: 37
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                lineNumber: 703,
+                                                lineNumber: 714,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 701,
+                                        lineNumber: 712,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1487,13 +1496,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                         children: "Pay Post-Service"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 710,
+                                        lineNumber: 721,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                lineNumber: 700,
+                                lineNumber: 711,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1508,14 +1517,14 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                 className: "w-4 h-4 mr-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                lineNumber: 723,
+                                                lineNumber: 734,
                                                 columnNumber: 21
                                             }, this),
                                             " Back"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 718,
+                                        lineNumber: 729,
                                         columnNumber: 19
                                     }, this),
                                     step < 4 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1527,13 +1536,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                                 className: "w-4 h-4 ml-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                                lineNumber: 732,
+                                                lineNumber: 743,
                                                 columnNumber: 31
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 728,
+                                        lineNumber: 739,
                                         columnNumber: 19
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                         onClick: handleSubmitBooking,
@@ -1542,13 +1551,13 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                         children: loading ? "Confirming..." : "Confirm & Book Now"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                        lineNumber: 735,
+                                        lineNumber: 746,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                lineNumber: 716,
+                                lineNumber: 727,
                                 columnNumber: 15
                             }, this)
                         ]
@@ -1562,7 +1571,7 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                 children: "Close"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                lineNumber: 747,
+                                lineNumber: 758,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1573,34 +1582,34 @@ function BookingFlowModal({ isOpen, onClose, service }) {
                                     children: "View My Bookings"
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                    lineNumber: 758,
+                                    lineNumber: 769,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                                lineNumber: 754,
+                                lineNumber: 765,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                        lineNumber: 746,
+                        lineNumber: 757,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-                    lineNumber: 695,
+                    lineNumber: 706,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-            lineNumber: 300,
+            lineNumber: 311,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/client/src/components/booking/BookingFlowModal.tsx",
-        lineNumber: 299,
+        lineNumber: 310,
         columnNumber: 5
     }, this);
 }

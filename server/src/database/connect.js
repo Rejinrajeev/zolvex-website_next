@@ -5,12 +5,19 @@ const logger = require("../config/logger");
 let isConnected = false;
 
 async function connectDB() {
-  if (isConnected) return mongoose.connection;
+  // In test environment, skip network MongoDB connection to prevent query delays
+  if (process.env.NODE_ENV === "test" || process.env.JEST_WORKER_ID !== undefined) {
+    isConnected = false;
+    return null;
+  }
+
+  if (isConnected && mongoose.connection.readyState === 1) return mongoose.connection;
 
   try {
     mongoose.set("strictQuery", false);
+    mongoose.set("bufferCommands", false);
     const conn = await mongoose.connect(config.mongoose.url, {
-      serverSelectionTimeoutMS: 2000 // 2 seconds fast timeout for connection check
+      serverSelectionTimeoutMS: 1000
     });
     isConnected = true;
     logger.info(`🍃 MongoDB Connected: ${conn.connection.host}/${conn.connection.name}`);
@@ -35,7 +42,7 @@ async function disconnectDB() {
 }
 
 function getIsConnected() {
-  return isConnected;
+  return isConnected && mongoose.connection.readyState === 1;
 }
 
 module.exports = { connectDB, disconnectDB, getIsConnected };

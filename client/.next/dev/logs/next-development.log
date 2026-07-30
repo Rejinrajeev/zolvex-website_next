@@ -1,15 +1,15 @@
-[00:00:00.509] Server  LOG     ✓ Ready in 380ms
-[00:00:11.556] Server  ERROR   (node:76140) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+[00:00:00.874] Server  LOG     ✓ Ready in 699ms
+[00:00:57.295] Server  ERROR   (node:4061) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-[00:08:18.042] Browser WARN    Image with src "/images/work_img_3.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:15:29.624] Server  LOG     ✓ Compiled in 88ms
+[00:20:44.110] Server  LOG     ✓ Compiled in 59ms
+[00:39:58.408] Server  LOG     ✓ Compiled in 125ms
+[00:41:02.630] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:08:23.344] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:55:02.317] Server  LOG     ✓ Compiled in 135ms
+[01:01:18.476] Browser WARN    Image with src "/images/hero_img.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:08:54.736] Server  WARN    ⚠ Blocked cross-origin request from upset-owls-design.loca.lt to /_next/* resource. To allow this, configure "allowedDevOrigins" in next.config
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:13:00.482] Server  LOG     ✓ Compiled in 109ms
-[00:13:07.962] Server  LOG     ✓ Compiled in 56ms
-[00:19:30.906] Browser WARN    Image with src "/images/work_img_1.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[01:01:26.291] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:19:31.690] Browser WARN    Image with src "/images/work_img_1.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[01:02:36.360] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

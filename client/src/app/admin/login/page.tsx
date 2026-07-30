@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Lock, Mail, ShieldAlert, Sparkles, KeyRound, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Lock, Mail, ShieldAlert, Sparkles, KeyRound, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@zolvex.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mfaCode, setMfaCode] = useState("");
   const [mfaRequired, setMfaRequired] = useState(false);
@@ -29,7 +29,7 @@ export default function AdminLoginPage() {
 
       const json = await res.json();
       if (!res.ok || !json.success) {
-        throw new Error(json.message || "Invalid credentials.");
+        throw new Error("Invalid email or password.");
       }
 
       if (json.data?.mfaRequired) {
@@ -37,10 +37,12 @@ export default function AdminLoginPage() {
         setMfaTempToken(json.data.mfaTempToken);
       } else {
         localStorage.setItem("zolvex_token", json.data.accessToken);
+        localStorage.setItem("accessToken", json.data.accessToken);
+        localStorage.setItem("token", json.data.accessToken);
         router.push("/admin");
       }
     } catch (err: any) {
-      setErrorMsg(err.message);
+      setErrorMsg(err.message || "Invalid email or password.");
     } finally {
       setLoading(false);
     }
@@ -60,13 +62,14 @@ export default function AdminLoginPage() {
 
       const json = await res.json();
       if (!res.ok || !json.success) {
-        throw new Error(json.message || "Invalid MFA code.");
+        throw new Error("Invalid verification code.");
       }
 
       localStorage.setItem("zolvex_token", json.data.accessToken);
+      localStorage.setItem("accessToken", json.data.accessToken);
       router.push("/admin");
     } catch (err: any) {
-      setErrorMsg(err.message);
+      setErrorMsg(err.message || "Invalid verification code.");
     } finally {
       setLoading(false);
     }
@@ -89,7 +92,7 @@ export default function AdminLoginPage() {
             Zolvex <span className="text-primary">Admin Portal</span>
           </h1>
           <p className="text-xs text-neutral-400 font-medium">
-            Bank-Level 256-bit Encrypted Enterprise Access
+            Bank-Level Encrypted Authorization Access
           </p>
         </div>
 

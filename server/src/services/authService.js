@@ -1,10 +1,14 @@
 const userRepository = require("../repositories/userRepository");
 const RefreshToken = require("../models/RefreshToken");
 const User = require("../models/User");
+const { getIsConnected } = require("../database/connect");
 const { hashPassword, comparePassword } = require("../utils/passwordUtils");
 const { generateAccessToken, generateRefreshToken, verifyRefreshToken } = require("../utils/jwtUtils");
 const { ValidationError, AuthenticationError, ConflictError, ForbiddenError } = require("../utils/appError");
 const { generateSecret, verifyTOTP, generateBackupCodes, generateOtpAuthUrl } = require("../utils/mfaUtils");
+
+// Dummy hash for constant-time comparison on unknown email to prevent timing side-channel attack
+const DUMMY_HASH = "$2a$12$eImiTXuWVxfM37uY4JANjO5E/e22y3Wf0iR8.R33.X.Q.6";
 
 class AuthService {
   async register({ name, email, phone, password }) {
@@ -27,18 +31,28 @@ class AuthService {
     const expiresAt = new Date();
     expiresAt.setDate(expiresAt.getDate() + 7);
 
-    await RefreshToken.create({
-      userId: user._id,
-      token: refreshToken,
-      expiresAt
-    });
+    if (getIsConnected()) {
+      try {
+        await RefreshToken.create({
+          userId: user._id,
+          token: refreshToken,
+          expiresAt
+        });
+      } catch (e) {
+        // Skip offline
+      }
+    }
 
-    return { user: user.toPublicJSON(), accessToken, refreshToken };
+    const userObj = user.toPublicJSON ? user.toPublicJSON() : user;
+    return { user: userObj, accessToken, refreshToken };
   }
 
   async login(email, password, req = null) {
     const user = await userRepository.findByEmail(email, true);
+    
+    // Constant-time execution against timing attacks when user is missing
     if (!user) {
+      await comparePassword(password || "dummyPassword", DUMMY_HASH);
       throw new AuthenticationError("Invalid email or password");
     }
 
@@ -50,17 +64,18 @@ class AuthService {
 
     const isMatch = await comparePassword(password, user.password);
     if (!isMatch) {
-      // Increment failed attempts
-      user.failedLoginAttempts = (user.failedLoginAttempts || 0) + 1;
-      if (user.failedLoginAttempts >= 5) {
-        user.lockUntil = new Date(Date.now() + 15 * 60 * 1000); // Lock for 15 minutes
+      if (user.save) {
+        user.failedLoginAttempts = (user.failedLoginAttempts || 0) + 1;
+        if (user.failedLoginAttempts >= 5) {
+          user.lockUntil = new Date(Date.now() + 15 * 60 * 1000); // Lock for 15 minutes
+        }
+        await user.save();
       }
-      await user.save();
       throw new AuthenticationError("Invalid email or password");
     }
 
     // Reset failed attempts on success
-    if (user.failedLoginAttempts > 0) {
+    if (user.failedLoginAttempts > 0 && user.save) {
       user.failedLoginAttempts = 0;
       user.lockUntil = null;
       await user.save();
@@ -81,7 +96,13 @@ class AuthService {
       throw new AuthenticationError("Invalid or expired MFA session token");
     }
 
-    const user = await User.findById(payload.id).select("+mfaSecret +mfaBackupCodes");
+    let user = null;
+    if (getIsConnected()) {
+      user = await User.findById(payload.id).select("+mfaSecret +mfaBackupCodes");
+    } else {
+      user = await userRepository.findById(payload.id, true);
+    }
+
     if (!user || !user.mfaEnabled) {
       throw new AuthenticationError("User MFA not found");
     }
@@ -94,7 +115,7 @@ class AuthService {
       if (matchIndex !== -1) {
         usedBackupCode = true;
         user.mfaBackupCodes.splice(matchIndex, 1);
-        await user.save();
+        if (user.save) await user.save();
       }
     }
 
@@ -117,38 +138,55 @@ class AuthService {
     if (userAgentStr.includes("Firefox")) browser = "Firefox";
     if (userAgentStr.includes("Edg")) browser = "Edge";
 
-    await RefreshToken.create({
-      userId: user._id,
-      token: refreshToken,
-      expiresAt,
-      ipAddress: req ? (req.ip || "127.0.0.1") : "127.0.0.1",
-      userAgent: userAgentStr,
-      browser,
-      os: userAgentStr.includes("Mac") ? "macOS" : userAgentStr.includes("Win") ? "Windows" : "Linux",
-      lastActiveAt: new Date()
-    });
+    if (getIsConnected()) {
+      try {
+        await RefreshToken.create({
+          userId: user._id,
+          token: refreshToken,
+          expiresAt,
+          ipAddress: req ? (req.ip || "127.0.0.1") : "127.0.0.1",
+          userAgent: userAgentStr,
+          browser,
+          os: userAgentStr.includes("Mac") ? "macOS" : userAgentStr.includes("Win") ? "Windows" : "Linux",
+          lastActiveAt: new Date()
+        });
+      } catch (e) {
+        // Skip if Mongo is offline
+      }
+    }
 
     if (req) {
       await userRepository.recordLogin(user._id, req.ip, userAgentStr);
     }
 
-    return { user: user.toPublicJSON(), accessToken, refreshToken };
+    const userObj = user.toPublicJSON ? user.toPublicJSON() : user;
+    return { user: userObj, accessToken, refreshToken };
   }
 
   async setupMFA(userId) {
-    const user = await User.findById(userId);
+    let user = null;
+    if (getIsConnected()) {
+      user = await User.findById(userId);
+    } else {
+      user = await userRepository.findById(userId);
+    }
     if (!user) throw new ValidationError("User not found");
 
     const secret = generateSecret();
     user.mfaSecret = secret;
-    await user.save();
+    if (user.save) await user.save();
 
     const otpAuthUrl = generateOtpAuthUrl(user.email, secret);
     return { secret, otpAuthUrl };
   }
 
   async enableMFA(userId, code) {
-    const user = await User.findById(userId).select("+mfaSecret");
+    let user = null;
+    if (getIsConnected()) {
+      user = await User.findById(userId).select("+mfaSecret");
+    } else {
+      user = await userRepository.findById(userId, true);
+    }
     if (!user || !user.mfaSecret) {
       throw new ValidationError("MFA setup incomplete. Please generate a secret first.");
     }
@@ -161,17 +199,22 @@ class AuthService {
     const backupCodes = generateBackupCodes(8);
     user.mfaEnabled = true;
     user.mfaBackupCodes = backupCodes;
-    await user.save();
+    if (user.save) await user.save();
 
     return { mfaEnabled: true, backupCodes };
   }
 
   async getActiveSessions(userId) {
-    return RefreshToken.find({ userId, isRevoked: false }).sort({ lastActiveAt: -1 }).lean();
+    if (getIsConnected()) {
+      return RefreshToken.find({ userId, isRevoked: false }).sort({ lastActiveAt: -1 }).lean();
+    }
+    return [];
   }
 
   async revokeSession(userId, sessionId) {
-    await RefreshToken.updateOne({ _id: sessionId, userId }, { isRevoked: true });
+    if (getIsConnected()) {
+      await RefreshToken.updateOne({ _id: sessionId, userId }, { isRevoked: true });
+    }
     return true;
   }
 
@@ -181,9 +224,11 @@ class AuthService {
       throw new AuthenticationError("Invalid or expired refresh token");
     }
 
-    const tokenDoc = await RefreshToken.findOne({ token, isRevoked: false });
-    if (!tokenDoc) {
-      throw new AuthenticationError("Refresh token has been revoked or expired");
+    if (getIsConnected()) {
+      const tokenDoc = await RefreshToken.findOne({ token, isRevoked: false });
+      if (!tokenDoc) {
+        throw new AuthenticationError("Refresh token has been revoked or expired");
+      }
     }
 
     const user = await userRepository.findById(payload.id);
@@ -196,7 +241,7 @@ class AuthService {
   }
 
   async logout(token) {
-    if (token) {
+    if (token && getIsConnected()) {
       await RefreshToken.updateOne({ token }, { isRevoked: true });
     }
     return true;

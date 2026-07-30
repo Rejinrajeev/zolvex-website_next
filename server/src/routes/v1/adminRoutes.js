@@ -10,6 +10,8 @@ const {
   getMessages,
   getReviews
 } = require("../../controllers/adminController");
+const { authenticate } = require("../../middleware/auth");
+const { authorize } = require("../../middleware/rbac");
 
 const router = express.Router();
 
@@ -17,15 +19,14 @@ const router = express.Router();
 router.get("/content", getContent);
 router.get("/theme", getTheme);
 
-// Admin dashboard endpoints
+// Protected Admin Endpoints (RBAC Secured: admin, super_admin)
+router.use("/admin", authenticate, authorize("admin", "super_admin"));
+
 router.get("/admin/analytics", getAnalytics);
 router.put("/admin/content", updateContent);
-
 router.get("/admin/offers", getOffers);
 router.post("/admin/offers", createOffer);
-
 router.put("/admin/theme", updateTheme);
-
 router.get("/admin/messages", getMessages);
 router.get("/admin/reviews", getReviews);
 

@@ -114,7 +114,10 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
 
       // Set default variation
       if (service.variations && service.variations.length > 0) {
-        setSelectedVariationId(service.variations[0].id);
+        const firstVar = service.variations[0];
+        setSelectedVariationId(firstVar.id || (firstVar as any)._id || "var-101");
+      } else {
+        setSelectedVariationId("var-101");
       }
 
       // Default date to tomorrow formatted YYYY-MM-DD
@@ -152,15 +155,19 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
 
   // Recalculate price whenever variation or addons change
   useEffect(() => {
-    if (isOpen && service && selectedVariationId) {
+    if (isOpen && service) {
       calculateLivePrice();
     }
   }, [selectedVariationId, selectedAddons, service, isOpen]);
 
   const calculateLivePrice = async () => {
-    if (!service || !selectedVariationId) return;
+    if (!service) return;
     setCalcLoading(true);
     try {
+      const targetServiceId = service.id || (service as any)._id || service.slug || "srv-001";
+      const firstVar = service.variations?.[0];
+      const targetVarId = selectedVariationId || (firstVar ? (firstVar.id || (firstVar as any)._id) : "var-101");
+
       const addonsPayload = Object.entries(selectedAddons)
         .filter(([_, item]) => item.quantity > 0)
         .map(([addonId, item]) => ({
@@ -173,8 +180,8 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          serviceId: service.id,
-          variationId: selectedVariationId,
+          serviceId: targetServiceId,
+          variationId: targetVarId,
           addons: addonsPayload
         })
       });
@@ -229,6 +236,10 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
 
     setLoading(true);
     try {
+      const targetServiceId = service.id || (service as any)._id || service.slug || "srv-001";
+      const firstVar = service.variations?.[0];
+      const targetVarId = selectedVariationId || (firstVar ? (firstVar.id || (firstVar as any)._id) : "var-101");
+
       const addonsPayload = Object.entries(selectedAddons)
         .filter(([_, item]) => item.quantity > 0)
         .map(([addonId, item]) => ({
@@ -241,8 +252,8 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          serviceId: service.id,
-          variationId: selectedVariationId,
+          serviceId: targetServiceId,
+          variationId: targetVarId,
           customerName,
           customerPhone,
           customerEmail,

@@ -15,6 +15,7 @@ import {
   Tag
 } from "lucide-react";
 import Link from "next/link";
+import { fetchWithAuth } from "@/lib/api";
 
 interface AnalyticsData {
   totalBookings: number;
@@ -37,7 +38,7 @@ export default function AdminDashboardPage() {
 
   const fetchAnalytics = async () => {
     try {
-      const res = await fetch("/api/v1/admin/analytics");
+      const res = await fetchWithAuth("/api/v1/admin/analytics");
       const json = await res.json();
       if (json.success && json.data) {
         setData(json.data);

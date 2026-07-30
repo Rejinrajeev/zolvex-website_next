@@ -5,6 +5,7 @@ import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { useCMS } from "@/context/CMSContext";
 import { Palette, Save, CheckCircle2, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { fetchWithAuth } from "@/lib/api";
 
 export default function AdminThemePage() {
   const { theme, refreshCMS } = useCMS();
@@ -32,9 +33,8 @@ export default function AdminThemePage() {
     setLoading(true);
     setSuccessMsg("");
     try {
-      const res = await fetch("/api/v1/admin/theme", {
+      const res = await fetchWithAuth("/api/v1/admin/theme", {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
 

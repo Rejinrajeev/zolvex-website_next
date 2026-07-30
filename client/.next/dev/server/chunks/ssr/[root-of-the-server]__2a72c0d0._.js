@@ -1094,14 +1094,18 @@ const CMSProvider = ({ children })=>{
                 fetch("/api/v1/content"),
                 fetch("/api/v1/theme")
             ]);
-            const contentData = await contentRes.json();
-            const themeData = await themeRes.json();
-            if (contentData.success && contentData.data) {
-                setContent(contentData.data);
+            if (contentRes.ok) {
+                const contentData = await contentRes.json();
+                if (contentData.success && contentData.data) {
+                    setContent(contentData.data);
+                }
             }
-            if (themeData.success && themeData.data) {
-                setTheme(themeData.data);
-                applyThemeTokens(themeData.data);
+            if (themeRes.ok) {
+                const themeData = await themeRes.json();
+                if (themeData.success && themeData.data) {
+                    setTheme(themeData.data);
+                    applyThemeTokens(themeData.data);
+                }
             }
         } catch (e) {
             console.warn("Failed to fetch CMS content or theme:", e);
@@ -1130,7 +1134,7 @@ const CMSProvider = ({ children })=>{
         children: children
     }, void 0, false, {
         fileName: "[project]/client/src/context/CMSContext.tsx",
-        lineNumber: 69,
+        lineNumber: 72,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

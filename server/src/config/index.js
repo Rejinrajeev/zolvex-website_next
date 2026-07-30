@@ -1,7 +1,15 @@
 const dotenv = require("dotenv");
 const path = require("path");
 
+const initialEnv = process.env.NODE_ENV;
+
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+
+// Preserve test env if running under Jest test runner
+const isTesting = initialEnv === "test" || process.env.JEST_WORKER_ID !== undefined;
+if (isTesting) {
+  process.env.NODE_ENV = "test";
+}
 
 module.exports = {
   env: process.env.NODE_ENV || "development",

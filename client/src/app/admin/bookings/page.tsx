@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { CalendarCheck, Search, Download, ShieldCheck, UserCheck, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { fetchWithAuth } from "@/lib/api";
 
 interface Technician {
   name: string;
@@ -52,7 +53,7 @@ export default function AdminBookingsPage() {
       const url = statusFilter !== "all" 
         ? `/api/v1/admin/bookings?status=${statusFilter}`
         : "/api/v1/admin/bookings";
-      const res = await fetch(url);
+      const res = await fetchWithAuth(url);
       const json = await res.json();
       if (json.success && json.data) {
         setBookings(json.data);
@@ -67,9 +68,8 @@ export default function AdminBookingsPage() {
   const handleStatusChange = async (id: string, newStatus: string) => {
     setUpdatingId(id);
     try {
-      const res = await fetch(`/api/v1/admin/bookings/${id}/status`, {
+      const res = await fetchWithAuth(`/api/v1/admin/bookings/${id}/status`, {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus })
       });
       const json = await res.json();
@@ -88,9 +88,8 @@ export default function AdminBookingsPage() {
     if (!assigningBooking) return;
 
     try {
-      const res = await fetch(`/api/v1/admin/bookings/${assigningBooking._id}/assign`, {
+      const res = await fetchWithAuth(`/api/v1/admin/bookings/${assigningBooking._id}/assign`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(techData)
       });
       const json = await res.json();
@@ -106,7 +105,7 @@ export default function AdminBookingsPage() {
   const exportToCSV = () => {
     const headers = ["Booking Number,Customer Name,Phone,Address,Date,Time,Status,Total Price\n"];
     const rows = bookings.map(b => 
-      `"${b.bookingNumber}","${b.customerName}","${b.customerPhone}","${b.customerAddress.replace(/"/g, '""')}","${b.preferredDate}","${b.preferredTime}","${b.status}",${b.totalPrice}`
+      `"${b.bookingNumber}","${b.customerName}","${b.customerPhone}","${b.customerAddress?.replace(/"/g, '""') || ''}","${b.preferredDate}","${b.preferredTime}","${b.status}",${b.totalPrice}`
     );
     const blob = new Blob([headers.concat(rows).join("\n")], { type: "text/csv" });
     const url = window.URL.createObjectURL(blob);
@@ -117,9 +116,9 @@ export default function AdminBookingsPage() {
   };
 
   const filtered = bookings.filter(b => 
-    b.bookingNumber.toLowerCase().includes(search.toLowerCase()) ||
-    b.customerName.toLowerCase().includes(search.toLowerCase()) ||
-    b.customerPhone.includes(search)
+    b.bookingNumber?.toLowerCase().includes(search.toLowerCase()) ||
+    b.customerName?.toLowerCase().includes(search.toLowerCase()) ||
+    b.customerPhone?.includes(search)
   );
 
   return (

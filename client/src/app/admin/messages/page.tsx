@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { MessageSquare, Star, CheckCircle2, Mail, Phone, Clock, RefreshCw } from "lucide-react";
+import { fetchWithAuth } from "@/lib/api";
 
 interface Message {
   _id: string;
@@ -38,8 +39,8 @@ export default function AdminMessagesPage() {
   const fetchData = async () => {
     try {
       const [msgRes, revRes] = await Promise.all([
-        fetch("/api/v1/admin/messages"),
-        fetch("/api/v1/admin/reviews")
+        fetchWithAuth("/api/v1/admin/messages"),
+        fetchWithAuth("/api/v1/admin/reviews")
       ]);
       const msgJson = await msgRes.json();
       const revJson = await revRes.json();

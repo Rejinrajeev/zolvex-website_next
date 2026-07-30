@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { 
   LayoutDashboard, 
   FileText, 
@@ -15,12 +15,14 @@ import {
   ArrowLeft,
   Sparkles,
   Menu,
-  X
+  X,
+  LogOut
 } from "lucide-react";
 import { useState } from "react";
 
 export function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const menuItems = [
@@ -35,6 +37,13 @@ export function AdminSidebar() {
     { label: "Security & Sessions", href: "/admin/security", icon: ShieldCheck },
     { label: "Audit Logs", href: "/admin/audit-logs", icon: Shield }
   ];
+
+  const handleLogout = () => {
+    localStorage.removeItem("zolvex_token");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("token");
+    router.push("/admin/login");
+  };
 
   return (
     <>
@@ -94,8 +103,16 @@ export function AdminSidebar() {
           </nav>
         </div>
 
-        {/* Footer Quick Return */}
-        <div className="p-4 border-t border-neutral-800">
+        {/* Footer Quick Return & Logout */}
+        <div className="p-4 border-t border-neutral-800 space-y-2">
+          <button
+            onClick={handleLogout}
+            className="flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold transition-all"
+          >
+            <LogOut className="w-4 h-4" />
+            <span>Log Out Admin Session</span>
+          </button>
+
           <Link
             href="/"
             className="flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl border border-neutral-700 hover:bg-neutral-800 text-xs font-semibold text-neutral-300 hover:text-white transition-all"

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Tag, Plus, CheckCircle2, Clock, Trash2, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { fetchWithAuth } from "@/lib/api";
 
 interface Offer {
   _id: string;
@@ -36,7 +37,7 @@ export default function AdminOffersPage() {
 
   const fetchOffers = async () => {
     try {
-      const res = await fetch("/api/v1/admin/offers");
+      const res = await fetchWithAuth("/api/v1/admin/offers");
       const json = await res.json();
       if (json.success && json.data) {
         setOffers(json.data);
@@ -51,7 +52,7 @@ export default function AdminOffersPage() {
   const handleCreateOffer = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/v1/admin/offers", {
+      const res = await fetchWithAuth("/api/v1/admin/offers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
