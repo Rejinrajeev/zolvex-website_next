@@ -308,7 +308,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
-      <div className="bg-white w-full sm:max-w-xl sm:rounded-2xl rounded-t-2xl max-h-[92vh] sm:max-h-[88vh] flex flex-col shadow-2xl overflow-hidden border border-border/40 animate-slide-up sm:animate-scale-in">
+      <div className="bg-card w-full sm:max-w-xl sm:rounded-2xl rounded-t-2xl max-h-[92vh] sm:max-h-[88vh] flex flex-col shadow-2xl overflow-hidden border border-border/40 animate-slide-up sm:animate-scale-in">
         
         {/* Header */}
         <div className="bg-gradient-to-r from-foreground to-neutral-800 text-white p-4 sm:p-5 flex items-center justify-between relative">
@@ -324,7 +324,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
 
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+            className="w-9 h-9 rounded-full bg-card/10 hover:bg-card/20 flex items-center justify-center text-white transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -387,7 +387,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                         className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex items-center justify-between ${
                           isSelected
                             ? "border-primary bg-primary/5 shadow-sm"
-                            : "border-border/60 hover:border-primary/40 bg-white"
+                            : "border-border/60 hover:border-primary/40 bg-card"
                         }`}
                       >
                         <div className="flex items-center space-x-3">
@@ -446,7 +446,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                     <div
                       key={addon.id}
                       className={`p-3.5 rounded-xl border transition-all ${
-                        isSelected ? "border-primary bg-primary/5 shadow-sm" : "border-border/60 bg-white"
+                        isSelected ? "border-primary bg-primary/5 shadow-sm" : "border-border/60 bg-card"
                       }`}
                     >
                       <div className="flex items-start justify-between">
@@ -466,7 +466,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                         {/* Quantity Counter */}
                         <div className="flex items-center space-x-2 pt-1">
                           {currentAddon.quantity > 0 ? (
-                            <div className="flex items-center bg-white border border-primary rounded-lg shadow-sm">
+                            <div className="flex items-center bg-card border border-primary rounded-lg shadow-sm">
                               <button
                                 onClick={() => handleAddonQuantityChange(addon.id, -1)}
                                 className="w-7 h-7 flex items-center justify-center text-foreground hover:bg-secondaryBg transition-colors"
@@ -504,7 +504,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                           <select
                             value={currentAddon.variationId || addon.variations[0]?.id}
                             onChange={(e) => handleAddonVariationChange(addon.id, e.target.value)}
-                            className="w-full text-xs p-2 rounded-lg border border-border bg-white text-foreground focus:ring-1 focus:ring-primary outline-none"
+                            className="w-full text-xs p-2 rounded-lg border border-border bg-card text-foreground focus:ring-1 focus:ring-primary outline-none"
                           >
                             {addon.variations.map(v => (
                               <option key={v.id} value={v.id}>
@@ -540,7 +540,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                   min={new Date().toISOString().split("T")[0]}
                   value={preferredDate}
                   onChange={(e) => setPreferredDate(e.target.value)}
-                  className="w-full p-3 rounded-xl border border-border bg-white text-sm font-semibold text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                  className="w-full p-3 rounded-xl border border-border bg-card text-sm font-semibold text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                 />
               </div>
 
@@ -561,7 +561,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                         className={`p-3 rounded-xl border-2 cursor-pointer text-xs font-semibold transition-all flex items-center space-x-2 ${
                           isSelected
                             ? "border-primary bg-primary/10 text-foreground font-bold shadow-sm"
-                            : "border-border/60 hover:border-primary/40 bg-white text-muted"
+                            : "border-border/60 hover:border-primary/40 bg-card text-muted"
                         }`}
                       >
                         <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${
@@ -597,7 +597,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                     placeholder="e.g. Rahul Sharma"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full p-2.5 rounded-xl border border-border bg-card text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
 
@@ -611,7 +611,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                     placeholder="e.g. +91 9876543210"
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value)}
-                    className="w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full p-2.5 rounded-xl border border-border bg-card text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
 
@@ -625,7 +625,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                     placeholder="e.g. Flat 4B, Emerald Heights, MG Road, Trivandrum"
                     value={customerAddress}
                     onChange={(e) => setCustomerAddress(e.target.value)}
-                    className="w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
+                    className="w-full p-2.5 rounded-xl border border-border bg-card text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
                   />
                 </div>
 
@@ -636,7 +636,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                     placeholder="e.g. Please ring bell twice, pet inside"
                     value={additionalInfo}
                     onChange={(e) => setAdditionalInfo(e.target.value)}
-                    className="w-full p-2.5 rounded-xl border border-border bg-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                    className="w-full p-2.5 rounded-xl border border-border bg-card text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
                   />
                 </div>
               </div>
@@ -667,7 +667,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
                   </div>
                   <button
                     onClick={copyRefToClipboard}
-                    className="flex items-center space-x-1 px-2.5 py-1.5 rounded-lg bg-white border border-border text-xs font-semibold text-foreground hover:border-primary transition-all"
+                    className="flex items-center space-x-1 px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-semibold text-foreground hover:border-primary transition-all"
                   >
                     {copiedRef ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedRef ? "Copied" : "Copy"}</span>
@@ -703,7 +703,7 @@ export function BookingFlowModal({ isOpen, onClose, service }: BookingFlowModalP
         </div>
 
         {/* Footer Bar / Price & Nav Actions */}
-        <div className="bg-white border-t border-border/80 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="bg-card border-t border-border/80 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           
           {step < 5 ? (
             <>

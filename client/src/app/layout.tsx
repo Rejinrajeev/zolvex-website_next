@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { CMSProvider } from "@/context/CMSContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,12 +45,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pb-16 md:pb-0`}
       >
-        <CMSProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <MobileNav />
-        </CMSProvider>
+        <ThemeProvider>
+          <CMSProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <MobileNav />
+          </CMSProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

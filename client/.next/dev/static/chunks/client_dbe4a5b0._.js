@@ -36,11 +36,11 @@ var _s = __turbopack_context__.k.signature();
 function AdminSidebar() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(46);
-    if ($[0] !== "ea30c15f1441fe4039ecbc546321acd2259f6e5e101eb1cb8f6e7f6c19cfd303") {
+    if ($[0] !== "195103dc63cbee01863d4d9b52376988e58806231caa66fc9c16e321c28bc4a7") {
         for(let $i = 0; $i < 46; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "ea30c15f1441fe4039ecbc546321acd2259f6e5e101eb1cb8f6e7f6c19cfd303";
+        $[0] = "195103dc63cbee01863d4d9b52376988e58806231caa66fc9c16e321c28bc4a7";
     }
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -141,7 +141,7 @@ function AdminSidebar() {
                 children: [
                     t7,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "font-extrabold text-base tracking-tight",
+                        className: "font-extrabold text-base tracking-tight text-foreground",
                         children: [
                             "ZOLVEX ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -150,7 +150,7 @@ function AdminSidebar() {
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                                 lineNumber: 93,
-                                columnNumber: 126
+                                columnNumber: 142
                             }, this)
                         ]
                     }, void 0, true, {
@@ -200,17 +200,17 @@ function AdminSidebar() {
         }
         if ($[19] !== t10 || $[20] !== t9) {
             t5 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "lg:hidden bg-neutral-900 text-white p-4 flex items-center justify-between border-b border-neutral-800",
+                className: "lg:hidden bg-card text-foreground p-4 flex items-center justify-between border-b border-border",
                 children: [
                     t8,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: t9,
-                        className: "p-2 rounded-lg bg-neutral-800 text-white",
+                        className: "p-2 rounded-lg bg-secondaryBg text-foreground",
                         children: t10
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                         lineNumber: 117,
-                        columnNumber: 135
+                        columnNumber: 128
                     }, this)
                 ]
             }, void 0, true, {
@@ -225,7 +225,7 @@ function AdminSidebar() {
             t5 = $[21];
         }
         t4 = `
-        fixed lg:static inset-y-0 left-0 z-40 w-64 bg-neutral-900 text-white flex flex-col justify-between border-r border-neutral-800 transition-transform duration-300
+        fixed lg:static inset-y-0 left-0 z-40 w-64 bg-card text-foreground flex flex-col justify-between border-r border-border transition-transform duration-300
         ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
       `;
         let t11;
@@ -250,14 +250,14 @@ function AdminSidebar() {
         }
         if ($[23] === Symbol.for("react.memo_cache_sentinel")) {
             t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "p-6 border-b border-neutral-800 hidden lg:flex items-center justify-between",
+                className: "p-6 border-b border-border hidden lg:flex items-center justify-between",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     href: "/admin",
                     className: "flex items-center space-x-2",
                     children: [
                         t11,
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "font-black text-xl tracking-tight",
+                            className: "font-black text-xl tracking-tight text-foreground",
                             children: [
                                 "ZOLVEX ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -266,19 +266,19 @@ function AdminSidebar() {
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                                     lineNumber: 136,
-                                    columnNumber: 229
+                                    columnNumber: 240
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                             lineNumber: 136,
-                            columnNumber: 170
+                            columnNumber: 165
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                     lineNumber: 136,
-                    columnNumber: 105
+                    columnNumber: 100
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
@@ -292,7 +292,7 @@ function AdminSidebar() {
         t0 = "p-4 space-y-1.5";
         if ($[24] === Symbol.for("react.memo_cache_sentinel")) {
             t1 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-[10px] font-bold uppercase tracking-wider text-neutral-500 px-3 block mb-2",
+                className: "text-[10px] font-bold uppercase tracking-wider text-muted px-3 block mb-2",
                 children: "Management Modules"
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
@@ -312,21 +312,21 @@ function AdminSidebar() {
                     onClick: {
                         "AdminSidebar[menuItems.map() > <Link>.onClick]": ()=>setMobileOpen(false)
                     }["AdminSidebar[menuItems.map() > <Link>.onClick]"],
-                    className: `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${isActive ? "bg-primary text-neutral-950 font-bold shadow-md" : "text-neutral-400 hover:text-white hover:bg-neutral-800/60"}`,
+                    className: `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${isActive ? "bg-primary text-white font-bold shadow-md" : "text-muted hover:text-foreground hover:bg-secondaryBg/60"}`,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                             lineNumber: 154,
-                            columnNumber: 292
+                            columnNumber: 285
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: item.label
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                             lineNumber: 154,
-                            columnNumber: 320
+                            columnNumber: 313
                         }, this)
                     ]
                 }, item.href, true, {
@@ -420,7 +420,7 @@ function AdminSidebar() {
     if ($[34] !== handleLogout) {
         t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
             onClick: handleLogout,
-            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold transition-all",
+            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/30 text-xs font-bold transition-all",
             children: [
                 t8,
                 t9
@@ -439,21 +439,21 @@ function AdminSidebar() {
     if ($[36] === Symbol.for("react.memo_cache_sentinel")) {
         t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
             href: "/",
-            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl border border-neutral-700 hover:bg-neutral-800 text-xs font-semibold text-neutral-300 hover:text-white transition-all",
+            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl border border-border hover:bg-secondaryBg text-xs font-semibold text-muted hover:text-foreground transition-all",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
                     className: "w-4 h-4"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                     lineNumber: 216,
-                    columnNumber: 229
+                    columnNumber: 223
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     children: "Return to Website"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                     lineNumber: 216,
-                    columnNumber: 262
+                    columnNumber: 256
                 }, this)
             ]
         }, void 0, true, {
@@ -468,7 +468,7 @@ function AdminSidebar() {
     let t12;
     if ($[37] !== t10) {
         t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "p-4 border-t border-neutral-800 space-y-2",
+            className: "p-4 border-t border-border space-y-2",
             children: [
                 t10,
                 t11
@@ -558,11 +558,11 @@ var _s = __turbopack_context__.k.signature();
 function AdminAuditLogsPage() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(55);
-    if ($[0] !== "050a53a2333810984c1386ef1e06fff84c59c95ccba9a47c28914bfadc1bda6b") {
+    if ($[0] !== "1f5887dcfa0c43397d55ec02a9a28f26ad42128daa718a26c98e101a3992ffdb") {
         for(let $i = 0; $i < 55; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "050a53a2333810984c1386ef1e06fff84c59c95ccba9a47c28914bfadc1bda6b";
+        $[0] = "1f5887dcfa0c43397d55ec02a9a28f26ad42128daa718a26c98e101a3992ffdb";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -676,7 +676,7 @@ function AdminAuditLogsPage() {
             t15 = $[21];
         }
         const filtered = logs.filter(t15);
-        t13 = "min-h-screen bg-neutral-950 text-white flex flex-col lg:flex-row";
+        t13 = "min-h-screen bg-background text-foreground flex flex-col lg:flex-row transition-colors duration-200";
         if ($[22] === Symbol.for("react.memo_cache_sentinel")) {
             t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$admin$2f$AdminSidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AdminSidebar"], {}, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
@@ -693,21 +693,21 @@ function AdminAuditLogsPage() {
             t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2",
+                        className: "text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2 text-foreground",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__["Shield"], {
                                 className: "w-7 h-7 text-primary"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                                 lineNumber: 138,
-                                columnNumber: 113
+                                columnNumber: 129
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "Immutable Security Audit Logs"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                                 lineNumber: 138,
-                                columnNumber: 156
+                                columnNumber: 172
                             }, this)
                         ]
                     }, void 0, true, {
@@ -716,12 +716,12 @@ function AdminAuditLogsPage() {
                         columnNumber: 18
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xs sm:text-sm text-neutral-400 mt-1",
+                        className: "text-xs sm:text-sm text-muted mt-1",
                         children: "Searchable and exportable audit records of all administrative actions, logins, and system changes."
                     }, void 0, false, {
                         fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                         lineNumber: 138,
-                        columnNumber: 203
+                        columnNumber: 219
                     }, this)
                 ]
             }, void 0, true, {
@@ -758,12 +758,12 @@ function AdminAuditLogsPage() {
         }
         if ($[26] !== exportAuditLogsCSV) {
             t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-800",
+                className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-border",
                 children: [
                     t16,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                         onClick: exportAuditLogsCSV,
-                        className: "bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700 font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2",
+                        className: "bg-card hover:bg-secondaryBg text-foreground border border-border font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2 shadow-xs",
                         children: [
                             t17,
                             t18
@@ -771,7 +771,7 @@ function AdminAuditLogsPage() {
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                         lineNumber: 155,
-                        columnNumber: 149
+                        columnNumber: 144
                     }, this)
                 ]
             }, void 0, true, {
@@ -787,7 +787,7 @@ function AdminAuditLogsPage() {
         let t19;
         if ($[28] === Symbol.for("react.memo_cache_sentinel")) {
             t19 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                className: "w-4 h-4 text-neutral-500 absolute left-3 top-1/2 -translate-y-1/2"
+                className: "w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2"
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                 lineNumber: 163,
@@ -808,7 +808,7 @@ function AdminAuditLogsPage() {
         }
         if ($[30] !== search) {
             t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-neutral-900 border border-neutral-800 p-4 rounded-2xl mb-6",
+                className: "bg-card border border-border p-4 rounded-2xl mb-6 shadow-xs",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative w-full sm:w-80",
                     children: [
@@ -818,17 +818,17 @@ function AdminAuditLogsPage() {
                             placeholder: "Search by action, email, or IP address...",
                             value: search,
                             onChange: t20,
-                            className: "w-full pl-9 pr-4 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white focus:border-primary outline-none"
+                            className: "w-full pl-9 pr-4 py-2 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none"
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                             lineNumber: 178,
-                            columnNumber: 138
+                            columnNumber: 136
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                     lineNumber: 178,
-                    columnNumber: 92
+                    columnNumber: 90
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
@@ -840,12 +840,12 @@ function AdminAuditLogsPage() {
         } else {
             t12 = $[31];
         }
-        t9 = "bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl";
+        t9 = "bg-card border border-border rounded-2xl overflow-hidden shadow-xs";
         t8 = "overflow-x-auto";
         t6 = "w-full text-left text-xs";
         if ($[32] === Symbol.for("react.memo_cache_sentinel")) {
             t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                className: "bg-neutral-950 text-neutral-400 uppercase tracking-wider font-bold border-b border-neutral-800",
+                className: "bg-secondaryBg/40 text-muted uppercase tracking-wider font-bold border-b border-border",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -854,7 +854,7 @@ function AdminAuditLogsPage() {
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                             lineNumber: 188,
-                            columnNumber: 130
+                            columnNumber: 122
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                             className: "p-4",
@@ -862,7 +862,7 @@ function AdminAuditLogsPage() {
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                             lineNumber: 188,
-                            columnNumber: 164
+                            columnNumber: 156
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                             className: "p-4",
@@ -870,7 +870,7 @@ function AdminAuditLogsPage() {
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                             lineNumber: 188,
-                            columnNumber: 204
+                            columnNumber: 196
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                             className: "p-4",
@@ -878,7 +878,7 @@ function AdminAuditLogsPage() {
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                             lineNumber: 188,
-                            columnNumber: 241
+                            columnNumber: 233
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                             className: "p-4",
@@ -886,13 +886,13 @@ function AdminAuditLogsPage() {
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                             lineNumber: 188,
-                            columnNumber: 279
+                            columnNumber: 271
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                     lineNumber: 188,
-                    columnNumber: 126
+                    columnNumber: 118
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
@@ -903,7 +903,7 @@ function AdminAuditLogsPage() {
         } else {
             t7 = $[32];
         }
-        t4 = "divide-y divide-neutral-800/60 font-medium";
+        t4 = "divide-y divide-border/60 font-medium";
         t5 = filtered.map(_AdminAuditLogsPageFilteredMap);
         $[6] = exportAuditLogsCSV;
         $[7] = logs;
@@ -1048,10 +1048,10 @@ _s(AdminAuditLogsPage, "ijEFyN33fmXUhpW1mMFhWyKjYHA=");
 _c = AdminAuditLogsPage;
 function _AdminAuditLogsPageFilteredMap(log) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-        className: "hover:bg-neutral-800/30 transition-colors",
+        className: "hover:bg-secondaryBg/20 transition-colors",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "p-4 font-mono text-[11px] text-neutral-400",
+                className: "p-4 font-mono text-[11px] text-muted",
                 children: new Date(log.timestamp).toLocaleString()
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
@@ -1066,36 +1066,36 @@ function _AdminAuditLogsPageFilteredMap(log) {
                 }, void 0, false, {
                     fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                     lineNumber: 283,
-                    columnNumber: 208
+                    columnNumber: 202
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                 lineNumber: 283,
-                columnNumber: 188
+                columnNumber: 182
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "p-4 font-mono text-[11px] text-neutral-300",
+                className: "p-4 font-mono text-[11px] text-foreground",
                 children: log.resource
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                 lineNumber: 283,
-                columnNumber: 345
+                columnNumber: 339
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "p-4 font-bold text-white",
+                className: "p-4 font-bold text-foreground",
                 children: log.userEmail
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                 lineNumber: 283,
-                columnNumber: 423
+                columnNumber: 416
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                className: "p-4 font-mono text-[11px] text-neutral-400",
+                className: "p-4 font-mono text-[11px] text-muted",
                 children: log.ipAddress
             }, void 0, false, {
                 fileName: "[project]/client/src/app/admin/audit-logs/page.tsx",
                 lineNumber: 283,
-                columnNumber: 484
+                columnNumber: 482
             }, this)
         ]
     }, log._id, true, {

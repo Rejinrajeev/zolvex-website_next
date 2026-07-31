@@ -291,7 +291,7 @@ export default function FAQPage() {
                         <Input
                             type="text"
                             placeholder="Search FAQs..."
-                            className="pl-10 pr-10 py-6 bg-white border-border rounded-xl shadow-sm focus:border-primary focus:ring-primary w-full"
+                            className="pl-10 pr-10 py-6 bg-card border-border rounded-xl shadow-sm focus:border-primary focus:ring-primary w-full"
                             value={searchQuery}
                             onChange={handleSearchChange}
                         />
@@ -311,7 +311,7 @@ export default function FAQPage() {
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* Categories - Desktop Sidebar */}
                     <aside className="hidden lg:block lg:w-64 flex-shrink-0">
-                        <div className="bg-white rounded-xl shadow-sm border border-border overflow-hidden sticky top-24">
+                        <div className="bg-card rounded-xl shadow-sm border border-border overflow-hidden sticky top-24">
                             <div className="p-4 bg-primary/5 border-b border-border">
                                 <h2 className="font-semibold text-foreground">Categories</h2>
                             </div>
@@ -364,7 +364,7 @@ export default function FAQPage() {
                                     onClick={() => handleCategoryChange(category)}
                                     className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === category && !searchQuery
                                             ? "bg-primary text-white shadow-md"
-                                            : "bg-white border border-border text-muted hover:border-primary hover:text-primary"
+                                            : "bg-card border border-border text-muted hover:border-primary hover:text-primary"
                                         }`}
                                 >
                                     {category}
@@ -403,7 +403,7 @@ export default function FAQPage() {
                                         <AccordionItem
                                             key={itemId}
                                             value={itemId}
-                                            className="bg-white border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                                            className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                                         >
                                             <AccordionTrigger className="px-4 md:px-6 py-4 hover:no-underline hover:bg-primary/5 transition-colors text-left">
                                                 <span className="text-sm md:text-base font-medium text-foreground">
@@ -418,7 +418,7 @@ export default function FAQPage() {
                                 })}
                             </Accordion>
                         ) : (
-                            <div className="text-center py-16 bg-white rounded-xl border border-border">
+                            <div className="text-center py-16 bg-card rounded-xl border border-border">
                                 <MessageCircle className="w-12 h-12 text-muted mx-auto mb-3" />
                                 <p className="text-muted mb-2">No questions found</p>
                                 <p className="text-sm text-muted mb-4">

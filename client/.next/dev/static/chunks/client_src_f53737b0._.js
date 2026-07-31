@@ -122,12 +122,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 function Navbar() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(10);
-    if ($[0] !== "e31ec19e72cefac7f9973f1d72f4b0f174b583d2d5c146e4523b3b1d7b4911c2") {
-        for(let $i = 0; $i < 10; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(11);
+    if ($[0] !== "d0a2b87c3a9bfd2b3c173818416d02effd9a3d0a42d0697378cbfbe5f752e057") {
+        for(let $i = 0; $i < 11; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "e31ec19e72cefac7f9973f1d72f4b0f174b583d2d5c146e4523b3b1d7b4911c2";
+        $[0] = "d0a2b87c3a9bfd2b3c173818416d02effd9a3d0a42d0697378cbfbe5f752e057";
     }
     const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     let t0;
@@ -214,35 +214,18 @@ function Navbar() {
     }
     let t2;
     if ($[3] === Symbol.for("react.memo_cache_sentinel")) {
-        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "hidden lg:flex items-center space-x-6",
+        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+            href: "tel:+918089631909",
+            className: "flex items-center text-muted hover:text-primary font-medium",
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                    href: "tel:+918089631909",
-                    className: "flex items-center text-muted hover:text-primary font-medium",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
-                            className: "w-4 h-4 mr-2 fill-current"
-                        }, void 0, false, {
-                            fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                            lineNumber: 33,
-                            columnNumber: 165
-                        }, this),
-                        "+91 80896 31909"
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                    lineNumber: 33,
-                    columnNumber: 65
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                    className: "bg-primary text-white hover:bg-[#D4AF37] px-6 py-2 text-base font-semibold",
-                    children: "Book a Service"
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
+                    className: "w-4 h-4 mr-2 fill-current"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/layout/Navbar.tsx",
                     lineNumber: 33,
-                    columnNumber: 231
-                }, this)
+                    columnNumber: 110
+                }, this),
+                "+91 80896 31909"
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/layout/Navbar.tsx",
@@ -254,14 +237,45 @@ function Navbar() {
         t2 = $[3];
     }
     let t3;
-    let t4;
-    if ($[4] !== isMenuOpen) {
+    if ($[4] === Symbol.for("react.memo_cache_sentinel")) {
         t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "hidden lg:flex items-center space-x-6",
+            children: [
+                t2,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/services",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                        className: "bg-primary text-white hover:bg-[#D4AF37] px-6 py-2 text-base font-semibold",
+                        children: "Book a Service"
+                    }, void 0, false, {
+                        fileName: "[project]/client/src/components/layout/Navbar.tsx",
+                        lineNumber: 40,
+                        columnNumber: 92
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/client/src/components/layout/Navbar.tsx",
+                    lineNumber: 40,
+                    columnNumber: 69
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/client/src/components/layout/Navbar.tsx",
+            lineNumber: 40,
+            columnNumber: 10
+        }, this);
+        $[4] = t3;
+    } else {
+        t3 = $[4];
+    }
+    let t4;
+    let t5;
+    if ($[5] !== isMenuOpen) {
+        t4 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex items-center justify-between h-20",
             children: [
                 t0,
                 t1,
-                t2,
+                t3,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: "lg:hidden text-foreground",
                     onClick: {
@@ -271,27 +285,27 @@ function Navbar() {
                         className: "w-6 h-6"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 43,
+                        lineNumber: 50,
                         columnNumber: 52
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                         className: "w-6 h-6"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 43,
+                        lineNumber: 50,
                         columnNumber: 80
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                    lineNumber: 41,
+                    lineNumber: 48,
                     columnNumber: 78
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/layout/Navbar.tsx",
-            lineNumber: 41,
+            lineNumber: 48,
             columnNumber: 10
         }, this);
-        t4 = isMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+        t5 = isMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
             className: "lg:hidden py-4 border-t border-border animate-in slide-in-from-top",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-col space-y-4",
@@ -305,7 +319,7 @@ function Navbar() {
                         children: "Home"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 44,
+                        lineNumber: 51,
                         columnNumber: 149
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -317,7 +331,7 @@ function Navbar() {
                         children: "About Us"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 46,
+                        lineNumber: 53,
                         columnNumber: 49
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -329,7 +343,7 @@ function Navbar() {
                         children: "Services"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 48,
+                        lineNumber: 55,
                         columnNumber: 53
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -341,7 +355,7 @@ function Navbar() {
                         children: "Track Booking"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 50,
+                        lineNumber: 57,
                         columnNumber: 53
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -353,7 +367,7 @@ function Navbar() {
                         children: "FAQ"
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 52,
+                        lineNumber: 59,
                         columnNumber: 58
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -367,75 +381,85 @@ function Navbar() {
                                         className: "w-4 h-4 mr-2 fill-current"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 61,
                                         columnNumber: 198
                                     }, this),
                                     "+91 80896 31909"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                                lineNumber: 54,
+                                lineNumber: 61,
                                 columnNumber: 93
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                className: "w-full bg-primary text-white hover:bg-[#D4AF37] mt-4",
-                                children: "Book a Service"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/services",
+                                onClick: {
+                                    "Navbar[<Link>.onClick]": ()=>setIsMenuOpen(false)
+                                }["Navbar[<Link>.onClick]"],
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                    className: "w-full bg-primary text-white hover:bg-[#D4AF37] mt-4",
+                                    children: "Book a Service"
+                                }, void 0, false, {
+                                    fileName: "[project]/client/src/components/layout/Navbar.tsx",
+                                    lineNumber: 63,
+                                    columnNumber: 40
+                                }, this)
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                                lineNumber: 54,
+                                lineNumber: 61,
                                 columnNumber: 264
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                        lineNumber: 54,
+                        lineNumber: 61,
                         columnNumber: 48
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                lineNumber: 44,
+                lineNumber: 51,
                 columnNumber: 108
             }, this)
         }, void 0, false, {
             fileName: "[project]/client/src/components/layout/Navbar.tsx",
-            lineNumber: 44,
+            lineNumber: 51,
             columnNumber: 24
         }, this);
-        $[4] = isMenuOpen;
-        $[5] = t3;
+        $[5] = isMenuOpen;
         $[6] = t4;
+        $[7] = t5;
     } else {
-        t3 = $[5];
         t4 = $[6];
+        t5 = $[7];
     }
-    let t5;
-    if ($[7] !== t3 || $[8] !== t4) {
-        t5 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+    let t6;
+    if ($[8] !== t4 || $[9] !== t5) {
+        t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
             className: "sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "container mx-auto px-4 lg:px-8",
                 children: [
-                    t3,
-                    t4
+                    t4,
+                    t5
                 ]
             }, void 0, true, {
                 fileName: "[project]/client/src/components/layout/Navbar.tsx",
-                lineNumber: 64,
+                lineNumber: 73,
                 columnNumber: 105
             }, this)
         }, void 0, false, {
             fileName: "[project]/client/src/components/layout/Navbar.tsx",
-            lineNumber: 64,
+            lineNumber: 73,
             columnNumber: 10
         }, this);
-        $[7] = t3;
         $[8] = t4;
         $[9] = t5;
+        $[10] = t6;
     } else {
-        t5 = $[9];
+        t6 = $[10];
     }
-    return t5;
+    return t6;
 }
 _s(Navbar, "vK10R+uCyHfZ4DZVnxbYkMWJB8g=");
 _c = Navbar;

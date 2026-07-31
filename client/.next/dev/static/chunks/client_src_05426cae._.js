@@ -36,11 +36,11 @@ var _s = __turbopack_context__.k.signature();
 function AdminSidebar() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(46);
-    if ($[0] !== "ea30c15f1441fe4039ecbc546321acd2259f6e5e101eb1cb8f6e7f6c19cfd303") {
+    if ($[0] !== "195103dc63cbee01863d4d9b52376988e58806231caa66fc9c16e321c28bc4a7") {
         for(let $i = 0; $i < 46; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "ea30c15f1441fe4039ecbc546321acd2259f6e5e101eb1cb8f6e7f6c19cfd303";
+        $[0] = "195103dc63cbee01863d4d9b52376988e58806231caa66fc9c16e321c28bc4a7";
     }
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -141,7 +141,7 @@ function AdminSidebar() {
                 children: [
                     t7,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "font-extrabold text-base tracking-tight",
+                        className: "font-extrabold text-base tracking-tight text-foreground",
                         children: [
                             "ZOLVEX ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -150,7 +150,7 @@ function AdminSidebar() {
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                                 lineNumber: 93,
-                                columnNumber: 126
+                                columnNumber: 142
                             }, this)
                         ]
                     }, void 0, true, {
@@ -200,17 +200,17 @@ function AdminSidebar() {
         }
         if ($[19] !== t10 || $[20] !== t9) {
             t5 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "lg:hidden bg-neutral-900 text-white p-4 flex items-center justify-between border-b border-neutral-800",
+                className: "lg:hidden bg-card text-foreground p-4 flex items-center justify-between border-b border-border",
                 children: [
                     t8,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: t9,
-                        className: "p-2 rounded-lg bg-neutral-800 text-white",
+                        className: "p-2 rounded-lg bg-secondaryBg text-foreground",
                         children: t10
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                         lineNumber: 117,
-                        columnNumber: 135
+                        columnNumber: 128
                     }, this)
                 ]
             }, void 0, true, {
@@ -225,7 +225,7 @@ function AdminSidebar() {
             t5 = $[21];
         }
         t4 = `
-        fixed lg:static inset-y-0 left-0 z-40 w-64 bg-neutral-900 text-white flex flex-col justify-between border-r border-neutral-800 transition-transform duration-300
+        fixed lg:static inset-y-0 left-0 z-40 w-64 bg-card text-foreground flex flex-col justify-between border-r border-border transition-transform duration-300
         ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
       `;
         let t11;
@@ -250,14 +250,14 @@ function AdminSidebar() {
         }
         if ($[23] === Symbol.for("react.memo_cache_sentinel")) {
             t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "p-6 border-b border-neutral-800 hidden lg:flex items-center justify-between",
+                className: "p-6 border-b border-border hidden lg:flex items-center justify-between",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     href: "/admin",
                     className: "flex items-center space-x-2",
                     children: [
                         t11,
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "font-black text-xl tracking-tight",
+                            className: "font-black text-xl tracking-tight text-foreground",
                             children: [
                                 "ZOLVEX ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -266,19 +266,19 @@ function AdminSidebar() {
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                                     lineNumber: 136,
-                                    columnNumber: 229
+                                    columnNumber: 240
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                             lineNumber: 136,
-                            columnNumber: 170
+                            columnNumber: 165
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                     lineNumber: 136,
-                    columnNumber: 105
+                    columnNumber: 100
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
@@ -292,7 +292,7 @@ function AdminSidebar() {
         t0 = "p-4 space-y-1.5";
         if ($[24] === Symbol.for("react.memo_cache_sentinel")) {
             t1 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-[10px] font-bold uppercase tracking-wider text-neutral-500 px-3 block mb-2",
+                className: "text-[10px] font-bold uppercase tracking-wider text-muted px-3 block mb-2",
                 children: "Management Modules"
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
@@ -312,21 +312,21 @@ function AdminSidebar() {
                     onClick: {
                         "AdminSidebar[menuItems.map() > <Link>.onClick]": ()=>setMobileOpen(false)
                     }["AdminSidebar[menuItems.map() > <Link>.onClick]"],
-                    className: `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${isActive ? "bg-primary text-neutral-950 font-bold shadow-md" : "text-neutral-400 hover:text-white hover:bg-neutral-800/60"}`,
+                    className: `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${isActive ? "bg-primary text-white font-bold shadow-md" : "text-muted hover:text-foreground hover:bg-secondaryBg/60"}`,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                             lineNumber: 154,
-                            columnNumber: 292
+                            columnNumber: 285
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: item.label
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                             lineNumber: 154,
-                            columnNumber: 320
+                            columnNumber: 313
                         }, this)
                     ]
                 }, item.href, true, {
@@ -420,7 +420,7 @@ function AdminSidebar() {
     if ($[34] !== handleLogout) {
         t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
             onClick: handleLogout,
-            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold transition-all",
+            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/30 text-xs font-bold transition-all",
             children: [
                 t8,
                 t9
@@ -439,21 +439,21 @@ function AdminSidebar() {
     if ($[36] === Symbol.for("react.memo_cache_sentinel")) {
         t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
             href: "/",
-            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl border border-neutral-700 hover:bg-neutral-800 text-xs font-semibold text-neutral-300 hover:text-white transition-all",
+            className: "flex items-center justify-center space-x-2 w-full py-2.5 px-4 rounded-xl border border-border hover:bg-secondaryBg text-xs font-semibold text-muted hover:text-foreground transition-all",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
                     className: "w-4 h-4"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                     lineNumber: 216,
-                    columnNumber: 229
+                    columnNumber: 223
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     children: "Return to Website"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
                     lineNumber: 216,
-                    columnNumber: 262
+                    columnNumber: 256
                 }, this)
             ]
         }, void 0, true, {
@@ -468,7 +468,7 @@ function AdminSidebar() {
     let t12;
     if ($[37] !== t10) {
         t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "p-4 border-t border-neutral-800 space-y-2",
+            className: "p-4 border-t border-border space-y-2",
             children: [
                 t10,
                 t11
@@ -707,7 +707,7 @@ function AdminBookingsPage() {
     };
     const filtered = bookings.filter((b_0)=>b_0.bookingNumber?.toLowerCase().includes(search.toLowerCase()) || b_0.customerName?.toLowerCase().includes(search.toLowerCase()) || b_0.customerPhone?.includes(search));
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-neutral-950 text-white flex flex-col lg:flex-row",
+        className: "min-h-screen bg-background text-foreground flex flex-col lg:flex-row transition-colors duration-200",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$admin$2f$AdminSidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AdminSidebar"], {}, void 0, false, {
                 fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -718,12 +718,12 @@ function AdminBookingsPage() {
                 className: "flex-1 p-4 sm:p-8 overflow-y-auto",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-800",
+                        className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-border",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2",
+                                        className: "text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2 text-foreground",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CalendarCheck$3e$__["CalendarCheck"], {
                                                 className: "w-7 h-7 text-primary"
@@ -746,7 +746,7 @@ function AdminBookingsPage() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-xs sm:text-sm text-neutral-400 mt-1",
+                                        className: "text-xs sm:text-sm text-muted mt-1",
                                         children: "Approve, dispatch cleaning specialists, transition status, and export customer orders."
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -761,7 +761,7 @@ function AdminBookingsPage() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                 onClick: exportToCSV,
-                                className: "bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700 font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2",
+                                className: "bg-card hover:bg-secondaryBg text-foreground border border-border font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2 shadow-xs",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                         className: "w-4 h-4 text-primary"
@@ -790,13 +790,13 @@ function AdminBookingsPage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-neutral-900 border border-neutral-800 p-4 rounded-2xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4",
+                        className: "bg-card border border-border p-4 rounded-2xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative w-full sm:w-80",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
-                                        className: "w-4 h-4 text-neutral-500 absolute left-3 top-1/2 -translate-y-1/2"
+                                        className: "w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
                                         lineNumber: 134,
@@ -807,7 +807,7 @@ function AdminBookingsPage() {
                                         placeholder: "Search ref no, customer name or phone...",
                                         value: search,
                                         onChange: (e_2)=>setSearch(e_2.target.value),
-                                        className: "w-full pl-9 pr-4 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white focus:border-primary outline-none"
+                                        className: "w-full pl-9 pr-4 py-2 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
                                         lineNumber: 135,
@@ -831,7 +831,7 @@ function AdminBookingsPage() {
                                     "cancelled"
                                 ].map((status)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>setStatusFilter(status),
-                                        className: `px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all ${statusFilter === status ? "bg-primary text-neutral-950 font-bold" : "bg-neutral-950 text-neutral-400 hover:text-white"}`,
+                                        className: `px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all ${statusFilter === status ? "bg-primary text-white font-bold shadow-sm" : "bg-secondaryBg/30 text-muted hover:text-foreground border border-border"}`,
                                         children: status.replace("_", " ")
                                     }, status, false, {
                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -860,7 +860,7 @@ function AdminBookingsPage() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-xs font-semibold text-neutral-400",
+                                className: "text-xs font-semibold text-muted",
                                 children: "Loading bookings..."
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -873,7 +873,7 @@ function AdminBookingsPage() {
                         lineNumber: 148,
                         columnNumber: 20
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl",
+                        className: "bg-card border border-border rounded-2xl overflow-hidden shadow-xs",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "overflow-x-auto",
@@ -881,7 +881,7 @@ function AdminBookingsPage() {
                                     className: "w-full text-left text-xs",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                                            className: "bg-neutral-950 text-neutral-400 uppercase tracking-wider font-bold border-b border-neutral-800",
+                                            className: "bg-secondaryBg/40 text-muted uppercase tracking-wider font-bold border-b border-border",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -952,9 +952,9 @@ function AdminBookingsPage() {
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                                            className: "divide-y divide-neutral-800/60 font-medium",
+                                            className: "divide-y divide-border/60 font-medium",
                                             children: filtered.map((b_1)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                                    className: "hover:bg-neutral-800/30 transition-colors",
+                                                    className: "hover:bg-secondaryBg/20 transition-colors",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                             className: "p-4 font-mono font-black text-primary",
@@ -968,7 +968,7 @@ function AdminBookingsPage() {
                                                             className: "p-4",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "font-bold text-white block",
+                                                                    className: "font-bold text-foreground block",
                                                                     children: b_1.customerName
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -976,7 +976,7 @@ function AdminBookingsPage() {
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-[11px] text-neutral-400",
+                                                                    className: "text-[11px] text-muted",
                                                                     children: b_1.customerPhone
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -993,7 +993,7 @@ function AdminBookingsPage() {
                                                             className: "p-4",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-white block font-semibold",
+                                                                    className: "text-foreground block font-semibold",
                                                                     children: b_1.preferredDate
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1001,7 +1001,7 @@ function AdminBookingsPage() {
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-[10px] text-neutral-400",
+                                                                    className: "text-[10px] text-muted",
                                                                     children: b_1.preferredTime
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1015,9 +1015,9 @@ function AdminBookingsPage() {
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "p-4 text-neutral-300",
+                                                            className: "p-4 text-foreground",
                                                             children: b_1.assignedTechnician ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "flex items-center space-x-1.5 text-xs text-emerald-400 font-semibold",
+                                                                className: "flex items-center space-x-1.5 text-xs text-emerald-500 font-semibold",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"], {
                                                                         className: "w-3.5 h-3.5"
@@ -1039,7 +1039,7 @@ function AdminBookingsPage() {
                                                                 lineNumber: 181,
                                                                 columnNumber: 51
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-neutral-500 italic text-[11px]",
+                                                                className: "text-muted italic text-[11px]",
                                                                 children: "Unassigned"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1052,7 +1052,7 @@ function AdminBookingsPage() {
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "p-4 font-extrabold text-white",
+                                                            className: "p-4 font-extrabold text-foreground",
                                                             children: [
                                                                 "₹",
                                                                 b_1.totalPrice?.toLocaleString()
@@ -1068,11 +1068,11 @@ function AdminBookingsPage() {
                                                                 value: b_1.status,
                                                                 disabled: updatingId === b_1._id,
                                                                 onChange: (e_3)=>handleStatusChange(b_1._id, e_3.target.value),
-                                                                className: `text-xs font-bold px-2.5 py-1.5 rounded-lg border outline-none cursor-pointer ${b_1.status === 'completed' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' : b_1.status === 'cancelled' ? 'bg-red-500/10 text-red-400 border-red-500/30' : b_1.status === 'assigned' || b_1.status === 'in_progress' ? 'bg-primary/10 text-primary border-primary/30' : 'bg-amber-500/10 text-amber-400 border-amber-500/30'}`,
+                                                                className: `text-xs font-bold px-2.5 py-1.5 rounded-lg border outline-none cursor-pointer ${b_1.status === 'completed' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30' : b_1.status === 'cancelled' ? 'bg-red-500/10 text-red-500 border-red-500/30' : b_1.status === 'assigned' || b_1.status === 'in_progress' ? 'bg-primary/10 text-primary border-primary/30' : 'bg-amber-500/10 text-amber-500 border-amber-500/30'}`,
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: "pending",
-                                                                        className: "bg-neutral-900 text-white",
+                                                                        className: "bg-card text-foreground",
                                                                         children: "Pending"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1081,7 +1081,7 @@ function AdminBookingsPage() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: "confirmed",
-                                                                        className: "bg-neutral-900 text-white",
+                                                                        className: "bg-card text-foreground",
                                                                         children: "Confirmed"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1090,7 +1090,7 @@ function AdminBookingsPage() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: "assigned",
-                                                                        className: "bg-neutral-900 text-white",
+                                                                        className: "bg-card text-foreground",
                                                                         children: "Assigned"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1099,7 +1099,7 @@ function AdminBookingsPage() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: "in_progress",
-                                                                        className: "bg-neutral-900 text-white",
+                                                                        className: "bg-card text-foreground",
                                                                         children: "In Progress"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
@@ -1108,20 +1108,11 @@ function AdminBookingsPage() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: "completed",
-                                                                        className: "bg-neutral-900 text-white",
+                                                                        className: "bg-card text-foreground",
                                                                         children: "Completed"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
                                                                         lineNumber: 197,
-                                                                        columnNumber: 27
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                                        value: "cancelled",
-                                                                        className: "bg-neutral-900 text-white",
-                                                                        children: "Cancelled"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                                        lineNumber: 198,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
@@ -1145,25 +1136,25 @@ function AdminBookingsPage() {
                                                                         className: "w-3.5 h-3.5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                                        lineNumber: 204,
+                                                                        lineNumber: 203,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: "Assign Staff"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                                        lineNumber: 205,
+                                                                        lineNumber: 204,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                                lineNumber: 203,
+                                                                lineNumber: 202,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                            lineNumber: 202,
+                                                            lineNumber: 201,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
@@ -1193,7 +1184,7 @@ function AdminBookingsPage() {
                                 children: "No bookings found matching your search criteria."
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                lineNumber: 214,
+                                lineNumber: 213,
                                 columnNumber: 39
                             }, this)
                         ]
@@ -1214,20 +1205,20 @@ function AdminBookingsPage() {
                                             className: "w-5 h-5 text-primary"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 223,
+                                            lineNumber: 222,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Assign Cleaning Specialist"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 224,
+                                            lineNumber: 223,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                    lineNumber: 222,
+                                    lineNumber: 221,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1239,14 +1230,14 @@ function AdminBookingsPage() {
                                             children: assigningBooking.bookingNumber
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 228,
+                                            lineNumber: 227,
                                             columnNumber: 54
                                         }, this),
                                         "."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                    lineNumber: 227,
+                                    lineNumber: 226,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1260,7 +1251,7 @@ function AdminBookingsPage() {
                                                     children: "Technician Full Name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 233,
+                                                    lineNumber: 232,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1274,13 +1265,13 @@ function AdminBookingsPage() {
                                                     className: "w-full p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white outline-none focus:border-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 234,
+                                                    lineNumber: 233,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 232,
+                                            lineNumber: 231,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1290,7 +1281,7 @@ function AdminBookingsPage() {
                                                     children: "Contact Phone Number"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 240,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1304,13 +1295,13 @@ function AdminBookingsPage() {
                                                     className: "w-full p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white outline-none focus:border-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 242,
+                                                    lineNumber: 241,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 240,
+                                            lineNumber: 239,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1323,7 +1314,7 @@ function AdminBookingsPage() {
                                                             children: "Rating Badge"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                            lineNumber: 250,
+                                                            lineNumber: 249,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1337,13 +1328,13 @@ function AdminBookingsPage() {
                                                             className: "w-full p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white outline-none focus:border-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                            lineNumber: 251,
+                                                            lineNumber: 250,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 248,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1353,7 +1344,7 @@ function AdminBookingsPage() {
                                                             children: "Photo Avatar URL"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                            lineNumber: 258,
+                                                            lineNumber: 257,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1366,19 +1357,19 @@ function AdminBookingsPage() {
                                                             className: "w-full p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white outline-none focus:border-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                            lineNumber: 259,
+                                                            lineNumber: 258,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 257,
+                                                    lineNumber: 256,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 247,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1391,7 +1382,7 @@ function AdminBookingsPage() {
                                                     children: "Cancel"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 267,
+                                                    lineNumber: 266,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1400,30 +1391,30 @@ function AdminBookingsPage() {
                                                     children: "Dispatch Specialist"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                                    lineNumber: 270,
+                                                    lineNumber: 269,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 265,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                                    lineNumber: 231,
+                                    lineNumber: 230,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                            lineNumber: 221,
+                            lineNumber: 220,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/client/src/app/admin/bookings/page.tsx",
-                        lineNumber: 220,
+                        lineNumber: 219,
                         columnNumber: 30
                     }, this)
                 ]

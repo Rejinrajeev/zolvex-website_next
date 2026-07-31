@@ -33,12 +33,16 @@ export default function AboutPage() {
                 Zolvex Home Service started with a simple belief: every homeowner and business owner deserves reliable, professional, and affordable home services from a single trusted partner. In just 6 months, we've served over 1,000 service requests and earned the trust of 800+ satisfied customers in Trivandrum. Now, we're proudly expanding to Ernakulam to bring the same trusted service to more families and businesses.
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
-                <Button className="bg-primary text-white hover:bg-primaryHover px-6 py-3">
-                  Book a Service
-                </Button>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                  Get Free Quote
-                </Button>
+                <Link href="/services">
+                  <Button className="bg-primary text-white hover:bg-primaryHover px-6 py-3">
+                    Book a Service
+                  </Button>
+                </Link>
+                <Link href="/services">
+                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                    Get Free Quote
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
@@ -51,7 +55,7 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+              <div className="absolute bottom-6 left-6 bg-card/90 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
                 <p className="text-sm font-semibold text-foreground">✨ 800+ Happy Customers</p>
               </div>
             </div>
@@ -158,7 +162,7 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
+            <div className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Clock className="w-6 h-6 text-primary" />
               </div>
@@ -167,7 +171,7 @@ export default function AboutPage() {
                 Your time is valuable. We arrive when scheduled, dress professionally, and treat your space with utmost respect. Reliability isn't a promise—it's our standard.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
+            <div className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Heart className="w-6 h-6 text-primary" />
               </div>
@@ -176,7 +180,7 @@ export default function AboutPage() {
                 Quality shouldn't come with a premium price tag. Our pricing is transparent, fair, and designed to fit your budget. What you see is what you pay—no hidden charges, no surprises.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
+            <div className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-primary" />
               </div>
@@ -185,7 +189,7 @@ export default function AboutPage() {
                 Trust is everything. We're transparent about our work, our team's qualifications, and our processes. Your satisfaction isn't just our goal—it's our responsibility.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
+            <div className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-border/50">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Heart className="w-6 h-6 text-primary" />
               </div>
@@ -258,9 +262,11 @@ export default function AboutPage() {
             Our vision? A single call for any home service need. No more juggling multiple vendors or hoping you've found the right person. One trusted partner. One quality standard. One promise kept every single time.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <Button className="bg-primary text-white hover:bg-primaryHover px-8 py-3">
-              Join the Movement
-            </Button>
+            <Link href="/services">
+              <Button className="bg-primary text-white hover:bg-primaryHover px-8 py-3">
+                Join the Movement
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -275,14 +281,16 @@ export default function AboutPage() {
             Whether you need a deep clean today or are planning ahead, Zolvex is here to serve you in Trivandrum and Ernakulam. Let's start building that trust.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <Link href="/booking">
+            <Link href="/services">
               <Button className="bg-primary text-white hover:bg-primaryHover px-8 py-3 text-lg">
                 Book a Service
               </Button>
             </Link>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 text-lg">
-              Get Free Quote
-            </Button>
+            <Link href="/services">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 text-lg">
+                Get Free Quote
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

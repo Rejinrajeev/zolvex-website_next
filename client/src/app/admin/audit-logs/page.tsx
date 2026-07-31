@@ -82,26 +82,26 @@ export default function AdminAuditLogsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-background text-foreground flex flex-col lg:flex-row transition-colors duration-200">
       <AdminSidebar />
 
       <main className="flex-1 p-4 sm:p-8 overflow-y-auto">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-border">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2 text-foreground">
               <Shield className="w-7 h-7 text-primary" />
               <span>Immutable Security Audit Logs</span>
             </h1>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-1">
+            <p className="text-xs sm:text-sm text-muted mt-1">
               Searchable and exportable audit records of all administrative actions, logins, and system changes.
             </p>
           </div>
 
           <Button
             onClick={exportAuditLogsCSV}
-            className="bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700 font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2"
+            className="bg-card hover:bg-secondaryBg text-foreground border border-border font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2 shadow-xs"
           >
             <Download className="w-4 h-4 text-primary" />
             <span>Export Audit CSV</span>
@@ -109,24 +109,24 @@ export default function AdminAuditLogsPage() {
         </div>
 
         {/* Search */}
-        <div className="bg-neutral-900 border border-neutral-800 p-4 rounded-2xl mb-6">
+        <div className="bg-card border border-border p-4 rounded-2xl mb-6 shadow-xs">
           <div className="relative w-full sm:w-80">
-            <Search className="w-4 h-4 text-neutral-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search by action, email, or IP address..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white focus:border-primary outline-none"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none"
             />
           </div>
         </div>
 
         {/* Audit Logs Table */}
-        <div className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl">
+        <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-neutral-950 text-neutral-400 uppercase tracking-wider font-bold border-b border-neutral-800">
+              <thead className="bg-secondaryBg/40 text-muted uppercase tracking-wider font-bold border-b border-border">
                 <tr>
                   <th className="p-4">Timestamp</th>
                   <th className="p-4">Security Action</th>
@@ -135,11 +135,11 @@ export default function AdminAuditLogsPage() {
                   <th className="p-4">IP Address</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-neutral-800/60 font-medium">
+              <tbody className="divide-y divide-border/60 font-medium">
                 {filtered.map((log) => (
-                  <tr key={log._id} className="hover:bg-neutral-800/30 transition-colors">
+                  <tr key={log._id} className="hover:bg-secondaryBg/20 transition-colors">
                     
-                    <td className="p-4 font-mono text-[11px] text-neutral-400">
+                    <td className="p-4 font-mono text-[11px] text-muted">
                       {new Date(log.timestamp).toLocaleString()}
                     </td>
 
@@ -149,15 +149,15 @@ export default function AdminAuditLogsPage() {
                       </span>
                     </td>
 
-                    <td className="p-4 font-mono text-[11px] text-neutral-300">
+                    <td className="p-4 font-mono text-[11px] text-foreground">
                       {log.resource}
                     </td>
 
-                    <td className="p-4 font-bold text-white">
+                    <td className="p-4 font-bold text-foreground">
                       {log.userEmail}
                     </td>
 
-                    <td className="p-4 font-mono text-[11px] text-neutral-400">
+                    <td className="p-4 font-mono text-[11px] text-muted">
                       {log.ipAddress}
                     </td>
 

@@ -61,25 +61,47 @@ const verifyMFA = catchAsync(async (req, res) => {
 });
 
 const setupMFA = catchAsync(async (req, res) => {
-  const result = await authService.setupMFA(req.user._id);
-  return ApiResponse.success(res, "TOTP Secret Generated", result);
+  const result = await authService.setupMFA(req.user._id, req);
+  return ApiResponse.success(res, "TOTP Secret & QR Code Generated", result);
 });
 
 const enableMFA = catchAsync(async (req, res) => {
   const { code } = req.body;
-  const result = await authService.enableMFA(req.user._id, code);
+  const result = await authService.enableMFA(req.user._id, code, req);
   return ApiResponse.success(res, "MFA Enabled Successfully", result);
 });
 
+const disableMFA = catchAsync(async (req, res) => {
+  const result = await authService.disableMFA(req.user._id, req);
+  return ApiResponse.success(res, "MFA Disabled Successfully", result);
+});
+
+const regenerateBackupCodes = catchAsync(async (req, res) => {
+  const result = await authService.regenerateBackupCodes(req.user._id, req);
+  return ApiResponse.success(res, "Backup recovery codes regenerated", result);
+});
+
 const getActiveSessions = catchAsync(async (req, res) => {
-  const sessions = await authService.getActiveSessions(req.user._id);
+  const currentToken = req.cookies?.refreshToken;
+  const sessions = await authService.getActiveSessions(req.user._id, currentToken);
   return ApiResponse.success(res, "Active sessions retrieved", sessions);
 });
 
 const revokeSession = catchAsync(async (req, res) => {
   const { sessionId } = req.params;
-  await authService.revokeSession(req.user._id, sessionId);
+  await authService.revokeSession(req.user._id, sessionId, req);
   return ApiResponse.success(res, "Session revoked successfully");
+});
+
+const revokeAllOtherSessions = catchAsync(async (req, res) => {
+  const currentToken = req.cookies?.refreshToken;
+  await authService.revokeAllOtherSessions(req.user._id, currentToken, req);
+  return ApiResponse.success(res, "All other sessions revoked successfully");
+});
+
+const getSecurityStats = catchAsync(async (req, res) => {
+  const stats = await authService.getSecurityStats(req.user._id);
+  return ApiResponse.success(res, "Security stats retrieved", stats);
 });
 
 const refreshToken = catchAsync(async (req, res) => {
@@ -93,7 +115,7 @@ const refreshToken = catchAsync(async (req, res) => {
 
 const logout = catchAsync(async (req, res) => {
   const token = req.cookies?.refreshToken || req.body?.refreshToken;
-  await authService.logout(token);
+  await authService.logout(token, req);
   res.clearCookie("refreshToken");
 
   return ApiResponse.success(res, "Logged out successfully");
@@ -111,8 +133,12 @@ module.exports = {
   verifyMFA,
   setupMFA,
   enableMFA,
+  disableMFA,
+  regenerateBackupCodes,
   getActiveSessions,
   revokeSession,
+  revokeAllOtherSessions,
+  getSecurityStats,
   refreshToken,
   logout,
   getMe

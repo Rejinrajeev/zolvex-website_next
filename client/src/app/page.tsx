@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle2, Sparkles, Shield, Clock } from "lucide-react";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
@@ -45,11 +46,13 @@ export default function Home() {
 
               {/* CTA Button */}
               <div className="pt-4">
-                <Button 
-                  className="bg-primary text-white hover:bg-primaryHover px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Get a Free Quote
-                </Button>
+                <Link href="/services">
+                  <Button 
+                    className="bg-primary text-white hover:bg-primaryHover px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    Get a Free Quote
+                  </Button>
+                </Link>
               </div>
 
               {/* Trust Badges */}
@@ -88,7 +91,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               
               {/* Decorative Badges */}
-              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
+              <div className="absolute top-6 left-6 bg-card/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg border border-border">
                 <p className="text-sm font-semibold text-foreground">✨ Premium Service</p>
               </div>
               

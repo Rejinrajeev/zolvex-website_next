@@ -122,24 +122,24 @@ export default function AdminBookingsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-background text-foreground flex flex-col lg:flex-row transition-colors duration-200">
       <AdminSidebar />
 
       <main className="flex-1 p-4 sm:p-8 overflow-y-auto">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-border">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2 text-foreground">
               <CalendarCheck className="w-7 h-7 text-primary" />
               <span>Booking Control Hub</span>
             </h1>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-1">Approve, dispatch cleaning specialists, transition status, and export customer orders.</p>
+            <p className="text-xs sm:text-sm text-muted mt-1">Approve, dispatch cleaning specialists, transition status, and export customer orders.</p>
           </div>
 
           <Button
             onClick={exportToCSV}
-            className="bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700 font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2"
+            className="bg-card hover:bg-secondaryBg text-foreground border border-border font-bold text-xs px-5 py-2.5 rounded-xl transition-all flex items-center space-x-2 shadow-xs"
           >
             <Download className="w-4 h-4 text-primary" />
             <span>Export CSV</span>
@@ -147,16 +147,16 @@ export default function AdminBookingsPage() {
         </div>
 
         {/* Search & Filter Bar */}
-        <div className="bg-neutral-900 border border-neutral-800 p-4 rounded-2xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="bg-card border border-border p-4 rounded-2xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           
           <div className="relative w-full sm:w-80">
-            <Search className="w-4 h-4 text-neutral-500 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search ref no, customer name or phone..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white focus:border-primary outline-none"
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none"
             />
           </div>
 
@@ -168,8 +168,8 @@ export default function AdminBookingsPage() {
                 onClick={() => setStatusFilter(status)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize transition-all ${
                   statusFilter === status
-                    ? "bg-primary text-neutral-950 font-bold"
-                    : "bg-neutral-950 text-neutral-400 hover:text-white"
+                    ? "bg-primary text-white font-bold shadow-sm"
+                    : "bg-secondaryBg/30 text-muted hover:text-foreground border border-border"
                 }`}
               >
                 {status.replace("_", " ")}
@@ -183,13 +183,13 @@ export default function AdminBookingsPage() {
         {loading ? (
           <div className="text-center py-16">
             <RefreshCw className="w-8 h-8 animate-spin text-primary mx-auto mb-2" />
-            <p className="text-xs font-semibold text-neutral-400">Loading bookings...</p>
+            <p className="text-xs font-semibold text-muted">Loading bookings...</p>
           </div>
         ) : (
-          <div className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-xl">
+          <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-neutral-950 text-neutral-400 uppercase tracking-wider font-bold border-b border-neutral-800">
+                <thead className="bg-secondaryBg/40 text-muted uppercase tracking-wider font-bold border-b border-border">
                   <tr>
                     <th className="p-4">Reference</th>
                     <th className="p-4">Customer</th>
@@ -200,34 +200,34 @@ export default function AdminBookingsPage() {
                     <th className="p-4 text-right">Dispatch</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-800/60 font-medium">
+                <tbody className="divide-y divide-border/60 font-medium">
                   {filtered.map((b) => (
-                    <tr key={b._id} className="hover:bg-neutral-800/30 transition-colors">
+                    <tr key={b._id} className="hover:bg-secondaryBg/20 transition-colors">
                       
                       <td className="p-4 font-mono font-black text-primary">{b.bookingNumber}</td>
                       
                       <td className="p-4">
-                        <span className="font-bold text-white block">{b.customerName}</span>
-                        <span className="text-[11px] text-neutral-400">{b.customerPhone}</span>
+                        <span className="font-bold text-foreground block">{b.customerName}</span>
+                        <span className="text-[11px] text-muted">{b.customerPhone}</span>
                       </td>
 
                       <td className="p-4">
-                        <span className="text-white block font-semibold">{b.preferredDate}</span>
-                        <span className="text-[10px] text-neutral-400">{b.preferredTime}</span>
+                        <span className="text-foreground block font-semibold">{b.preferredDate}</span>
+                        <span className="text-[10px] text-muted">{b.preferredTime}</span>
                       </td>
 
-                      <td className="p-4 text-neutral-300">
+                      <td className="p-4 text-foreground">
                         {b.assignedTechnician ? (
-                          <div className="flex items-center space-x-1.5 text-xs text-emerald-400 font-semibold">
+                          <div className="flex items-center space-x-1.5 text-xs text-emerald-500 font-semibold">
                             <ShieldCheck className="w-3.5 h-3.5" />
                             <span>{b.assignedTechnician.name}</span>
                           </div>
                         ) : (
-                          <span className="text-neutral-500 italic text-[11px]">Unassigned</span>
+                          <span className="text-muted italic text-[11px]">Unassigned</span>
                         )}
                       </td>
 
-                      <td className="p-4 font-extrabold text-white">
+                      <td className="p-4 font-extrabold text-foreground">
                         ₹{b.totalPrice?.toLocaleString()}
                       </td>
 
@@ -237,18 +237,17 @@ export default function AdminBookingsPage() {
                           disabled={updatingId === b._id}
                           onChange={(e) => handleStatusChange(b._id, e.target.value)}
                           className={`text-xs font-bold px-2.5 py-1.5 rounded-lg border outline-none cursor-pointer ${
-                            b.status === 'completed' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' :
-                            b.status === 'cancelled' ? 'bg-red-500/10 text-red-400 border-red-500/30' :
+                            b.status === 'completed' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30' :
+                            b.status === 'cancelled' ? 'bg-red-500/10 text-red-500 border-red-500/30' :
                             b.status === 'assigned' || b.status === 'in_progress' ? 'bg-primary/10 text-primary border-primary/30' :
-                            'bg-amber-500/10 text-amber-400 border-amber-500/30'
+                            'bg-amber-500/10 text-amber-500 border-amber-500/30'
                           }`}
                         >
-                          <option value="pending" className="bg-neutral-900 text-white">Pending</option>
-                          <option value="confirmed" className="bg-neutral-900 text-white">Confirmed</option>
-                          <option value="assigned" className="bg-neutral-900 text-white">Assigned</option>
-                          <option value="in_progress" className="bg-neutral-900 text-white">In Progress</option>
-                          <option value="completed" className="bg-neutral-900 text-white">Completed</option>
-                          <option value="cancelled" className="bg-neutral-900 text-white">Cancelled</option>
+                          <option value="pending" className="bg-card text-foreground">Pending</option>
+                          <option value="confirmed" className="bg-card text-foreground">Confirmed</option>
+                          <option value="assigned" className="bg-card text-foreground">Assigned</option>
+                          <option value="in_progress" className="bg-card text-foreground">In Progress</option>
+                          <option value="completed" className="bg-card text-foreground">Completed</option>
                         </select>
                       </td>
 

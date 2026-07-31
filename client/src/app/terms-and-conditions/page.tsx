@@ -26,7 +26,7 @@ export default function TermsAndConditionsPage() {
         {/* Content */}
         <div className="space-y-8">
           {/* 1. Services Overview */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               1. Services Overview
@@ -37,7 +37,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 2. Booking & Service Confirmation */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               2. Booking & Service Confirmation
@@ -50,7 +50,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 3. Pricing & Payments */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               3. Pricing & Payments
@@ -64,7 +64,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 4. Cancellations & Rescheduling */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               4. Cancellations & Rescheduling
@@ -77,7 +77,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 5. Scope of Work */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               5. Scope of Work
@@ -90,7 +90,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 6. Materials & Spare Parts */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               6. Materials & Spare Parts
@@ -103,7 +103,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 7. Pre-Existing Conditions */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               7. Pre-Existing Conditions
@@ -117,7 +117,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 8. Customer Responsibilities */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               8. Customer Responsibilities
@@ -136,7 +136,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 9. Personal Belongings & Valuables */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               9. Personal Belongings & Valuables
@@ -150,7 +150,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 10. Technician Verification & Conduct */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               10. Technician Verification & Conduct
@@ -163,7 +163,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 11. Extended or Multi-Day Services */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               11. Extended or Multi-Day Services
@@ -174,7 +174,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 12. Service Completion & Acceptance */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               12. Service Completion & Acceptance
@@ -187,7 +187,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 13. Damage & Liability */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               13. Damage & Liability
@@ -200,7 +200,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 14. Service Warranty */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               14. Service Warranty
@@ -212,7 +212,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 15. Safety & Right to Refuse Service */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               15. Safety & Right to Refuse Service
@@ -224,7 +224,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 16. Intellectual Property */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               16. Intellectual Property
@@ -235,7 +235,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* 17. Authorization */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               17. Authorization
@@ -246,7 +246,7 @@ export default function TermsAndConditionsPage() {
           </section>
 
           {/* Contact Information */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               Contact Information

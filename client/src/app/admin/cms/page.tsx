@@ -58,54 +58,52 @@ export default function AdminCMSPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-background text-foreground flex flex-col lg:flex-row transition-colors duration-200">
       <AdminSidebar />
 
       <main className="flex-1 p-4 sm:p-8 overflow-y-auto">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-neutral-800">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-border">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center space-x-2 text-foreground">
               <FileText className="w-7 h-7 text-primary" />
-              <span>Website Content Management System (CMS)</span>
+              <span>Website Content CMS Editor</span>
             </h1>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-              Edit every text, heading, button label, and paragraph visible on your website dynamically without code changes.
-            </p>
+            <p className="text-xs sm:text-sm text-muted mt-1">Live edit hero titles, taglines, about section copy, and contact info across the site.</p>
           </div>
 
           <Button
             onClick={handleSaveCMS}
             disabled={loading}
-            className="bg-primary hover:bg-primaryHover text-neutral-950 font-bold text-xs px-6 py-3 rounded-xl shadow-lg transition-all flex items-center space-x-2"
+            className="bg-primary hover:bg-primaryHover text-white font-extrabold text-xs px-6 py-2.5 rounded-xl shadow-md transition-all flex items-center space-x-2"
           >
             {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-            <span>Save All CMS Changes</span>
+            <span>Save All Copy</span>
           </Button>
         </div>
 
         {successMsg && (
-          <div className="mb-6 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-3 rounded-xl flex items-center space-x-2 text-xs font-semibold">
-            <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+          <div className="mb-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-bold flex items-center space-x-2">
+            <CheckCircle2 className="w-4 h-4" />
             <span>{successMsg}</span>
           </div>
         )}
 
-        {/* Section Tabs */}
-        <div className="flex space-x-2 border-b border-neutral-800 pb-3 mb-6 overflow-x-auto">
+        {/* Tab Navigation */}
+        <div className="flex space-x-2 border-b border-border pb-3 mb-6">
           {[
-            { id: "hero", label: "Home Hero Section" },
-            { id: "about", label: "About Us Copy" },
-            { id: "footer", label: "Footer & Contact Details" }
+            { id: "hero", label: "Hero Banner Copy" },
+            { id: "about", label: "About & Footer Text" },
+            { id: "contact", label: "Contact Info" }
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeTab === tab.id
-                  ? "bg-primary text-neutral-950 shadow-md"
-                  : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white"
+                  ? "bg-primary text-white shadow-md"
+                  : "bg-card text-muted border border-border hover:border-primary"
               }`}
             >
               {tab.label}
@@ -113,40 +111,40 @@ export default function AdminCMSPage() {
           ))}
         </div>
 
-        {/* CMS Editor Form Card */}
-        <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl space-y-6">
+        {/* Form Sections */}
+        <div className="bg-card border border-border p-6 rounded-3xl space-y-6 max-w-3xl shadow-xs">
           
           {activeTab === "hero" && (
             <div className="space-y-4">
               <h3 className="text-sm font-bold text-primary uppercase tracking-wider">Hero Section Settings</h3>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-300">Hero Main Title (H1)</label>
+                <label className="text-xs font-semibold text-foreground">Hero Main Title (H1)</label>
                 <input
                   type="text"
                   value={formData.hero_title || ""}
                   onChange={(e) => handleChange("hero_title", e.target.value)}
-                  className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm font-bold text-white focus:border-primary outline-none"
+                  className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm font-bold text-foreground focus:border-primary outline-none"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-300">Hero Subtitle Paragraph</label>
+                <label className="text-xs font-semibold text-foreground">Hero Subtitle Paragraph</label>
                 <textarea
                   rows={3}
                   value={formData.hero_subtitle || ""}
                   onChange={(e) => handleChange("hero_subtitle", e.target.value)}
-                  className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm text-neutral-200 focus:border-primary outline-none resize-none"
+                  className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm text-foreground focus:border-primary outline-none resize-none"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-300">Primary CTA Button Label</label>
+                <label className="text-xs font-semibold text-foreground">Primary CTA Button Label</label>
                 <input
                   type="text"
                   value={formData.hero_cta || ""}
                   onChange={(e) => handleChange("hero_cta", e.target.value)}
-                  className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm font-bold text-white focus:border-primary outline-none"
+                  className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm font-bold text-foreground focus:border-primary outline-none"
                 />
               </div>
             </div>
@@ -157,59 +155,59 @@ export default function AdminCMSPage() {
               <h3 className="text-sm font-bold text-primary uppercase tracking-wider">About Us Copy</h3>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-300">About Heading</label>
+                <label className="text-xs font-semibold text-foreground">About Heading</label>
                 <input
                   type="text"
                   value={formData.about_heading || ""}
                   onChange={(e) => handleChange("about_heading", e.target.value)}
-                  className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm font-bold text-white focus:border-primary outline-none"
+                  className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm font-bold text-foreground focus:border-primary outline-none"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-300">About Section Description</label>
+                <label className="text-xs font-semibold text-foreground">About Section Description</label>
                 <textarea
                   rows={4}
                   value={formData.about_description || ""}
                   onChange={(e) => handleChange("about_description", e.target.value)}
-                  className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm text-neutral-200 focus:border-primary outline-none resize-none"
+                  className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm text-foreground focus:border-primary outline-none resize-none"
                 />
               </div>
             </div>
           )}
 
-          {activeTab === "footer" && (
+          {(activeTab === "contact" || activeTab === "footer") && (
             <div className="space-y-4">
               <h3 className="text-sm font-bold text-primary uppercase tracking-wider">Footer & Contact Settings</h3>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-300">Footer Tagline</label>
+                <label className="text-xs font-semibold text-foreground">Footer Tagline</label>
                 <input
                   type="text"
                   value={formData.footer_tagline || ""}
                   onChange={(e) => handleChange("footer_tagline", e.target.value)}
-                  className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm text-white focus:border-primary outline-none"
+                  className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm text-foreground focus:border-primary outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-neutral-300">Support Phone Number</label>
+                  <label className="text-xs font-semibold text-foreground">Support Phone Number</label>
                   <input
                     type="text"
                     value={formData.contact_phone || ""}
                     onChange={(e) => handleChange("contact_phone", e.target.value)}
-                    className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm text-white focus:border-primary outline-none"
+                    className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm text-foreground focus:border-primary outline-none"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-neutral-300">Support Email Address</label>
+                  <label className="text-xs font-semibold text-foreground">Support Email Address</label>
                   <input
                     type="text"
                     value={formData.contact_email || ""}
                     onChange={(e) => handleChange("contact_email", e.target.value)}
-                    className="w-full p-3 rounded-xl bg-neutral-950 border border-neutral-800 text-sm text-white focus:border-primary outline-none"
+                    className="w-full p-3 rounded-xl bg-secondaryBg/30 border border-border text-sm text-foreground focus:border-primary outline-none"
                   />
                 </div>
               </div>

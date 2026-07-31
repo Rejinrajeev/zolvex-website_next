@@ -1,16 +1,45 @@
 const userRepository = require("../repositories/userRepository");
 const RefreshToken = require("../models/RefreshToken");
 const User = require("../models/User");
+const SecurityEvent = require("../models/SecurityEvent");
 const { getIsConnected } = require("../database/connect");
 const { hashPassword, comparePassword } = require("../utils/passwordUtils");
 const { generateAccessToken, generateRefreshToken, verifyRefreshToken } = require("../utils/jwtUtils");
 const { ValidationError, AuthenticationError, ConflictError, ForbiddenError } = require("../utils/appError");
-const { generateSecret, verifyTOTP, generateBackupCodes, generateOtpAuthUrl } = require("../utils/mfaUtils");
+const {
+  generateSecret,
+  encryptSecret,
+  decryptSecret,
+  verifyTOTP,
+  generateBackupCodes,
+  hashBackupCode,
+  generateOtpAuthUrl,
+  generateQRCodeDataURL
+} = require("../utils/mfaUtils");
 
 // Dummy hash for constant-time comparison on unknown email to prevent timing side-channel attack
 const DUMMY_HASH = "$2a$12$eImiTXuWVxfM37uY4JANjO5E/e22y3Wf0iR8.R33.X.Q.6";
 
 class AuthService {
+  async logSecurityEvent(userId, userEmail, action, req = null, status = "SUCCESS", details = {}) {
+    if (getIsConnected()) {
+      try {
+        await SecurityEvent.create({
+          userId,
+          userEmail: userEmail || "admin@zolvex.com",
+          action,
+          resource: req ? req.originalUrl : "/api/v1/auth",
+          ipAddress: req ? (req.ip || "127.0.0.1") : "127.0.0.1",
+          userAgent: req ? (req.headers["user-agent"] || "System") : "System",
+          status,
+          details
+        });
+      } catch (e) {
+        console.warn("Security log failed (offline):", e.message);
+      }
+    }
+  }
+
   async register({ name, email, phone, password }) {
     const existing = await userRepository.findByEmail(email);
     if (existing) {
@@ -59,6 +88,7 @@ class AuthService {
     // Check account lockout status
     if (user.lockUntil && user.lockUntil > new Date()) {
       const remainingMins = Math.ceil((user.lockUntil.getTime() - Date.now()) / 60000);
+      await this.logSecurityEvent(user._id, user.email, "LOGIN_LOCKED_ATTEMPT", req, "FAILED");
       throw new ForbiddenError(`Account locked due to 5 failed attempts. Please try again in ${remainingMins} minutes.`);
     }
 
@@ -71,6 +101,7 @@ class AuthService {
         }
         await user.save();
       }
+      await this.logSecurityEvent(user._id, user.email, "LOGIN_FAILED", req, "FAILED");
       throw new AuthenticationError("Invalid email or password");
     }
 
@@ -84,9 +115,11 @@ class AuthService {
     // Check if TOTP MFA is enabled
     if (user.mfaEnabled) {
       const mfaTempToken = generateAccessToken({ id: user._id, isMfaPending: true });
+      await this.logSecurityEvent(user._id, user.email, "MFA_PROMPT_ISSUED", req, "SUCCESS");
       return { mfaRequired: true, mfaTempToken, userEmail: user.email };
     }
 
+    await this.logSecurityEvent(user._id, user.email, "ADMIN_LOGIN_SUCCESS", req, "SUCCESS");
     return this.completeLogin(user, req);
   }
 
@@ -107,22 +140,35 @@ class AuthService {
       throw new AuthenticationError("User MFA not found");
     }
 
-    const isValidTOTP = verifyTOTP(totpCode, user.mfaSecret);
+    const cleanCode = totpCode ? totpCode.trim() : "";
+    const isValidTOTP = verifyTOTP(cleanCode, user.mfaSecret);
     let usedBackupCode = false;
 
-    if (!isValidTOTP && user.mfaBackupCodes) {
-      const matchIndex = user.mfaBackupCodes.indexOf(totpCode.trim());
-      if (matchIndex !== -1) {
+    if (!isValidTOTP && user.mfaBackupCodes && user.mfaBackupCodes.length > 0) {
+      const inputHash = hashBackupCode(cleanCode);
+      const codeIndex = user.mfaBackupCodes.findIndex(
+        b => (typeof b === "string" && b === cleanCode) || (b.codeHash && b.codeHash === inputHash && !b.used)
+      );
+
+      if (codeIndex !== -1) {
         usedBackupCode = true;
-        user.mfaBackupCodes.splice(matchIndex, 1);
+        if (typeof user.mfaBackupCodes[codeIndex] === "object") {
+          user.mfaBackupCodes[codeIndex].used = true;
+          user.mfaBackupCodes[codeIndex].usedAt = new Date();
+        } else {
+          user.mfaBackupCodes.splice(codeIndex, 1);
+        }
         if (user.save) await user.save();
+        await this.logSecurityEvent(user._id, user.email, "RECOVERY_CODE_USED", req, "SUCCESS");
       }
     }
 
     if (!isValidTOTP && !usedBackupCode) {
+      await this.logSecurityEvent(user._id, user.email, "MFA_VERIFICATION_FAILED", req, "FAILED");
       throw new AuthenticationError("Invalid 6-digit TOTP code or recovery code.");
     }
 
+    await this.logSecurityEvent(user._id, user.email, "TOTP_MFA_VERIFIED", req, "SUCCESS");
     return this.completeLogin(user, req);
   }
 
@@ -137,6 +183,8 @@ class AuthService {
     let browser = "Chrome / Safari";
     if (userAgentStr.includes("Firefox")) browser = "Firefox";
     if (userAgentStr.includes("Edg")) browser = "Edge";
+    if (userAgentStr.includes("Chrome") && !userAgentStr.includes("Edg")) browser = "Chrome";
+    if (userAgentStr.includes("Safari") && !userAgentStr.includes("Chrome")) browser = "Safari";
 
     if (getIsConnected()) {
       try {
@@ -147,7 +195,7 @@ class AuthService {
           ipAddress: req ? (req.ip || "127.0.0.1") : "127.0.0.1",
           userAgent: userAgentStr,
           browser,
-          os: userAgentStr.includes("Mac") ? "macOS" : userAgentStr.includes("Win") ? "Windows" : "Linux",
+          os: userAgentStr.includes("Mac") ? "macOS" : userAgentStr.includes("Win") ? "Windows" : userAgentStr.includes("Android") ? "Android" : userAgentStr.includes("iPhone") ? "iOS" : "Linux",
           lastActiveAt: new Date()
         });
       } catch (e) {
@@ -163,7 +211,7 @@ class AuthService {
     return { user: userObj, accessToken, refreshToken };
   }
 
-  async setupMFA(userId) {
+  async setupMFA(userId, req = null) {
     let user = null;
     if (getIsConnected()) {
       user = await User.findById(userId);
@@ -172,15 +220,25 @@ class AuthService {
     }
     if (!user) throw new ValidationError("User not found");
 
-    const secret = generateSecret();
-    user.mfaSecret = secret;
+    const rawSecret = generateSecret();
+    const encryptedSecret = encryptSecret(rawSecret);
+    
+    user.mfaSecret = encryptedSecret;
     if (user.save) await user.save();
 
-    const otpAuthUrl = generateOtpAuthUrl(user.email, secret);
-    return { secret, otpAuthUrl };
+    const otpAuthUrl = generateOtpAuthUrl(user.email, rawSecret);
+    const qrCodeDataUrl = await generateQRCodeDataURL(otpAuthUrl);
+
+    await this.logSecurityEvent(user._id, user.email, "MFA_SETUP_STARTED", req, "SUCCESS");
+
+    return {
+      secret: rawSecret,
+      otpAuthUrl,
+      qrCodeDataUrl
+    };
   }
 
-  async enableMFA(userId, code) {
+  async enableMFA(userId, code, req = null) {
     let user = null;
     if (getIsConnected()) {
       user = await User.findById(userId).select("+mfaSecret");
@@ -193,29 +251,137 @@ class AuthService {
 
     const isValid = verifyTOTP(code, user.mfaSecret);
     if (!isValid) {
+      await this.logSecurityEvent(user._id, user.email, "MFA_ENABLE_FAILED", req, "FAILED");
       throw new ValidationError("Invalid 6-digit verification code. Please check your authenticator app.");
     }
 
-    const backupCodes = generateBackupCodes(8);
+    const rawBackupCodes = generateBackupCodes(10);
+    const hashedBackupCodes = rawBackupCodes.map(c => ({
+      codeHash: hashBackupCode(c),
+      used: false
+    }));
+
     user.mfaEnabled = true;
-    user.mfaBackupCodes = backupCodes;
+    user.mfaBackupCodes = hashedBackupCodes;
     if (user.save) await user.save();
 
-    return { mfaEnabled: true, backupCodes };
+    await this.logSecurityEvent(user._id, user.email, "MFA_ENABLED", req, "SUCCESS");
+
+    return { mfaEnabled: true, backupCodes: rawBackupCodes };
   }
 
-  async getActiveSessions(userId) {
+  async disableMFA(userId, req = null) {
+    let user = null;
     if (getIsConnected()) {
-      return RefreshToken.find({ userId, isRevoked: false }).sort({ lastActiveAt: -1 }).lean();
+      user = await User.findById(userId);
+    } else {
+      user = await userRepository.findById(userId);
     }
-    return [];
+    if (!user) throw new ValidationError("User not found");
+
+    user.mfaEnabled = false;
+    user.mfaSecret = null;
+    user.mfaBackupCodes = [];
+    if (user.save) await user.save();
+
+    await this.logSecurityEvent(user._id, user.email, "MFA_DISABLED", req, "WARNING");
+
+    return { mfaEnabled: false };
   }
 
-  async revokeSession(userId, sessionId) {
+  async regenerateBackupCodes(userId, req = null) {
+    let user = null;
+    if (getIsConnected()) {
+      user = await User.findById(userId);
+    } else {
+      user = await userRepository.findById(userId);
+    }
+    if (!user || !user.mfaEnabled) {
+      throw new ValidationError("MFA must be enabled to generate backup codes.");
+    }
+
+    const rawBackupCodes = generateBackupCodes(10);
+    const hashedBackupCodes = rawBackupCodes.map(c => ({
+      codeHash: hashBackupCode(c),
+      used: false
+    }));
+
+    user.mfaBackupCodes = hashedBackupCodes;
+    if (user.save) await user.save();
+
+    await this.logSecurityEvent(user._id, user.email, "BACKUP_CODES_REGENERATED", req, "SUCCESS");
+
+    return { backupCodes: rawBackupCodes };
+  }
+
+  async getActiveSessions(userId, currentRefreshToken = null) {
+    if (getIsConnected()) {
+      const sessions = await RefreshToken.find({ userId, isRevoked: false })
+        .sort({ lastActiveAt: -1 })
+        .lean();
+
+      return sessions.map((s, idx) => ({
+        ...s,
+        isCurrentSession: currentRefreshToken ? s.token === currentRefreshToken : idx === 0
+      }));
+    }
+    return [
+      {
+        _id: "s1",
+        ipAddress: "127.0.0.1",
+        userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        browser: "Chrome 122.0",
+        os: "macOS Sonoma",
+        lastActiveAt: new Date().toISOString(),
+        isCurrentSession: true,
+        isRevoked: false
+      }
+    ];
+  }
+
+  async revokeSession(userId, sessionId, req = null) {
     if (getIsConnected()) {
       await RefreshToken.updateOne({ _id: sessionId, userId }, { isRevoked: true });
     }
+    await this.logSecurityEvent(userId, "admin@zolvex.com", "SESSION_REVOKED", req, "SUCCESS", { sessionId });
     return true;
+  }
+
+  async revokeAllOtherSessions(userId, currentRefreshToken = null, req = null) {
+    if (getIsConnected()) {
+      const filter = { userId, isRevoked: false };
+      if (currentRefreshToken) {
+        filter.token = { $ne: currentRefreshToken };
+      }
+      await RefreshToken.updateMany(filter, { isRevoked: true });
+    }
+    await this.logSecurityEvent(userId, "admin@zolvex.com", "ALL_OTHER_SESSIONS_REVOKED", req, "WARNING");
+    return true;
+  }
+
+  async getSecurityStats(userId) {
+    let user = null;
+    let activeSessionsCount = 1;
+
+    if (getIsConnected()) {
+      user = await User.findById(userId);
+      activeSessionsCount = await RefreshToken.countDocuments({ userId, isRevoked: false });
+    } else {
+      user = await userRepository.findById(userId);
+    }
+
+    const mfaEnabled = user ? user.mfaEnabled : false;
+    let score = 50;
+    if (mfaEnabled) score += 40;
+    if (activeSessionsCount <= 2) score += 10;
+
+    return {
+      mfaEnabled,
+      activeSessionsCount,
+      securityScore: Math.min(100, score),
+      lastLoginAt: user?.lastLoginAt || new Date(),
+      lastLoginIp: user?.lastLoginIp || "127.0.0.1"
+    };
   }
 
   async refresh(token) {
@@ -240,7 +406,7 @@ class AuthService {
     return { accessToken: newAccessToken };
   }
 
-  async logout(token) {
+  async logout(token, req = null) {
     if (token && getIsConnected()) {
       await RefreshToken.updateOne({ token }, { isRevoked: true });
     }

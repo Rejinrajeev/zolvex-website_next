@@ -76,28 +76,28 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-4 transition-colors duration-200">
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-md bg-neutral-900 border border-neutral-800 p-8 rounded-3xl space-y-6 shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-card border border-border p-8 rounded-3xl space-y-6 shadow-xl relative z-10">
         
         {/* Header */}
         <div className="text-center space-y-2">
           <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto border border-primary/30 shadow-inner">
             <Sparkles className="w-6 h-6" />
           </div>
-          <h1 className="text-2xl font-black tracking-tight text-white">
+          <h1 className="text-2xl font-black tracking-tight text-foreground">
             Zolvex <span className="text-primary">Admin Portal</span>
           </h1>
-          <p className="text-xs text-neutral-400 font-medium">
+          <p className="text-xs text-muted font-medium">
             Bank-Level Encrypted Authorization Access
           </p>
         </div>
 
         {errorMsg && (
-          <div className="bg-red-500/10 border border-red-500/30 text-red-400 p-3.5 rounded-2xl text-xs font-semibold flex items-center space-x-2">
+          <div className="bg-red-500/10 border border-red-500/30 text-red-500 p-3.5 rounded-2xl text-xs font-semibold flex items-center space-x-2">
             <ShieldAlert className="w-4 h-4 flex-shrink-0" />
             <span>{errorMsg}</span>
           </div>
@@ -108,30 +108,30 @@ export default function AdminLoginPage() {
           <form onSubmit={handleLoginStep1} className="space-y-4">
             
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-neutral-300">Administrator Email</label>
+              <label className="text-xs font-bold text-foreground">Administrator Email</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white focus:border-primary outline-none transition-all font-medium"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none transition-all font-medium"
                   placeholder="admin@zolvex.com"
                 />
               </div>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-neutral-300">Password</label>
+              <label className="text-xs font-bold text-foreground">Password</label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white focus:border-primary outline-none transition-all font-medium"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none transition-all font-medium"
                   placeholder="••••••••••••"
                 />
               </div>
@@ -140,7 +140,7 @@ export default function AdminLoginPage() {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-xl bg-primary hover:bg-primaryHover text-neutral-950 font-extrabold text-xs shadow-lg transition-all flex items-center justify-center space-x-2"
+              className="w-full py-3.5 rounded-xl bg-primary hover:bg-primaryHover text-white font-extrabold text-xs shadow-md transition-all flex items-center justify-center space-x-2"
             >
               <span>Authenticate Session</span>
               <ArrowRight className="w-4 h-4" />
@@ -153,21 +153,21 @@ export default function AdminLoginPage() {
             
             <div className="p-4 bg-primary/10 border border-primary/20 rounded-2xl text-center space-y-1">
               <KeyRound className="w-6 h-6 text-primary mx-auto mb-1" />
-              <h3 className="text-xs font-bold text-white">Two-Factor Authentication Required</h3>
-              <p className="text-[11px] text-neutral-400">
+              <h3 className="text-xs font-bold text-foreground">Two-Factor Authentication Required</h3>
+              <p className="text-[11px] text-muted">
                 Enter the 6-digit TOTP code from Google Authenticator or your emergency recovery code.
               </p>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-neutral-300 text-center block">6-Digit TOTP / Recovery Code</label>
+              <label className="text-xs font-bold text-foreground text-center block">6-Digit TOTP / Recovery Code</label>
               <input
                 type="text"
                 required
                 maxLength={9}
                 value={mfaCode}
                 onChange={(e) => setMfaCode(e.target.value)}
-                className="w-full text-center tracking-widest text-lg font-mono font-black py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-primary focus:border-primary outline-none uppercase"
+                className="w-full text-center tracking-widest text-lg font-mono font-black py-3 rounded-xl bg-secondaryBg/30 border border-border text-primary focus:border-primary outline-none uppercase"
                 placeholder="123456"
               />
             </div>
@@ -175,7 +175,7 @@ export default function AdminLoginPage() {
             <Button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-xl bg-primary hover:bg-primaryHover text-neutral-950 font-extrabold text-xs shadow-lg transition-all"
+              className="w-full py-3.5 rounded-xl bg-primary hover:bg-primaryHover text-white font-extrabold text-xs shadow-md transition-all"
             >
               Verify 2FA & Log In
             </Button>

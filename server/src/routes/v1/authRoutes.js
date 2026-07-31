@@ -5,8 +5,12 @@ const {
   verifyMFA,
   setupMFA,
   enableMFA,
+  disableMFA,
+  regenerateBackupCodes,
   getActiveSessions,
   revokeSession,
+  revokeAllOtherSessions,
+  getSecurityStats,
   refreshToken,
   logout,
   getMe
@@ -29,7 +33,12 @@ router.get("/me", authenticate, getMe);
 // Admin MFA Setup & Active Session Management
 router.post("/mfa/setup", authenticate, setupMFA);
 router.post("/mfa/enable", authenticate, enableMFA);
+router.post("/mfa/disable", authenticate, disableMFA);
+router.post("/mfa/regenerate-backup-codes", authenticate, regenerateBackupCodes);
+
 router.get("/sessions", authenticate, getActiveSessions);
+router.delete("/sessions/all-other", authenticate, revokeAllOtherSessions);
 router.delete("/sessions/:sessionId", authenticate, revokeSession);
+router.get("/security-stats", authenticate, getSecurityStats);
 
 module.exports = router;

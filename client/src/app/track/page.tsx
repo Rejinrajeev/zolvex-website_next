@@ -88,7 +88,7 @@ export default function TrackBookingPage() {
   const currentStepIdx = booking ? getStepIndex(booking.status) : 0;
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-200">
       <div className="max-w-3xl mx-auto space-y-8">
         
         {/* Header */}
@@ -97,30 +97,30 @@ export default function TrackBookingPage() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>REAL-TIME SERVICE TRACKER</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Track Your Cleaning Job</h1>
-          <p className="text-xs sm:text-sm text-neutral-400 max-w-md mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">Track Your Cleaning Job</h1>
+          <p className="text-xs sm:text-sm text-muted max-w-md mx-auto">
             Enter your booking reference ID (e.g. ZLV-2026-XXXX) or mobile number to track live status.
           </p>
         </div>
 
         {/* Search Input Box */}
-        <div className="bg-neutral-900 border border-neutral-800 p-5 rounded-3xl space-y-4 shadow-xl max-w-xl mx-auto">
+        <div className="bg-card border border-border p-5 rounded-3xl space-y-4 shadow-xs max-w-xl mx-auto">
           <form onSubmit={handleTrack} className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex-1">
-              <Search className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 required
                 value={refQuery}
                 onChange={(e) => setRefQuery(e.target.value)}
                 placeholder="Booking Ref (ZLV-...) or Phone..."
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-neutral-950 border border-neutral-800 text-xs font-semibold text-white focus:border-primary outline-none"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-secondaryBg/30 border border-border text-xs font-semibold text-foreground focus:border-primary outline-none"
               />
             </div>
             <Button
               type="submit"
               disabled={loading}
-              className="py-3 px-6 rounded-xl bg-primary hover:bg-primaryHover text-neutral-950 font-extrabold text-xs shadow-lg transition-all"
+              className="py-3 px-6 rounded-xl bg-primary hover:bg-primaryHover text-white font-extrabold text-xs shadow-md transition-all"
             >
               {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : "Track Progress"}
             </Button>
@@ -139,7 +139,7 @@ export default function TrackBookingPage() {
               <div className="space-y-6">
                 
                 {/* Status Card Header */}
-                <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4">
+                <div className="bg-card border border-border p-6 rounded-3xl space-y-4 shadow-xs">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-neutral-800 pb-4">
                     <div>
                       <span className="text-[10px] uppercase font-bold text-neutral-500 block">Booking Reference</span>

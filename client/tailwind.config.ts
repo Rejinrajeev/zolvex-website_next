@@ -10,15 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#F7F6F2',
-        secondaryBg: '#EDEBE6',
-        primary: '#E6C15A',
-        secondary: '#F4D35E',
-        foreground: '#2B2B2B',
-        muted: '#6B6B6B',
-        border: '#D6D3CC',
-        success: '#7CB342',
-        primaryHover: '#D4AF37',
+        background: 'var(--background)',
+        secondaryBg: 'var(--secondary-bg)',
+        card: 'var(--card)',
+        cardForeground: 'var(--card-foreground)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        foreground: 'var(--foreground)',
+        muted: 'var(--muted)',
+        border: 'var(--border)',
+        success: 'var(--success)',
+        primaryHover: 'var(--primary-hover)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

@@ -356,11 +356,11 @@ const allQuestions = faqData.flatMap((cat)=>cat.questions.map((q)=>({
 function FAQPage() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(59);
-    if ($[0] !== "1fff94ce571dafe7070d3b8e3f01cd36a092ecd06be41416b2711efd0c0cf8ea") {
+    if ($[0] !== "26f1b3d9b39076e1e2c5cfc12bbfb49daf4da47e95ad11e7061aa99a777ac0fb") {
         for(let $i = 0; $i < 59; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "1fff94ce571dafe7070d3b8e3f01cd36a092ecd06be41416b2711efd0c0cf8ea";
+        $[0] = "26f1b3d9b39076e1e2c5cfc12bbfb49daf4da47e95ad11e7061aa99a777ac0fb";
     }
     const [searchQuery, setSearchQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [selectedCategory, setSelectedCategory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("General");
@@ -545,7 +545,7 @@ function FAQPage() {
         t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
             type: "text",
             placeholder: "Search FAQs...",
-            className: "pl-10 pr-10 py-6 bg-white border-border rounded-xl shadow-sm focus:border-primary focus:ring-primary w-full",
+            className: "pl-10 pr-10 py-6 bg-card border-border rounded-xl shadow-sm focus:border-primary focus:ring-primary w-full",
             value: searchQuery,
             onChange: handleSearchChange
         }, void 0, false, {
@@ -755,7 +755,7 @@ function FAQPage() {
                     onClick: {
                         "FAQPage[categories.map() > <button>.onClick]": ()=>handleCategoryChange(category_1)
                     }["FAQPage[categories.map() > <button>.onClick]"],
-                    className: `flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === category_1 && !searchQuery ? "bg-primary text-white shadow-md" : "bg-white border border-border text-muted hover:border-primary hover:text-primary"}`,
+                    className: `flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === category_1 && !searchQuery ? "bg-primary text-white shadow-md" : "bg-card border border-border text-muted hover:border-primary hover:text-primary"}`,
                     children: category_1
                 }, category_1, false, {
                     fileName: "[project]/client/src/app/faq/page.tsx",
@@ -860,14 +860,14 @@ function FAQPage() {
             lineNumber: 443,
             columnNumber: 37
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "text-center py-16 bg-white rounded-xl border border-border",
+            className: "text-center py-16 bg-card rounded-xl border border-border",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__["MessageCircle"], {
                     className: "w-12 h-12 text-muted mx-auto mb-3"
                 }, void 0, false, {
                     fileName: "[project]/client/src/app/faq/page.tsx",
                     lineNumber: 443,
-                    columnNumber: 276
+                    columnNumber: 275
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-muted mb-2",
@@ -875,7 +875,7 @@ function FAQPage() {
                 }, void 0, false, {
                     fileName: "[project]/client/src/app/faq/page.tsx",
                     lineNumber: 443,
-                    columnNumber: 339
+                    columnNumber: 338
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-sm text-muted mb-4",
@@ -883,7 +883,7 @@ function FAQPage() {
                 }, void 0, false, {
                     fileName: "[project]/client/src/app/faq/page.tsx",
                     lineNumber: 443,
-                    columnNumber: 392
+                    columnNumber: 391
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                     variant: "outline",
@@ -898,7 +898,7 @@ function FAQPage() {
                 }, void 0, false, {
                     fileName: "[project]/client/src/app/faq/page.tsx",
                     lineNumber: 443,
-                    columnNumber: 479
+                    columnNumber: 478
                 }, this)
             ]
         }, void 0, true, {
@@ -1016,7 +1016,7 @@ function FAQPage() {
                             className: "hidden lg:block lg:w-64 flex-shrink-0",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-white rounded-xl shadow-sm border border-border overflow-hidden sticky top-24",
+                                    className: "bg-card rounded-xl shadow-sm border border-border overflow-hidden sticky top-24",
                                     children: [
                                         t13,
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1025,7 +1025,7 @@ function FAQPage() {
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/app/faq/page.tsx",
                                             lineNumber: 487,
-                                            columnNumber: 327
+                                            columnNumber: 326
                                         }, this)
                                     ]
                                 }, void 0, true, {
@@ -1066,7 +1066,7 @@ function _FAQPageFilteredDataMap(item_1, index) {
     const itemId = `item-${index}`;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$accordion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AccordionItem"], {
         value: itemId,
-        className: "bg-white border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow",
+        className: "bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$accordion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AccordionTrigger"], {
                 className: "px-4 md:px-6 py-4 hover:no-underline hover:bg-primary/5 transition-colors text-left",
@@ -1076,12 +1076,12 @@ function _FAQPageFilteredDataMap(item_1, index) {
                 }, void 0, false, {
                     fileName: "[project]/client/src/app/faq/page.tsx",
                     lineNumber: 491,
-                    columnNumber: 280
+                    columnNumber: 279
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/app/faq/page.tsx",
                 lineNumber: 491,
-                columnNumber: 166
+                columnNumber: 165
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$accordion$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AccordionContent"], {
                 className: "px-4 md:px-6 pb-4 pt-2 text-muted text-sm md:text-base border-t border-border",
@@ -1089,7 +1089,7 @@ function _FAQPageFilteredDataMap(item_1, index) {
             }, void 0, false, {
                 fileName: "[project]/client/src/app/faq/page.tsx",
                 lineNumber: 491,
-                columnNumber: 383
+                columnNumber: 382
             }, this)
         ]
     }, itemId, true, {

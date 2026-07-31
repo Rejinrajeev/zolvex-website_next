@@ -11,11 +11,11 @@ export function MobileNav() {
     { label: "Home", href: "/", icon: Home },
     { label: "Services", href: "/services", icon: Sparkles },
     { label: "Track", href: "/track", icon: Search },
-    { label: "Call Us", href: "tel:+919876543210", icon: PhoneCall, external: true }
+    { label: "Call Us", href: "tel:+918089631909", icon: PhoneCall, external: true }
   ];
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-border/80 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] px-3 py-2">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-md border-t border-border/80 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] px-3 py-2 transition-colors duration-200">
       <div className="flex items-center justify-around">
         {navItems.map((item) => {
           const Icon = item.icon;

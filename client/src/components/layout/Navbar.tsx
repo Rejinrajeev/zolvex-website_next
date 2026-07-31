@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-colors duration-200">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -37,26 +38,33 @@ export function Navbar() {
           </nav>
 
           {/* Contact & CTA */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-4">
             <a 
               href="tel:+918089631909" 
-              className="flex items-center text-muted hover:text-primary font-medium"
+              className="flex items-center text-muted hover:text-primary font-medium text-sm"
             >
               <Phone className="w-4 h-4 mr-2 fill-current" />
               +91 80896 31909
             </a>
-            <Button className="bg-primary text-white hover:bg-[#D4AF37] px-6 py-2 text-base font-semibold">
-              Book a Service
-            </Button>
+            <ThemeToggle />
+            <Link href="/services">
+              <Button className="bg-primary text-white hover:bg-[#D4AF37] px-5 py-2 text-sm font-semibold">
+                Book a Service
+              </Button>
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu & Theme Toggle */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <ThemeToggle />
+            <button 
+              className="text-foreground p-1"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -106,9 +114,11 @@ export function Navbar() {
                   <Phone className="w-4 h-4 mr-2 fill-current" />
                   +91 80896 31909
                 </a>
-                <Button className="w-full bg-primary text-white hover:bg-[#D4AF37] mt-4">
-                  Book a Service
-                </Button>
+                <Link href="/services" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full bg-primary text-white hover:bg-[#D4AF37] mt-4">
+                    Book a Service
+                  </Button>
+                </Link>
               </div>
             </div>
           </nav>

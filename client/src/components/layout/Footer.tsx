@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -145,7 +146,8 @@ export function Footer() {
           <p className="text-xs text-muted text-center md:text-left">
             © {new Date().getFullYear()} ZOLVEX. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-muted">
+          <div className="flex items-center gap-6 text-xs text-muted">
+            <ThemeToggle />
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">
               Privacy
             </Link>

@@ -118,7 +118,7 @@ export function ServicesSection() {
           {!isMobile && showLeftArrow && (
             <button
               onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl border border-border hover:border-primary transition-all"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-card rounded-full p-3 shadow-lg hover:shadow-xl border border-border hover:border-primary transition-all"
               aria-label="Previous services"
             >
               <ChevronLeft className="w-5 h-5 text-foreground hover:text-primary" />
@@ -127,7 +127,7 @@ export function ServicesSection() {
           {!isMobile && showRightArrow && (
             <button
               onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl border border-border hover:border-primary transition-all"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-card rounded-full p-3 shadow-lg hover:shadow-xl border border-border hover:border-primary transition-all"
               aria-label="Next services"
             >
               <ChevronRight className="w-5 h-5 text-foreground hover:text-primary" />
@@ -145,7 +145,7 @@ export function ServicesSection() {
           >
             {loading ? (
               [1, 2, 3].map((n) => (
-                <div key={n} className="flex-none w-full sm:w-[350px] bg-white rounded-2xl h-[420px] animate-pulse border border-border" />
+                <div key={n} className="flex-none w-full sm:w-[350px] bg-card rounded-2xl h-[420px] animate-pulse border border-border" />
               ))
             ) : (
               services.map((service, index) => (
@@ -154,7 +154,7 @@ export function ServicesSection() {
                   onClick={() => handleOpenBooking(service)}
                   className="flex-none w-full sm:w-[350px] snap-center group cursor-pointer"
                 >
-                  <div className="bg-white rounded-2xl overflow-hidden border border-border/50 hover:border-primary/40 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
+                  <div className="bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/40 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
                     
                     {/* Image area */}
                     <div className="relative h-56 overflow-hidden bg-secondaryBg">
@@ -165,7 +165,7 @@ export function ServicesSection() {
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, 350px"
                       />
-                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1 shadow-lg">
+                      <div className="absolute top-4 right-4 bg-card/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1 shadow-lg">
                         <Star className="w-4 h-4 fill-primary text-primary" />
                         <span className="text-sm font-semibold">{service.rating || 4.9}</span>
                         <span className="text-xs text-muted">({service.reviews || 120})</span>

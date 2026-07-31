@@ -72,7 +72,7 @@ function MyBookingsPage() {
     const cancelledBookings = bookings.filter((b_1)=>b_1.status === "cancelled");
     const displayedList = activeTab === "upcoming" ? upcomingBookings : activeTab === "completed" ? completedBookings : cancelledBookings;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-neutral-950 text-white py-12 px-4 sm:px-6 lg:px-8",
+        className: "min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-200",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-4xl mx-auto space-y-8",
             children: [
@@ -103,7 +103,7 @@ function MyBookingsPage() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-3xl sm:text-4xl font-extrabold tracking-tight",
+                            className: "text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground",
                             children: "My Service Bookings"
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -111,7 +111,7 @@ function MyBookingsPage() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm text-neutral-400 max-w-md mx-auto",
+                            className: "text-sm text-muted max-w-md mx-auto",
                             children: "View your upcoming cleaning schedules, track live technician status, or cancel bookings."
                         }, void 0, false, {
                             fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -125,7 +125,7 @@ function MyBookingsPage() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4 shadow-xl max-w-xl mx-auto",
+                    className: "bg-card border border-border p-6 rounded-3xl space-y-4 shadow-xs max-w-xl mx-auto",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                         onSubmit: handleSearch,
                         className: "flex flex-col sm:flex-row gap-3",
@@ -136,7 +136,7 @@ function MyBookingsPage() {
                                 value: phone,
                                 onChange: (e_0)=>setPhone(e_0.target.value),
                                 placeholder: "Enter your phone number (e.g. 9998887770)...",
-                                className: "flex-1 p-3.5 rounded-xl bg-neutral-950 border border-neutral-800 text-sm font-semibold text-white focus:border-primary outline-none"
+                                className: "flex-1 p-3.5 rounded-xl bg-secondaryBg/30 border border-border text-sm font-semibold text-foreground focus:border-primary outline-none"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/my-bookings/page.tsx",
                                 lineNumber: 81,
@@ -145,7 +145,7 @@ function MyBookingsPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                 type: "submit",
                                 disabled: loading,
-                                className: "py-3.5 px-6 rounded-xl bg-primary hover:bg-primaryHover text-neutral-950 font-bold text-xs shadow-lg transition-all",
+                                className: "py-3.5 px-6 rounded-xl bg-primary hover:bg-primaryHover text-white font-bold text-xs shadow-md transition-all",
                                 children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__["RefreshCw"], {
                                     className: "w-4 h-4 animate-spin"
                                 }, void 0, false, {
@@ -173,7 +173,7 @@ function MyBookingsPage() {
                     className: "space-y-6",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex justify-center space-x-2 border-b border-neutral-800 pb-3",
+                            className: "flex justify-center space-x-2 border-b border-border pb-3",
                             children: [
                                 {
                                     id: "upcoming",
@@ -189,7 +189,7 @@ function MyBookingsPage() {
                                 }
                             ].map((tab)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>setActiveTab(tab.id),
-                                    className: `px-4 py-2 rounded-xl text-xs font-bold transition-all ${activeTab === tab.id ? "bg-primary text-neutral-950 shadow-md" : "bg-neutral-900 text-neutral-400 border border-neutral-800"}`,
+                                    className: `px-4 py-2 rounded-xl text-xs font-bold transition-all ${activeTab === tab.id ? "bg-primary text-white shadow-md" : "bg-card text-muted border border-border hover:border-primary"}`,
                                     children: tab.label
                                 }, tab.id, false, {
                                     fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -205,15 +205,15 @@ function MyBookingsPage() {
                             className: "space-y-4",
                             children: [
                                 displayedList.map((b_2)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "bg-neutral-900 border border-neutral-800 p-6 rounded-3xl space-y-4",
+                                        className: "bg-card border border-border p-6 rounded-3xl space-y-4 shadow-xs",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-800 pb-4",
+                                                className: "flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-border pb-4",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-[10px] uppercase font-bold text-neutral-500 block",
+                                                                className: "text-[10px] uppercase font-bold text-muted block",
                                                                 children: "Booking Reference"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -235,7 +235,7 @@ function MyBookingsPage() {
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: `self-start sm:self-auto text-xs font-extrabold px-3 py-1 rounded-full uppercase border ${b_2.status === 'completed' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' : b_2.status === 'cancelled' ? 'bg-red-500/10 text-red-400 border-red-500/30' : b_2.status === 'confirmed' ? 'bg-blue-500/10 text-blue-400 border-blue-500/30' : 'bg-amber-500/10 text-amber-400 border-amber-500/30'}`,
+                                                        className: `self-start sm:self-auto text-xs font-extrabold px-3 py-1 rounded-full uppercase border ${b_2.status === 'completed' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30' : b_2.status === 'cancelled' ? 'bg-red-500/10 text-red-500 border-red-500/30' : b_2.status === 'confirmed' ? 'bg-blue-500/10 text-blue-500 border-blue-500/30' : 'bg-amber-500/10 text-amber-500 border-amber-500/30'}`,
                                                         children: b_2.status
                                                     }, void 0, false, {
                                                         fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -255,7 +255,7 @@ function MyBookingsPage() {
                                                         className: "space-y-1",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-neutral-400 block font-semibold",
+                                                                className: "text-muted block font-semibold",
                                                                 children: "Service Date & Time Slot"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -263,7 +263,7 @@ function MyBookingsPage() {
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-white font-bold block flex items-center space-x-1.5",
+                                                                className: "text-foreground font-bold block flex items-center space-x-1.5",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
                                                                         className: "w-3.5 h-3.5 text-primary"
@@ -300,7 +300,7 @@ function MyBookingsPage() {
                                                         className: "space-y-1",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-neutral-400 block font-semibold",
+                                                                className: "text-muted block font-semibold",
                                                                 children: "Service Location"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -308,7 +308,7 @@ function MyBookingsPage() {
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-white font-medium block flex items-center space-x-1.5",
+                                                                className: "text-foreground font-medium block flex items-center space-x-1.5",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
                                                                         className: "w-3.5 h-3.5 text-primary flex-shrink-0"
@@ -344,12 +344,12 @@ function MyBookingsPage() {
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "pt-4 border-t border-neutral-800 flex items-center justify-between",
+                                                className: "pt-4 border-t border-border flex items-center justify-between",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-[10px] text-neutral-400 font-semibold block",
+                                                                className: "text-[10px] text-muted font-semibold block",
                                                                 children: "Total Amount Payable"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -357,7 +357,7 @@ function MyBookingsPage() {
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-lg font-black text-white",
+                                                                className: "text-lg font-black text-foreground",
                                                                 children: [
                                                                     "₹",
                                                                     b_2.totalPrice?.toLocaleString()
@@ -379,7 +379,7 @@ function MyBookingsPage() {
                                                     ].includes(b_2.status) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: ()=>handleCancel(b_2._id),
                                                         disabled: cancellingId === b_2._id,
-                                                        className: "px-4 py-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold transition-all",
+                                                        className: "px-4 py-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/30 text-xs font-bold transition-all",
                                                         children: cancellingId === b_2._id ? "Cancelling..." : "Cancel Booking"
                                                     }, void 0, false, {
                                                         fileName: "[project]/client/src/app/my-bookings/page.tsx",
@@ -399,17 +399,17 @@ function MyBookingsPage() {
                                         columnNumber: 41
                                     }, this)),
                                 displayedList.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "text-center py-12 bg-neutral-900 border border-neutral-800 rounded-3xl p-6",
+                                    className: "text-center py-12 bg-card border border-border rounded-3xl p-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
-                                            className: "w-8 h-8 text-neutral-500 mx-auto mb-2"
+                                            className: "w-8 h-8 text-muted mx-auto mb-2"
                                         }, void 0, false, {
                                             fileName: "[project]/client/src/app/my-bookings/page.tsx",
                                             lineNumber: 151,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-xs font-semibold text-neutral-400",
+                                            className: "text-xs font-semibold text-muted",
                                             children: [
                                                 "No ",
                                                 activeTab,

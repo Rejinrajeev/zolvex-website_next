@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
         {/* Content */}
         <div className="space-y-8">
           {/* 1. Introduction */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               1. Introduction
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 2. Information We Collect */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               2. Information We Collect
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 3. How We Use Your Information */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               3. How We Use Your Information
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 4. Cookies & Tracking Technologies */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               4. Cookies & Tracking Technologies
@@ -115,7 +115,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 5. Sharing of Information */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               5. Sharing of Information
@@ -135,7 +135,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 6. Online Payments */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               6. Online Payments
@@ -146,7 +146,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 7. Data Security */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               7. Data Security
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 8. Your Rights */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               8. Your Rights
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 9. Third-Party Links */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               9. Third-Party Links
@@ -196,7 +196,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 10. Children's Privacy */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               10. Children's Privacy
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 11. Changes to This Privacy Policy */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               11. Changes to This Privacy Policy
@@ -218,7 +218,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* 12. Contact Information */}
-          <section className="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
+          <section className="bg-card rounded-xl p-6 md:p-8 shadow-sm border border-border/50">
             <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
               <span className="w-1 h-6 bg-primary rounded-full" />
               12. Contact Information

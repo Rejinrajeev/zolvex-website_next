@@ -1,7 +1,48 @@
 const crypto = require("crypto");
+const QRCode = require("qrcode");
 
 // Base32 Alphabet RFC 4648
 const BASE32_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+
+// Secret encryption key derived from environment or fallback (must be 32 bytes)
+const ENCRYPTION_KEY = crypto
+  .createHash("sha256")
+  .update(process.env.JWT_SECRET || "zolvex-default-master-secret-key-2026")
+  .digest();
+
+/**
+ * AES-256-GCM Encryption for stored TOTP secrets
+ */
+function encryptSecret(plaintextSecret) {
+  if (!plaintextSecret) return null;
+  const iv = crypto.randomBytes(12);
+  const cipher = crypto.createCipheriv("aes-256-gcm", ENCRYPTION_KEY, iv);
+  let encrypted = cipher.update(plaintextSecret, "utf8", "hex");
+  encrypted += cipher.final("hex");
+  const authTag = cipher.getAuthTag().toString("hex");
+  return `${iv.toString("hex")}:${authTag}:${encrypted}`;
+}
+
+/**
+ * AES-256-GCM Decryption for stored TOTP secrets
+ */
+function decryptSecret(encryptedPayload) {
+  if (!encryptedPayload) return null;
+  // If not in encrypted format (legacy unencrypted secret), return as is
+  if (!encryptedPayload.includes(":")) return encryptedPayload;
+
+  const parts = encryptedPayload.split(":");
+  if (parts.length !== 3) return encryptedPayload;
+
+  const [ivHex, authTagHex, encryptedHex] = parts;
+  const iv = Buffer.from(ivHex, "hex");
+  const authTag = Buffer.from(authTagHex, "hex");
+  const decipher = crypto.createDecipheriv("aes-256-gcm", ENCRYPTION_KEY, iv);
+  decipher.setAuthTag(authTag);
+  let decrypted = decipher.update(encryptedHex, "hex", "utf8");
+  decrypted += decipher.final("utf8");
+  return decrypted;
+}
 
 function base32Decode(base32Str) {
   const cleanStr = base32Str.toUpperCase().replace(/=+$/, "");
@@ -37,7 +78,8 @@ function generateSecret(length = 20) {
 }
 
 function generateTOTP(secret, timeStep = 30, window = 0) {
-  const key = base32Decode(secret);
+  const decryptedSecret = decryptSecret(secret) || secret;
+  const key = base32Decode(decryptedSecret);
   const epoch = Math.floor(Date.now() / 1000);
   const time = Math.floor(epoch / timeStep) + window;
 
@@ -74,7 +116,7 @@ function verifyTOTP(token, secret) {
   return false;
 }
 
-function generateBackupCodes(count = 8) {
+function generateBackupCodes(count = 10) {
   const codes = [];
   for (let i = 0; i < count; i++) {
     const raw = crypto.randomBytes(4).toString("hex").toUpperCase();
@@ -83,16 +125,41 @@ function generateBackupCodes(count = 8) {
   return codes;
 }
 
+function hashBackupCode(code) {
+  return crypto.createHash("sha256").update(code.trim().toUpperCase()).digest("hex");
+}
+
 function generateOtpAuthUrl(userEmail, secret, issuer = "Zolvex DeepClean Admin") {
+  const decryptedSecret = decryptSecret(secret) || secret;
   const encodedIssuer = encodeURIComponent(issuer);
   const encodedAccount = encodeURIComponent(userEmail);
-  return `otpauth://totp/${encodedIssuer}:${encodedAccount}?secret=${secret}&issuer=${encodedIssuer}&algorithm=SHA1&digits=6&period=30`;
+  return `otpauth://totp/${encodedIssuer}:${encodedAccount}?secret=${decryptedSecret}&issuer=${encodedIssuer}&algorithm=SHA1&digits=6&period=30`;
+}
+
+async function generateQRCodeDataURL(otpAuthUrl) {
+  try {
+    return await QRCode.toDataURL(otpAuthUrl, {
+      margin: 2,
+      width: 240,
+      color: {
+        dark: "#E6C15A",
+        light: "#141414"
+      }
+    });
+  } catch (err) {
+    console.error("Failed to generate QR Code Data URL:", err);
+    return null;
+  }
 }
 
 module.exports = {
+  encryptSecret,
+  decryptSecret,
   generateSecret,
   generateTOTP,
   verifyTOTP,
   generateBackupCodes,
-  generateOtpAuthUrl
+  hashBackupCode,
+  generateOtpAuthUrl,
+  generateQRCodeDataURL
 };
