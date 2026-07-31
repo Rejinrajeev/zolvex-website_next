@@ -16,7 +16,8 @@ import {
   Sparkles,
   Menu,
   X,
-  LogOut
+  LogOut,
+  Image as ImageIcon
 } from "lucide-react";
 import { useState } from "react";
 
@@ -28,6 +29,7 @@ export function AdminSidebar() {
   const menuItems = [
     { label: "Dashboard Overview", href: "/admin", icon: LayoutDashboard },
     { label: "Services Catalog", href: "/admin/services", icon: Sparkles },
+    { label: "Cloudinary Media", href: "/admin/media", icon: ImageIcon },
     { label: "Website CMS Editor", href: "/admin/cms", icon: FileText },
     { label: "Booking Control", href: "/admin/bookings", icon: CalendarCheck },
     { label: "Offers & Coupons", href: "/admin/offers", icon: Tag },

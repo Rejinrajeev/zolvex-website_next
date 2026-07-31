@@ -26,20 +26,52 @@ const serviceSchema = new mongoose.Schema(
       trim: true,
       index: true
     },
-    description: { type: String, trim: true },
+    description: {
+      type: String,
+      trim: true
+    },
     category: {
       type: String,
       default: "deep_cleaning",
       index: true
     },
-    basePrice: { type: Number, default: 0 },
-    durationMinutes: { type: Number, default: 90 },
-    isAvailable: { type: Boolean, default: true },
-    isActive: { type: Boolean, default: true, index: true },
-    displayOrder: { type: Number, default: 0 },
-    image: { type: String, default: "/images/work_img_1.jpeg" },
-    rating: { type: Number, default: 4.8 },
-    reviews: { type: Number, default: 120 },
+    basePrice: {
+      type: Number,
+      default: 0
+    },
+    durationMinutes: {
+      type: Number,
+      default: 90
+    },
+    isAvailable: {
+      type: Boolean,
+      default: true
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
+      index: true
+    },
+    displayOrder: {
+      type: Number,
+      default: 0,
+      index: true
+    },
+    image: {
+      type: String,
+      default: "/images/work_img_1.jpeg"
+    },
+    imagePublicId: String,
+    rating: {
+      type: Number,
+      default: 4.8
+    },
+    reviews: {
+      type: Number,
+      default: 120
+    },
+    seoTitle: String,
+    seoDescription: String,
     variations: [serviceVariationSchema],
     inclusions: [serviceInclusionSchema]
   },
@@ -48,7 +80,7 @@ const serviceSchema = new mongoose.Schema(
   }
 );
 
-// MongoDB Text index on name and description for fast search
+// Search index
 serviceSchema.index({ name: "text", description: "text" });
 
 module.exports = mongoose.model("Service", serviceSchema);

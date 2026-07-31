@@ -1,9 +1,11 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/about/page": "app/about/page.js",
   "/admin/audit-logs/page": "app/admin/audit-logs/page.js",
   "/admin/bookings/page": "app/admin/bookings/page.js",
   "/admin/cms/page": "app/admin/cms/page.js",
   "/admin/login/page": "app/admin/login/page.js",
+  "/admin/media/page": "app/admin/media/page.js",
   "/admin/messages/page": "app/admin/messages/page.js",
   "/admin/offers/page": "app/admin/offers/page.js",
   "/admin/page": "app/admin/page.js",

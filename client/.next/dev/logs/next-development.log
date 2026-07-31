@@ -127,3 +127,18 @@ Import trace:
     ./client/src/app/globals.css [Client Component Browser]
     ./client/src/app/layout.tsx [Server Component]
 [00:52:58.059] Server  LOG     ✓ Compiled in 110ms
+[03:01:23.114] Server  LOG     ✓ Compiled in 67ms
+[03:01:31.780] Server  LOG     ✓ Compiled in 58ms
+[03:01:31.798] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./client/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:01:32.236] Server  ERROR   Failed to proxy http://127.0.0.1:5002/api/v1/theme Error: connect ECONNREFUSED 127.0.0.1:5002
+[03:01:32.237] Server  ERROR   Error: connect ECONNREFUSED 127.0.0.1:5002
+[03:01:32.244] Server  ERROR   Failed to proxy http://127.0.0.1:5002/api/v1/content Error: connect ECONNREFUSED 127.0.0.1:5002
+[03:01:32.246] Server  ERROR   Error: connect ECONNREFUSED 127.0.0.1:5002
+[03:01:32.270] Server  ERROR   Failed to proxy http://127.0.0.1:5002/api/v1/services Error: connect ECONNREFUSED 127.0.0.1:5002
+[03:01:32.271] Server  ERROR   Error: connect ECONNREFUSED 127.0.0.1:5002
+[03:22:20.337] Server  LOG     ✓ Compiled in 99ms
+[03:22:29.125] Server  LOG     ✓ Compiled in 111ms
+[03:22:42.171] Server  LOG     ✓ Compiled in 118ms
+[03:22:53.608] Server  LOG     ✓ Compiled in 77ms
+[03:54:28.657] Server  LOG     ✓ Compiled in 150ms
+[04:03:07.523] Server  LOG     ✓ Compiled in 166ms

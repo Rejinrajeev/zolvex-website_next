@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { 
   Sparkles, 
   ChevronRight,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingFlowModal } from "@/components/booking/BookingFlowModal";
+import { CdnImage } from "@/components/ui/CdnImage";
 
 interface ServiceItem {
   id: string;
@@ -173,32 +173,32 @@ export function ServicesGrid() {
             >
               <div className="bg-card rounded-2xl overflow-hidden border border-border/60 hover:border-primary/40 shadow-xs hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
                 
-                {/* Image Container */}
+                {/* Image Container using CdnImage */}
                 <div 
                   className="relative h-48 overflow-hidden bg-secondaryBg cursor-pointer"
                   onClick={() => handleServiceClick(service)}
                 >
-                  <Image
+                  <CdnImage
                     src={service.image || `/images/work_img_${(index % 8) + 1}.jpeg`}
                     alt={service.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   
                   {index === 0 && (
-                    <div className="absolute top-3 left-3 bg-primary text-white text-[10px] font-black px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md uppercase tracking-wider">
+                    <div className="absolute top-3 left-3 bg-primary text-white text-[10px] font-black px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md uppercase tracking-wider z-10">
                       <Star className="w-3 h-3 fill-white" />
                       POPULAR
                     </div>
                   )}
 
-                  <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 z-10">
                     <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                     <span>{service.rating || 4.9}</span>
                   </div>
 
-                  <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+                  <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 z-10">
                     <Clock className="w-3 h-3 text-primary" />
                     <span>3-4 hrs</span>
                   </div>

@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ChevronLeft, Sparkles, Clock, Star } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { BookingFlowModal } from "@/components/booking/BookingFlowModal";
+import { CdnImage } from "@/components/ui/CdnImage";
 
 interface ServiceItem {
   id: string;
@@ -156,21 +156,21 @@ export function ServicesSection() {
                 >
                   <div className="bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/40 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full">
                     
-                    {/* Image area */}
+                    {/* Image area using CdnImage */}
                     <div className="relative h-56 overflow-hidden bg-secondaryBg">
-                      <Image
+                      <CdnImage
                         src={service.image || `/images/work_img_${(index % 8) + 1}.jpeg`}
                         alt={service.name}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="group-hover:scale-110 transition-transform duration-500"
                         sizes="(max-width: 640px) 100vw, 350px"
                       />
-                      <div className="absolute top-4 right-4 bg-card/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1 shadow-lg">
+                      <div className="absolute top-4 right-4 bg-card/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1 shadow-lg z-10">
                         <Star className="w-4 h-4 fill-primary text-primary" />
                         <span className="text-sm font-semibold">{service.rating || 4.9}</span>
                         <span className="text-xs text-muted">({service.reviews || 120})</span>
                       </div>
-                      <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white rounded-full px-3 py-1 text-xs flex items-center gap-1">
+                      <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white rounded-full px-3 py-1 text-xs flex items-center gap-1 z-10">
                         <Clock className="w-3 h-3" />
                         <span>3-5 hours</span>
                       </div>
@@ -207,7 +207,7 @@ export function ServicesSection() {
                     </div>
 
                     {index === 0 && (
-                      <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg tracking-wider uppercase">
+                      <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-extrabold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg tracking-wider uppercase z-10">
                         <Sparkles className="w-3 h-3" />
                         MOST POPULAR
                       </div>

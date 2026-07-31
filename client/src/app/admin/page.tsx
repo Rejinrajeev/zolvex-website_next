@@ -12,7 +12,11 @@ import {
   CheckCircle2, 
   Sparkles,
   FileText,
-  Tag
+  Tag,
+  Mail,
+  Star,
+  Layers,
+  ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 import { fetchWithAuth } from "@/lib/api";
@@ -22,6 +26,9 @@ interface AnalyticsData {
   pendingBookings: number;
   completedBookings: number;
   totalUsers: number;
+  unreadMessages?: number;
+  pendingTestimonials?: number;
+  activeServices?: number;
   totalRevenue: number;
   monthlyRevenue: number;
   conversionRate: number;
@@ -65,16 +72,16 @@ export default function AdminDashboardPage() {
               <span>SUPER ADMIN PANEL</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">Dashboard Overview</h1>
-            <p className="text-xs sm:text-sm text-muted mt-1">Real-time performance analytics, revenue insights, and system stats.</p>
+            <p className="text-xs sm:text-sm text-muted mt-1">Real-time performance analytics, pending moderation items, and system stats.</p>
           </div>
 
           <div className="flex items-center space-x-3">
             <Link
-              href="/admin/cms"
+              href="/admin/services"
               className="px-4 py-2.5 rounded-xl bg-card hover:bg-secondaryBg text-xs font-bold text-foreground flex items-center space-x-2 transition-all border border-border"
             >
-              <FileText className="w-4 h-4 text-primary" />
-              <span>Edit Site CMS</span>
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span>Manage Services</span>
             </Link>
             <Link
               href="/admin/offers"
@@ -84,6 +91,48 @@ export default function AdminDashboardPage() {
               <span>Create Coupon</span>
             </Link>
           </div>
+        </div>
+
+        {/* Quick Moderation Banners */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <Link href="/admin/messages" className="bg-card hover:border-primary/50 border border-border p-4 rounded-2xl flex items-center justify-between shadow-xs transition-all">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center border border-red-500/20">
+                <Mail className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-muted block">Unread Contact Messages</span>
+                <span className="text-lg font-black text-foreground">{data?.unreadMessages || 0} New</span>
+              </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-muted" />
+          </Link>
+
+          <Link href="/admin/messages" className="bg-card hover:border-primary/50 border border-border p-4 rounded-2xl flex items-center justify-between shadow-xs transition-all">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center border border-amber-500/20">
+                <Star className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-muted block">Pending Reviews</span>
+                <span className="text-lg font-black text-foreground">{data?.pendingTestimonials || 0} To Moderate</span>
+              </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-muted" />
+          </Link>
+
+          <Link href="/admin/services" className="bg-card hover:border-primary/50 border border-border p-4 rounded-2xl flex items-center justify-between shadow-xs transition-all">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center border border-emerald-500/20">
+                <Layers className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-muted block">Active Services</span>
+                <span className="text-lg font-black text-foreground">{data?.activeServices || 5} Packages Live</span>
+              </div>
+            </div>
+            <ArrowRight className="w-4 h-4 text-muted" />
+          </Link>
         </div>
 
         {/* KPI Cards Grid */}

@@ -1,6 +1,6 @@
 const { verifyAccessToken } = require("../utils/jwtUtils");
 const userRepository = require("../repositories/userRepository");
-const { AuthenticationError } = require("../utils/appError");
+const { AuthenticationError, ForbiddenError } = require("../utils/appError");
 
 async function authenticate(req, res, next) {
   try {
@@ -41,6 +41,18 @@ async function authenticate(req, res, next) {
   }
 }
 
+function authorize(...roles) {
+  return (req, res, next) => {
+    if (!req.user) {
+      return next(new AuthenticationError("User is not authenticated"));
+    }
+    if (roles.length && !roles.includes(req.user.role)) {
+      return next(new ForbiddenError("You do not have permission to perform this action"));
+    }
+    next();
+  };
+}
+
 // Optional Auth (populates req.user if token exists, but doesn't block if anonymous)
 async function optionalAuth(req, res, next) {
   try {
@@ -65,4 +77,4 @@ async function optionalAuth(req, res, next) {
   next();
 }
 
-module.exports = { authenticate, optionalAuth };
+module.exports = { authenticate, authorize, optionalAuth };

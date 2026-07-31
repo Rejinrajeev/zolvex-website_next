@@ -24,6 +24,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lu
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LogOut$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/log-out.js [app-client] (ecmascript) <export default as LogOut>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/image.js [app-client] (ecmascript) <export default as Image>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/client/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -36,11 +37,11 @@ var _s = __turbopack_context__.k.signature();
 function AdminSidebar() {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(46);
-    if ($[0] !== "195103dc63cbee01863d4d9b52376988e58806231caa66fc9c16e321c28bc4a7") {
+    if ($[0] !== "807439063b6e5f3a2b87443fc3d63c6435aabdaf1ca2fa74d7d3b660355a6da2") {
         for(let $i = 0; $i < 46; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "195103dc63cbee01863d4d9b52376988e58806231caa66fc9c16e321c28bc4a7";
+        $[0] = "807439063b6e5f3a2b87443fc3d63c6435aabdaf1ca2fa74d7d3b660355a6da2";
     }
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -63,6 +64,11 @@ function AdminSidebar() {
                 label: "Services Catalog",
                 href: "/admin/services",
                 icon: __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"]
+            },
+            {
+                label: "Cloudinary Media",
+                href: "/admin/media",
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__["Image"]
             },
             {
                 label: "Website CMS Editor",
@@ -127,7 +133,7 @@ function AdminSidebar() {
                 className: "w-5 h-5 text-primary"
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 86,
+                lineNumber: 90,
                 columnNumber: 12
             }, this);
             $[13] = t7;
@@ -149,19 +155,19 @@ function AdminSidebar() {
                                 children: "ADMIN"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                                lineNumber: 93,
+                                lineNumber: 97,
                                 columnNumber: 142
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                        lineNumber: 93,
+                        lineNumber: 97,
                         columnNumber: 61
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 93,
+                lineNumber: 97,
                 columnNumber: 12
             }, this);
             $[14] = t8;
@@ -184,13 +190,13 @@ function AdminSidebar() {
                 className: "w-5 h-5"
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 110,
+                lineNumber: 114,
                 columnNumber: 26
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                 className: "w-5 h-5"
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 110,
+                lineNumber: 114,
                 columnNumber: 54
             }, this);
             $[17] = mobileOpen;
@@ -209,13 +215,13 @@ function AdminSidebar() {
                         children: t10
                     }, void 0, false, {
                         fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                        lineNumber: 117,
+                        lineNumber: 121,
                         columnNumber: 128
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 117,
+                lineNumber: 121,
                 columnNumber: 12
             }, this);
             $[19] = t10;
@@ -236,12 +242,12 @@ function AdminSidebar() {
                     className: "w-4 h-4"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                    lineNumber: 130,
+                    lineNumber: 134,
                     columnNumber: 134
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 130,
+                lineNumber: 134,
                 columnNumber: 13
             }, this);
             $[22] = t11;
@@ -265,24 +271,24 @@ function AdminSidebar() {
                                     children: "ADMIN"
                                 }, void 0, false, {
                                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 140,
                                     columnNumber: 240
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                            lineNumber: 136,
+                            lineNumber: 140,
                             columnNumber: 165
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                    lineNumber: 136,
+                    lineNumber: 140,
                     columnNumber: 100
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 136,
+                lineNumber: 140,
                 columnNumber: 12
             }, this);
             $[23] = t3;
@@ -296,7 +302,7 @@ function AdminSidebar() {
                 children: "Management Modules"
             }, void 0, false, {
                 fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                lineNumber: 143,
+                lineNumber: 147,
                 columnNumber: 12
             }, this);
             $[24] = t1;
@@ -318,20 +324,20 @@ function AdminSidebar() {
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                            lineNumber: 154,
+                            lineNumber: 158,
                             columnNumber: 285
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             children: item.label
                         }, void 0, false, {
                             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                            lineNumber: 154,
+                            lineNumber: 158,
                             columnNumber: 313
                         }, this)
                     ]
                 }, item.href, true, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                    lineNumber: 152,
+                    lineNumber: 156,
                     columnNumber: 16
                 }, this);
             }
@@ -365,7 +371,7 @@ function AdminSidebar() {
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 178,
+            lineNumber: 182,
             columnNumber: 10
         }, this);
         $[25] = t0;
@@ -384,7 +390,7 @@ function AdminSidebar() {
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 188,
+            lineNumber: 192,
             columnNumber: 10
         }, this);
         $[29] = t3;
@@ -400,14 +406,14 @@ function AdminSidebar() {
             className: "w-4 h-4"
         }, void 0, false, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 198,
+            lineNumber: 202,
             columnNumber: 10
         }, this);
         t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
             children: "Log Out Admin Session"
         }, void 0, false, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 199,
+            lineNumber: 203,
             columnNumber: 10
         }, this);
         $[32] = t8;
@@ -427,7 +433,7 @@ function AdminSidebar() {
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 208,
+            lineNumber: 212,
             columnNumber: 11
         }, this);
         $[34] = handleLogout;
@@ -445,20 +451,20 @@ function AdminSidebar() {
                     className: "w-4 h-4"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                    lineNumber: 216,
+                    lineNumber: 220,
                     columnNumber: 223
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     children: "Return to Website"
                 }, void 0, false, {
                     fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-                    lineNumber: 216,
+                    lineNumber: 220,
                     columnNumber: 256
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 216,
+            lineNumber: 220,
             columnNumber: 11
         }, this);
         $[36] = t11;
@@ -475,7 +481,7 @@ function AdminSidebar() {
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 223,
+            lineNumber: 227,
             columnNumber: 11
         }, this);
         $[37] = t10;
@@ -493,7 +499,7 @@ function AdminSidebar() {
             ]
         }, void 0, true, {
             fileName: "[project]/client/src/components/admin/AdminSidebar.tsx",
-            lineNumber: 231,
+            lineNumber: 235,
             columnNumber: 11
         }, this);
         $[39] = t12;
@@ -605,8 +611,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lu
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Edit$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/square-pen.js [app-client] (ecmascript) <export default as Edit>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/trash-2.js [app-client] (ecmascript) <export default as Trash2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/search.js [app-client] (ecmascript) <export default as Search>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-client] (ecmascript) <export default as CheckCircle2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/clock.js [app-client] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/refresh-cw.js [app-client] (ecmascript) <export default as RefreshCw>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/arrow-up.js [app-client] (ecmascript) <export default as ArrowUp>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/arrow-down.js [app-client] (ecmascript) <export default as ArrowDown>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Upload$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/upload.js [app-client] (ecmascript) <export default as Upload>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/image.js [app-client] (ecmascript) <export default as Image>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertTriangle$3e$__ = __turbopack_context__.i("[project]/client/node_modules/lucide-react/dist/esm/icons/triangle-alert.js [app-client] (ecmascript) <export default as AlertTriangle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/client/src/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/client/src/lib/api.ts [app-client] (ecmascript)");
 ;
@@ -623,20 +636,45 @@ function AdminServicesPage() {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [categoryFilter, setCategoryFilter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("all");
-    // Modal States
+    // Modals
     const [showAddModal, setShowAddModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingService, setEditingService] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     // Form State
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         name: "",
+        slug: "",
         description: "",
         category: "deep_cleaning",
-        basePrice: 1999,
+        basePrice: 2999,
         durationMinutes: 90,
-        image: "/images/work_img_1.jpeg",
         isActive: true,
-        isAvailable: true
+        isAvailable: true,
+        seoTitle: "",
+        seoDescription: ""
     });
+    const [variations, setVariations] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
+        {
+            name: "1 BHK",
+            price: 2999
+        },
+        {
+            name: "2 BHK",
+            price: 3999
+        }
+    ]);
+    const [inclusions, setInclusions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([
+        {
+            description: "Deep ceiling to floor dusting & vacuuming"
+        },
+        {
+            description: "Kitchen oil degreasing & cabinet polish"
+        }
+    ]);
+    const [selectedFile, setSelectedFile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [filePreview, setFilePreview] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [submitting, setSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [successMsg, setSuccessMsg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [errorMsg, setErrorMsg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AdminServicesPage.useEffect": ()=>{
             fetchAdminServices();
@@ -656,88 +694,197 @@ function AdminServicesPage() {
             setLoading(false);
         }
     };
-    const handleCreateService = async (e_0)=>{
-        e_0.preventDefault();
-        try {
-            const res_0 = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["fetchWithAuth"])("/api/v1/admin/services", {
-                method: "POST",
-                body: JSON.stringify(formData)
-            });
-            const json_0 = await res_0.json();
-            if (json_0.success) {
-                setShowAddModal(false);
-                fetchAdminServices();
+    const generateSlug = (title)=>{
+        return title.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w\-]+/g, "").replace(/\-\-+/g, "-");
+    };
+    const handleTitleChange = (title_0)=>{
+        setFormData((prev)=>({
+                ...prev,
+                name: title_0,
+                slug: prev.slug ? prev.slug : generateSlug(title_0),
+                seoTitle: prev.seoTitle ? prev.seoTitle : title_0
+            }));
+    };
+    const handleFileSelect = (e_0)=>{
+        const file = e_0.target.files?.[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+                setErrorMsg("Selected image exceeds 5MB size limit.");
+                return;
             }
-        } catch (err) {
-            console.error("Create service error:", err);
+            setSelectedFile(file);
+            setFilePreview(URL.createObjectURL(file));
         }
     };
-    const handleUpdateService = async (e_1)=>{
+    const handleFormSubmit = async (e_1)=>{
         e_1.preventDefault();
-        if (!editingService) return;
+        setSubmitting(true);
+        setErrorMsg("");
+        setSuccessMsg("");
         try {
-            const res_1 = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["fetchWithAuth"])(`/api/v1/admin/services/${editingService._id}`, {
-                method: "PUT",
-                body: JSON.stringify(formData)
+            const bodyFormData = new FormData();
+            Object.entries(formData).forEach(([key, val])=>{
+                bodyFormData.append(key, String(val));
             });
-            const json_1 = await res_1.json();
-            if (json_1.success) {
-                setEditingService(null);
-                fetchAdminServices();
+            bodyFormData.append("variations", JSON.stringify(variations));
+            bodyFormData.append("inclusions", JSON.stringify(inclusions));
+            if (selectedFile) {
+                bodyFormData.append("image", selectedFile);
             }
-        } catch (err_0) {
-            console.error("Update service error:", err_0);
+            const token = localStorage.getItem("zolvex_token");
+            const isEdit = Boolean(editingService);
+            const url = isEdit ? `/api/v1/admin/services/${editingService._id}` : "/api/v1/admin/services";
+            const method = isEdit ? "PUT" : "POST";
+            const res_0 = await fetch(url, {
+                method,
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                },
+                body: bodyFormData
+            });
+            const json_0 = await res_0.json();
+            if (res_0.ok && json_0.success) {
+                setSuccessMsg(isEdit ? "Service updated successfully with Cloudinary image!" : "New service created and image saved in Cloudinary!");
+                setShowAddModal(false);
+                setEditingService(null);
+                setSelectedFile(null);
+                setFilePreview(null);
+                await fetchAdminServices();
+            } else {
+                throw new Error(json_0.message || "Failed to save service package");
+            }
+        } catch (err) {
+            setErrorMsg(err.message || "Service submission failed.");
+        } finally{
+            setSubmitting(false);
         }
     };
     const handleDeleteService = async (id)=>{
-        if (!confirm("Are you sure you want to delete this service?")) return;
+        if (!confirm("Are you sure you want to delete this service package? Associated Cloudinary image will be deleted.")) return;
         try {
-            const res_2 = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["fetchWithAuth"])(`/api/v1/admin/services/${id}`, {
+            const res_1 = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["fetchWithAuth"])(`/api/v1/admin/services/${id}`, {
                 method: "DELETE"
             });
-            const json_2 = await res_2.json();
-            if (json_2.success) {
-                fetchAdminServices();
+            const json_1 = await res_1.json();
+            if (json_1.success) {
+                setServices((prev_0)=>prev_0.filter((s)=>s._id !== id));
+                setSuccessMsg("Service package and Cloudinary image deleted.");
             }
-        } catch (err_1) {
-            console.error("Delete service error:", err_1);
+        } catch (err_0) {
+            setErrorMsg("Failed to delete service");
         }
     };
     const toggleActiveStatus = async (service)=>{
         try {
-            const res_3 = await fetch(`/api/v1/admin/services/${service._id}`, {
+            const token_0 = localStorage.getItem("zolvex_token");
+            const res_2 = await fetch(`/api/v1/admin/services/${service._id}`, {
                 method: "PUT",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token_0}`
                 },
                 body: JSON.stringify({
                     isActive: !service.isActive
                 })
             });
-            const json_3 = await res_3.json();
-            if (json_3.success) {
-                fetchAdminServices();
+            const json_2 = await res_2.json();
+            if (json_2.success) {
+                setSuccessMsg(`Service "${service.name}" is now ${!service.isActive ? "Active (Live)" : "Inactive (Hidden)"}`);
+                await fetchAdminServices();
             }
-        } catch (err_2) {
-            console.error("Toggle active error:", err_2);
+        } catch (err_1) {
+            setErrorMsg("Failed to toggle status");
         }
     };
-    const openEditModal = (s)=>{
-        setEditingService(s);
-        setFormData({
-            name: s.name,
-            description: s.description || "",
-            category: s.category || "deep_cleaning",
-            basePrice: s.basePrice || 1999,
-            durationMinutes: s.durationMinutes || 90,
-            image: s.image || "/images/work_img_1.jpeg",
-            isActive: s.isActive,
-            isAvailable: s.isAvailable !== false
-        });
+    const moveOrder = async (index, direction)=>{
+        const targetIdx = direction === "up" ? index - 1 : index + 1;
+        if (targetIdx < 0 || targetIdx >= services.length) return;
+        const newServices = [
+            ...services
+        ];
+        const temp = newServices[index];
+        newServices[index] = newServices[targetIdx];
+        newServices[targetIdx] = temp;
+        setServices(newServices);
+        const orders = newServices.map((s_0, i)=>({
+                id: s_0._id,
+                displayOrder: i + 1
+            }));
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["fetchWithAuth"])("/api/v1/admin/services/reorder", {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    orders
+                })
+            });
+            setSuccessMsg("Service display orders updated.");
+        } catch (e_2) {
+            console.warn("Reorder failed:", e_2);
+        }
     };
-    const filtered = services.filter((s_0)=>{
-        const matchesSearch = s_0.name.toLowerCase().includes(search.toLowerCase()) || s_0.description.toLowerCase().includes(search.toLowerCase());
-        const matchesCat = categoryFilter === "all" || s_0.category === categoryFilter;
+    const openEditModal = (s_1)=>{
+        setEditingService(s_1);
+        setFormData({
+            name: s_1.name,
+            slug: s_1.slug || generateSlug(s_1.name),
+            description: s_1.description || "",
+            category: s_1.category || "deep_cleaning",
+            basePrice: s_1.basePrice || 2999,
+            durationMinutes: s_1.durationMinutes || 90,
+            isActive: s_1.isActive,
+            isAvailable: s_1.isAvailable !== false,
+            seoTitle: s_1.seoTitle || s_1.name,
+            seoDescription: s_1.seoDescription || s_1.description
+        });
+        setVariations(s_1.variations && s_1.variations.length > 0 ? s_1.variations : [
+            {
+                name: "Standard",
+                price: s_1.basePrice || 2999
+            }
+        ]);
+        setInclusions(s_1.inclusions && s_1.inclusions.length > 0 ? s_1.inclusions : [
+            {
+                description: "Full home deep cleaning & sanitization"
+            }
+        ]);
+        setFilePreview(s_1.image || null);
+        setSelectedFile(null);
+    };
+    // Helper for adding/deleting variations
+    const addVariation = ()=>setVariations((prev_1)=>[
+                ...prev_1,
+                {
+                    name: "New Variation",
+                    price: 1999
+                }
+            ]);
+    const removeVariation = (idx)=>setVariations((prev_2)=>prev_2.filter((_, i_0)=>i_0 !== idx));
+    const updateVariation = (idx_0, field, val_0)=>{
+        setVariations((prev_3)=>prev_3.map((v, i_1)=>i_1 === idx_0 ? {
+                    ...v,
+                    [field]: field === "price" ? Number(val_0) : val_0
+                } : v));
+    };
+    // Helper for adding/deleting inclusions
+    const addInclusion = ()=>setInclusions((prev_4)=>[
+                ...prev_4,
+                {
+                    description: "Specialized surface sanitization"
+                }
+            ]);
+    const removeInclusion = (idx_1)=>setInclusions((prev_5)=>prev_5.filter((__0, i_2)=>i_2 !== idx_1));
+    const updateInclusion = (idx_2, val_1)=>{
+        setInclusions((prev_6)=>prev_6.map((inc, i_3)=>i_3 === idx_2 ? {
+                    ...inc,
+                    description: val_1
+                } : inc));
+    };
+    const filtered = services.filter((s_2)=>{
+        const matchesSearch = s_2.name.toLowerCase().includes(search.toLowerCase()) || s_2.description.toLowerCase().includes(search.toLowerCase());
+        const matchesCat = categoryFilter === "all" || s_2.category === categoryFilter;
         return matchesSearch && matchesCat;
     });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -745,7 +892,7 @@ function AdminServicesPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$admin$2f$AdminSidebar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AdminSidebar"], {}, void 0, false, {
                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                lineNumber: 144,
+                lineNumber: 278,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -763,77 +910,143 @@ function AdminServicesPage() {
                                                 className: "w-7 h-7 text-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 152,
+                                                lineNumber: 286,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Service Management System"
+                                                children: "Service Management & Reordering"
                                             }, void 0, false, {
                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 287,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 285,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-xs sm:text-sm text-muted mt-1",
-                                        children: "Complete CRUD control over cleaning services, duration parameters, pricing, and active availability."
+                                        children: "Create, edit, reorder, and manage Cloudinary images directly for active cleaning service packages."
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 289,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 150,
+                                lineNumber: 284,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                 onClick: ()=>{
+                                    setEditingService(null);
                                     setFormData({
                                         name: "",
+                                        slug: "",
                                         description: "",
                                         category: "deep_cleaning",
-                                        basePrice: 1999,
+                                        basePrice: 2999,
                                         durationMinutes: 90,
-                                        image: "/images/work_img_1.jpeg",
                                         isActive: true,
-                                        isAvailable: true
+                                        isAvailable: true,
+                                        seoTitle: "",
+                                        seoDescription: ""
                                     });
+                                    setVariations([
+                                        {
+                                            name: "1 BHK",
+                                            price: 2999
+                                        },
+                                        {
+                                            name: "2 BHK",
+                                            price: 3999
+                                        }
+                                    ]);
+                                    setInclusions([
+                                        {
+                                            description: "Complete deep cleaning & sanitization"
+                                        }
+                                    ]);
+                                    setSelectedFile(null);
+                                    setFilePreview(null);
                                     setShowAddModal(true);
                                 },
-                                className: "bg-primary hover:bg-primaryHover text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-md transition-all flex items-center space-x-2",
+                                className: "bg-primary hover:bg-primaryHover text-white font-extrabold text-xs px-5 py-2.5 rounded-xl shadow-md transition-all flex items-center space-x-2",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 322,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "Add New Service"
+                                        children: "Create New Service"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 323,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 160,
+                                lineNumber: 294,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                        lineNumber: 149,
+                        lineNumber: 283,
                         columnNumber: 9
+                    }, this),
+                    successMsg && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-bold flex items-center space-x-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+                                className: "w-4 h-4 flex-shrink-0"
+                            }, void 0, false, {
+                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                lineNumber: 329,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: successMsg
+                            }, void 0, false, {
+                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                lineNumber: 330,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                        lineNumber: 328,
+                        columnNumber: 24
+                    }, this),
+                    errorMsg && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-6 p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-500 text-xs font-bold flex items-center space-x-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$triangle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertTriangle$3e$__["AlertTriangle"], {
+                                className: "w-4 h-4 flex-shrink-0"
+                            }, void 0, false, {
+                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                lineNumber: 334,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: errorMsg
+                            }, void 0, false, {
+                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                lineNumber: 335,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                        lineNumber: 333,
+                        columnNumber: 22
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "bg-card border border-border p-4 rounded-2xl mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs",
@@ -845,24 +1058,24 @@ function AdminServicesPage() {
                                         className: "w-4 h-4 text-muted absolute left-3 top-1/2 -translate-y-1/2"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 341,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                         type: "text",
                                         placeholder: "Search service title or description...",
                                         value: search,
-                                        onChange: (e_2)=>setSearch(e_2.target.value),
+                                        onChange: (e_3)=>setSearch(e_3.target.value),
                                         className: "w-full pl-9 pr-4 py-2 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground focus:border-primary outline-none"
                                     }, void 0, false, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 342,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 180,
+                                lineNumber: 340,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -870,27 +1083,28 @@ function AdminServicesPage() {
                                 children: [
                                     "all",
                                     "deep_cleaning",
-                                    "water_tank",
-                                    "house_cleaning",
-                                    "sofa_cleaning"
+                                    "kitchen",
+                                    "bathroom",
+                                    "sofa",
+                                    "water_tank"
                                 ].map((cat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: ()=>setCategoryFilter(cat),
                                         className: `px-3.5 py-1.5 rounded-xl text-xs font-bold capitalize transition-all ${categoryFilter === cat ? "bg-primary text-white shadow-sm" : "bg-secondaryBg/30 text-muted hover:text-foreground border border-border"}`,
                                         children: cat.replace("_", " ")
                                     }, cat, false, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 186,
-                                        columnNumber: 99
+                                        lineNumber: 346,
+                                        columnNumber: 95
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 185,
+                                lineNumber: 345,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                        lineNumber: 179,
+                        lineNumber: 339,
                         columnNumber: 9
                     }, this),
                     loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -900,7 +1114,7 @@ function AdminServicesPage() {
                                 className: "w-8 h-8 animate-spin text-primary mx-auto mb-2"
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 194,
+                                lineNumber: 354,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -908,268 +1122,566 @@ function AdminServicesPage() {
                                 children: "Loading service catalog..."
                             }, void 0, false, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 195,
+                                lineNumber: 355,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                        lineNumber: 193,
+                        lineNumber: 353,
                         columnNumber: 20
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
-                        children: filtered.map((s_1)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-card border border-border p-5 rounded-3xl space-y-4 relative flex flex-col justify-between shadow-xs",
+                        children: filtered.map((s_3, index_0)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-card border border-border p-5 rounded-3xl space-y-4 relative flex flex-col justify-between shadow-xs group",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "space-y-3",
+                                        className: "relative h-44 rounded-2xl overflow-hidden bg-secondaryBg border border-border",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                src: s_3.image || "/images/work_img_1.jpeg",
+                                                alt: s_3.name,
+                                                className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                            }, void 0, false, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 361,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "absolute top-2 left-2 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md bg-card/90 text-primary border border-border",
+                                                children: [
+                                                    "Order #",
+                                                    index_0 + 1
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 362,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>toggleActiveStatus(s_3),
+                                                className: `absolute top-2 right-2 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase transition-all border ${s_3.isActive ? "bg-emerald-500 text-white border-emerald-400 shadow-xs" : "bg-red-500 text-white border-red-400 shadow-xs"}`,
+                                                children: s_3.isActive ? "Active (Live)" : "Inactive"
+                                            }, void 0, false, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 366,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                        lineNumber: 360,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center justify-between",
+                                                className: "flex items-center justify-between text-xs text-muted",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20",
-                                                        children: s_1.category.replace("_", " ")
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                        lineNumber: 200,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                        onClick: ()=>toggleActiveStatus(s_1),
-                                                        className: `text-[10px] font-bold px-2.5 py-1 rounded-md uppercase transition-all ${s_1.isActive ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20" : "bg-red-500/10 text-red-500 border border-red-500/20"}`,
-                                                        children: s_1.isActive ? "Active" : "Inactive"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                        lineNumber: 204,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 199,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "font-extrabold text-foreground text-base",
-                                                        children: s_1.name
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                        lineNumber: 210,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs text-muted line-clamp-2 mt-1",
-                                                        children: s_1.description
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                        lineNumber: 211,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 209,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center justify-between text-xs pt-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-primary font-black text-lg",
+                                                        className: "font-mono uppercase text-[10px] bg-secondaryBg/50 px-2 py-0.5 rounded-md",
                                                         children: [
-                                                            "₹",
-                                                            s_1.basePrice?.toLocaleString()
+                                                            "/",
+                                                            s_3.slug
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                        lineNumber: 215,
+                                                        lineNumber: 373,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-muted font-semibold flex items-center space-x-1",
+                                                        className: "flex items-center space-x-1 font-semibold",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
                                                                 className: "w-3.5 h-3.5 text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                lineNumber: 217,
+                                                                lineNumber: 375,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: [
-                                                                    s_1.durationMinutes || 90,
+                                                                    s_3.durationMinutes || 90,
                                                                     " mins"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                lineNumber: 218,
+                                                                lineNumber: 376,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                        lineNumber: 216,
+                                                        lineNumber: 374,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 214,
+                                                lineNumber: 372,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-extrabold text-foreground text-base leading-snug",
+                                                children: s_3.name
+                                            }, void 0, false, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 380,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-muted line-clamp-2 leading-relaxed",
+                                                children: s_3.description
+                                            }, void 0, false, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 381,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 198,
+                                        lineNumber: 371,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "pt-4 border-t border-border flex items-center justify-end space-x-2",
+                                        className: "pt-3 border-t border-border flex items-center justify-between",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>openEditModal(s_1),
-                                                className: "p-2 rounded-xl bg-secondaryBg/30 border border-border text-muted hover:text-foreground hover:border-primary transition-all",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Edit$3e$__["Edit"], {
-                                                    className: "w-4 h-4"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 225,
-                                                    columnNumber: 21
-                                                }, this)
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-[10px] text-muted block uppercase font-bold",
+                                                        children: "Base Price"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 386,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-primary font-black text-lg",
+                                                        children: [
+                                                            "₹",
+                                                            s_3.basePrice?.toLocaleString()
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 387,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 224,
+                                                lineNumber: 385,
                                                 columnNumber: 19
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>handleDeleteService(s_1._id),
-                                                className: "p-2 rounded-xl bg-neutral-950 border border-neutral-800 text-neutral-400 hover:text-red-400 transition-all",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
-                                                    className: "w-4 h-4"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 228,
-                                                    columnNumber: 21
-                                                }, this)
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center space-x-1.5",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: ()=>moveOrder(index_0, "up"),
+                                                        disabled: index_0 === 0,
+                                                        className: "p-1.5 rounded-lg bg-secondaryBg/40 hover:bg-secondaryBg text-foreground disabled:opacity-30 border border-border",
+                                                        title: "Move Display Order Up",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__["ArrowUp"], {
+                                                            className: "w-3.5 h-3.5"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 393,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 392,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: ()=>moveOrder(index_0, "down"),
+                                                        disabled: index_0 === services.length - 1,
+                                                        className: "p-1.5 rounded-lg bg-secondaryBg/40 hover:bg-secondaryBg text-foreground disabled:opacity-30 border border-border",
+                                                        title: "Move Display Order Down",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__["ArrowDown"], {
+                                                            className: "w-3.5 h-3.5"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 397,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 396,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: ()=>openEditModal(s_3),
+                                                        className: "p-2 rounded-xl bg-secondaryBg/40 hover:bg-secondaryBg text-foreground border border-border hover:border-primary transition-all",
+                                                        title: "Edit Service Package",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Edit$3e$__["Edit"], {
+                                                            className: "w-4 h-4"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 401,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 400,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: ()=>handleDeleteService(s_3._id),
+                                                        className: "p-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-500 border border-red-500/30 transition-all",
+                                                        title: "Delete Service Package",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
+                                                            className: "w-4 h-4"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 405,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 404,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
                                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                lineNumber: 227,
+                                                lineNumber: 391,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                        lineNumber: 223,
+                                        lineNumber: 384,
                                         columnNumber: 17
                                     }, this)
                                 ]
-                            }, s_1._id, true, {
+                            }, s_3._id, true, {
                                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                lineNumber: 197,
-                                columnNumber: 34
+                                lineNumber: 357,
+                                columnNumber: 45
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                        lineNumber: 196,
+                        lineNumber: 356,
                         columnNumber: 20
                     }, this),
                     (showAddModal || editingService) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-card border border-border p-6 rounded-3xl max-w-lg w-full space-y-4 shadow-2xl",
+                            className: "bg-card border border-border p-6 rounded-3xl max-w-2xl w-full space-y-5 shadow-2xl max-h-[92vh] overflow-y-auto",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-lg font-bold text-foreground",
-                                    children: editingService ? "Edit Service Details" : "Add New Cleaning Service"
-                                }, void 0, false, {
-                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                    lineNumber: 237,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                    onSubmit: editingService ? handleUpdateService : handleCreateService,
-                                    className: "space-y-3",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center justify-between pb-3 border-b border-border",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "text-xs font-semibold text-foreground",
-                                                    children: "Service Name"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                    className: "text-lg font-bold text-foreground",
+                                                    children: editingService ? `Edit Service: ${editingService.name}` : "Create New Cleaning Service Package"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 243,
+                                                    lineNumber: 419,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                    type: "text",
-                                                    required: true,
-                                                    value: formData.name,
-                                                    onChange: (e_3)=>setFormData({
-                                                            ...formData,
-                                                            name: e_3.target.value
-                                                        }),
-                                                    className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none focus:border-primary"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-xs text-muted",
+                                                    children: "Uploaded image will automatically save to Cloudinary CDN and update all service listings."
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 244,
+                                                    lineNumber: 422,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                            lineNumber: 242,
+                                            lineNumber: 418,
                                             columnNumber: 17
                                         }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>{
+                                                setShowAddModal(false);
+                                                setEditingService(null);
+                                            },
+                                            className: "text-muted hover:text-foreground p-1",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                                className: "w-5 h-5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 428,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                            lineNumber: 424,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                    lineNumber: 417,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                    onSubmit: handleFormSubmit,
+                                    className: "space-y-5",
+                                    children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2 bg-secondaryBg/20 p-4 rounded-2xl border border-border",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "text-xs font-semibold text-foreground",
-                                                    children: "Description"
-                                                }, void 0, false, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "text-xs font-extrabold text-foreground flex items-center space-x-1.5",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__["Image"], {
+                                                            className: "w-4 h-4 text-primary"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 437,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            children: "Service Package Image (Saved directly to Cloudinary)"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 438,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 251,
+                                                    lineNumber: 436,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                                    rows: 3,
-                                                    value: formData.description,
-                                                    onChange: (e_4)=>setFormData({
-                                                            ...formData,
-                                                            description: e_4.target.value
-                                                        }),
-                                                    className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none focus:border-primary resize-none"
-                                                }, void 0, false, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "border-2 border-dashed border-border rounded-xl p-4 text-center space-y-2 bg-card hover:border-primary transition-colors cursor-pointer relative",
+                                                    children: [
+                                                        filePreview ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "relative inline-block",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                                    src: filePreview,
+                                                                    alt: "Preview",
+                                                                    className: "h-36 mx-auto rounded-xl object-cover border border-border"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 443,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-[10px] bg-emerald-500 text-white px-2.5 py-0.5 rounded-full font-bold absolute bottom-2 right-2 shadow-xs",
+                                                                    children: selectedFile ? "New File Selected" : "Current Cloudinary Image"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 444,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 442,
+                                                            columnNumber: 36
+                                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "space-y-1",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$upload$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Upload$3e$__["Upload"], {
+                                                                    className: "w-8 h-8 text-primary mx-auto"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 448,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-xs font-bold text-foreground",
+                                                                    children: "Click or Drag Image File (JPEG, PNG, WebP, max 5MB)"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 449,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-[11px] text-muted",
+                                                                    children: "File will be uploaded to Cloudinary automatically on submission."
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 450,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 447,
+                                                            columnNumber: 32
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            type: "file",
+                                                            accept: "image/*",
+                                                            onChange: handleFileSelect,
+                                                            className: "hidden",
+                                                            id: "service-modal-file-upload"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 452,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            htmlFor: "service-modal-file-upload",
+                                                            className: "inline-block px-4 py-2 bg-secondaryBg rounded-xl text-xs font-bold text-foreground cursor-pointer border border-border hover:border-primary transition-colors mt-2",
+                                                            children: filePreview ? "Change Image File" : "Browse Image File"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 453,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 441,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                            lineNumber: 250,
+                                            lineNumber: 435,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "grid grid-cols-2 gap-3",
+                                            className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "text-xs font-semibold text-foreground",
+                                                            className: "text-xs font-bold text-foreground block mb-1",
+                                                            children: "Service Title *"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 462,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            type: "text",
+                                                            required: true,
+                                                            value: formData.name,
+                                                            onChange: (e_4)=>handleTitleChange(e_4.target.value),
+                                                            placeholder: "e.g. Sofa & Upholstery Shampooing",
+                                                            className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none focus:border-primary"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 463,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 461,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex justify-between items-center mb-1",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                                    className: "text-xs font-bold text-foreground",
+                                                                    children: "SEO URL Slug"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 468,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    onClick: ()=>setFormData({
+                                                                            ...formData,
+                                                                            slug: generateSlug(formData.name)
+                                                                        }),
+                                                                    className: "text-[10px] text-primary hover:underline font-bold",
+                                                                    children: "Auto Slug"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 469,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 467,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            type: "text",
+                                                            value: formData.slug,
+                                                            onChange: (e_5)=>setFormData({
+                                                                    ...formData,
+                                                                    slug: e_5.target.value
+                                                                }),
+                                                            placeholder: "sofa-upholstery-shampooing",
+                                                            className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none font-mono"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 476,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 466,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                            lineNumber: 460,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                    className: "text-xs font-bold text-foreground block mb-1",
+                                                    children: "Service Description *"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 484,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                    rows: 3,
+                                                    required: true,
+                                                    value: formData.description,
+                                                    onChange: (e_6)=>setFormData({
+                                                            ...formData,
+                                                            description: e_6.target.value
+                                                        }),
+                                                    placeholder: "Comprehensive deep extraction cleaning...",
+                                                    className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none focus:border-primary resize-none"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 485,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                            lineNumber: 483,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "grid grid-cols-3 gap-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                            className: "text-xs font-bold text-foreground block mb-1",
                                                             children: "Category"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 260,
+                                                            lineNumber: 493,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                                             value: formData.category,
-                                                            onChange: (e_5)=>setFormData({
+                                                            onChange: (e_7)=>setFormData({
                                                                     ...formData,
-                                                                    category: e_5.target.value
+                                                                    category: e_7.target.value
                                                                 }),
                                                             className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none",
                                                             children: [
@@ -1178,7 +1690,7 @@ function AdminServicesPage() {
                                                                     children: "Deep Cleaning"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                    lineNumber: 265,
+                                                                    lineNumber: 498,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1186,7 +1698,7 @@ function AdminServicesPage() {
                                                                     children: "Kitchen"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                    lineNumber: 266,
+                                                                    lineNumber: 499,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1194,15 +1706,15 @@ function AdminServicesPage() {
                                                                     children: "Bathroom"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                    lineNumber: 267,
+                                                                    lineNumber: 500,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                     value: "sofa",
-                                                                    children: "Sofa"
+                                                                    children: "Sofa Upholstery"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                    lineNumber: 268,
+                                                                    lineNumber: 501,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1210,127 +1722,324 @@ function AdminServicesPage() {
                                                                     children: "Water Tank"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                                    lineNumber: 269,
+                                                                    lineNumber: 502,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 261,
+                                                            lineNumber: 494,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 259,
+                                                    lineNumber: 492,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "text-xs font-semibold text-foreground",
-                                                            children: "Base Price (₹)"
+                                                            className: "text-xs font-bold text-foreground block mb-1",
+                                                            children: "Base Price (₹) *"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 274,
+                                                            lineNumber: 507,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                             type: "number",
                                                             required: true,
                                                             value: formData.basePrice,
-                                                            onChange: (e_6)=>setFormData({
+                                                            onChange: (e_8)=>setFormData({
                                                                     ...formData,
-                                                                    basePrice: Number(e_6.target.value)
+                                                                    basePrice: Number(e_8.target.value)
                                                                 }),
                                                             className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none focus:border-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 275,
+                                                            lineNumber: 508,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 273,
+                                                    lineNumber: 506,
                                                     columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                            lineNumber: 258,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "grid grid-cols-2 gap-3",
-                                            children: [
+                                                }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "text-xs font-semibold text-foreground",
+                                                            className: "text-xs font-bold text-foreground block mb-1",
                                                             children: "Duration (Minutes)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 284,
+                                                            lineNumber: 515,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                             type: "number",
                                                             required: true,
                                                             value: formData.durationMinutes,
-                                                            onChange: (e_7)=>setFormData({
+                                                            onChange: (e_9)=>setFormData({
                                                                     ...formData,
-                                                                    durationMinutes: Number(e_7.target.value)
+                                                                    durationMinutes: Number(e_9.target.value)
                                                                 }),
                                                             className: "w-full p-2.5 rounded-xl bg-secondaryBg/30 border border-border text-xs text-foreground outline-none focus:border-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 285,
+                                                            lineNumber: 516,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 283,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "text-xs font-semibold text-neutral-300",
-                                                            children: "Image Path / URL"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 292,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                            type: "text",
-                                                            value: formData.image,
-                                                            onChange: (e_8)=>setFormData({
-                                                                    ...formData,
-                                                                    image: e_8.target.value
-                                                                }),
-                                                            className: "w-full p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-xs text-white outline-none focus:border-primary"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                            lineNumber: 293,
-                                                            columnNumber: 21
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 291,
+                                                    lineNumber: 514,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                            lineNumber: 282,
+                                            lineNumber: 491,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex justify-end space-x-2 pt-4",
+                                            className: "space-y-2 bg-secondaryBg/10 p-3 rounded-2xl border border-border",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center justify-between",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-xs font-bold text-foreground",
+                                                            children: "BHK Pricing Variations"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 526,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: addVariation,
+                                                            className: "text-[11px] font-bold text-primary hover:underline flex items-center space-x-1",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                                                    className: "w-3.5 h-3.5"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 528,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: "Add Variation"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 529,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 527,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 525,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "space-y-2",
+                                                    children: variations.map((v_0, idx_3)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center space-x-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    type: "text",
+                                                                    value: v_0.name,
+                                                                    onChange: (e_10)=>updateVariation(idx_3, "name", e_10.target.value),
+                                                                    placeholder: "e.g. 1 BHK / 3 Seater",
+                                                                    className: "flex-1 p-2 rounded-xl bg-card border border-border text-xs text-foreground outline-none"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 535,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    type: "number",
+                                                                    value: v_0.price,
+                                                                    onChange: (e_11)=>updateVariation(idx_3, "price", e_11.target.value),
+                                                                    placeholder: "Price ₹",
+                                                                    className: "w-28 p-2 rounded-xl bg-card border border-border text-xs text-foreground outline-none"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 536,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                variations.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    onClick: ()=>removeVariation(idx_3),
+                                                                    className: "p-1.5 text-muted hover:text-red-500",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
+                                                                        className: "w-4 h-4"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                        lineNumber: 538,
+                                                                        columnNumber: 29
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 537,
+                                                                    columnNumber: 51
+                                                                }, this)
+                                                            ]
+                                                        }, idx_3, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 534,
+                                                            columnNumber: 53
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 533,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                            lineNumber: 524,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2 bg-secondaryBg/10 p-3 rounded-2xl border border-border",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center justify-between",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-xs font-bold text-foreground",
+                                                            children: "Included Feature Bullets"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 547,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: addInclusion,
+                                                            className: "text-[11px] font-bold text-primary hover:underline flex items-center space-x-1",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                                                    className: "w-3.5 h-3.5"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 549,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    children: "Add Bullet"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 550,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 548,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 546,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "space-y-2",
+                                                    children: inclusions.map((inc_0, idx_4)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center space-x-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    type: "text",
+                                                                    value: inc_0.description,
+                                                                    onChange: (e_12)=>updateInclusion(idx_4, e_12.target.value),
+                                                                    placeholder: "e.g. High-pressure tile scrubbing & stain removal",
+                                                                    className: "flex-1 p-2 rounded-xl bg-card border border-border text-xs text-foreground outline-none"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 556,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                inclusions.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    type: "button",
+                                                                    onClick: ()=>removeInclusion(idx_4),
+                                                                    className: "p-1.5 text-muted hover:text-red-500",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
+                                                                        className: "w-4 h-4"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                        lineNumber: 558,
+                                                                        columnNumber: 29
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                                    lineNumber: 557,
+                                                                    columnNumber: 51
+                                                                }, this)
+                                                            ]
+                                                        }, idx_4, true, {
+                                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                            lineNumber: 555,
+                                                            columnNumber: 55
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                    lineNumber: 554,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                            lineNumber: 545,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center space-x-3 bg-secondaryBg/30 p-3 rounded-xl border border-border",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: "flex items-center space-x-2 text-xs font-bold text-foreground cursor-pointer",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "checkbox",
+                                                        checked: formData.isActive,
+                                                        onChange: (e_13)=>setFormData({
+                                                                ...formData,
+                                                                isActive: e_13.target.checked
+                                                            }),
+                                                        className: "w-4 h-4 accent-primary rounded"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 567,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Active (Publish immediately on public website catalog)"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 571,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                lineNumber: 566,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                            lineNumber: 565,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex justify-end space-x-2 pt-3 border-t border-border",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     type: "button",
@@ -1338,59 +2047,72 @@ function AdminServicesPage() {
                                                         setShowAddModal(false);
                                                         setEditingService(null);
                                                     },
-                                                    className: "px-4 py-2 rounded-xl bg-neutral-800 text-neutral-300 text-xs font-semibold",
+                                                    className: "px-5 py-2.5 rounded-xl bg-secondaryBg text-foreground text-xs font-bold border border-border",
                                                     children: "Cancel"
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 301,
+                                                    lineNumber: 577,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                     type: "submit",
-                                                    className: "px-4 py-2 rounded-xl bg-primary text-neutral-950 text-xs font-bold",
-                                                    children: "Save Service"
+                                                    disabled: submitting,
+                                                    className: "px-6 py-2.5 rounded-xl bg-primary hover:bg-primaryHover text-white text-xs font-extrabold shadow-md flex items-center space-x-1",
+                                                    children: submitting ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__["RefreshCw"], {
+                                                        className: "w-4 h-4 animate-spin"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 584,
+                                                        columnNumber: 35
+                                                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$client$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Save & Publish Service Package"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/client/src/app/admin/services/page.tsx",
+                                                        lineNumber: 584,
+                                                        columnNumber: 84
+                                                    }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                                    lineNumber: 307,
+                                                    lineNumber: 583,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                            lineNumber: 300,
+                                            lineNumber: 576,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/client/src/app/admin/services/page.tsx",
-                                    lineNumber: 241,
+                                    lineNumber: 432,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/client/src/app/admin/services/page.tsx",
-                            lineNumber: 236,
+                            lineNumber: 415,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/client/src/app/admin/services/page.tsx",
-                        lineNumber: 235,
+                        lineNumber: 414,
                         columnNumber: 46
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/client/src/app/admin/services/page.tsx",
-                lineNumber: 146,
+                lineNumber: 280,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/client/src/app/admin/services/page.tsx",
-        lineNumber: 143,
+        lineNumber: 277,
         columnNumber: 10
     }, this);
 }
-_s(AdminServicesPage, "00NYU9CMxfXH5TyBnyLgM7u8xNA=");
+_s(AdminServicesPage, "GDIORR0IKepcw8gxJ8f302gfcwI=");
 _c = AdminServicesPage;
 var _c;
 __turbopack_context__.k.register(_c, "AdminServicesPage");

@@ -5,17 +5,30 @@ const Offer = require("../models/Offer");
 const Theme = require("../models/Theme");
 const ContactMessage = require("../models/ContactMessage");
 const Review = require("../models/Review");
+const Service = require("../models/Service");
 const { getIsConnected } = require("../database/connect");
 
 class AdminService {
   async getAnalytics() {
     if (getIsConnected()) {
       try {
-        const [totalBookings, pendingBookings, completedBookings, totalUsers, revenueResult] = await Promise.all([
+        const [
+          totalBookings,
+          pendingBookings,
+          completedBookings,
+          totalUsers,
+          unreadMessages,
+          pendingTestimonials,
+          activeServices,
+          revenueResult
+        ] = await Promise.all([
           Booking.countDocuments({ isDeleted: false }),
           Booking.countDocuments({ status: "pending", isDeleted: false }),
           Booking.countDocuments({ status: "completed", isDeleted: false }),
           User.countDocuments({ isDeleted: false }),
+          ContactMessage.countDocuments({ status: "unread" }),
+          Review.countDocuments({ status: "pending" }),
+          Service.countDocuments({ isActive: true }),
           Booking.aggregate([
             { $match: { isDeleted: false } },
             { $group: { _id: null, totalRevenue: { $sum: "$totalPrice" } } }
@@ -30,6 +43,9 @@ class AdminService {
           pendingBookings,
           completedBookings,
           totalUsers,
+          unreadMessages,
+          pendingTestimonials,
+          activeServices,
           totalRevenue,
           monthlyRevenue: Math.round(totalRevenue * 0.45),
           conversionRate,
@@ -43,16 +59,19 @@ class AdminService {
           ]
         };
       } catch (e) {
-        console.warn("Analytics MongoDB aggregate error, using default metrics:", e.message);
+        console.warn("Analytics MongoDB aggregate error, using fallback metrics:", e.message);
       }
     }
 
-    // Fallback analytics data
+    // Fallback analytics metrics
     return {
       totalBookings: 42,
       pendingBookings: 8,
       completedBookings: 28,
       totalUsers: 156,
+      unreadMessages: 2,
+      pendingTestimonials: 1,
+      activeServices: 5,
       totalRevenue: 184500,
       monthlyRevenue: 64200,
       conversionRate: 88,
@@ -79,7 +98,6 @@ class AdminService {
       } catch (e) {}
     }
 
-    // Default Site Copy CMS dictionary
     return {
       "hero_title": "READY TO REVITALIZE YOUR SPACE?",
       "hero_subtitle": "Expert Deep Cleaning Services Tailored to Your Needs in Kerala.",
@@ -87,7 +105,7 @@ class AdminService {
       "about_heading": "Kerala's Premier Cleaning Specialists",
       "about_description": "We deliver spotless, eco-friendly deep cleaning solutions for homes, offices, water tanks, and upholstery in Trivandrum & Ernakulam.",
       "footer_tagline": "Professional Home Cleaning Solutions Across Kerala.",
-      "contact_phone": "+91 98765 43210",
+      "contact_phone": "+91 80896 31909",
       "contact_email": "support@zolvex.com"
     };
   }
@@ -179,6 +197,7 @@ class AdminService {
         subject: "Villa Deep Clean Inquiry",
         message: "Hi, I have a 4 BHK villa in Trivandrum. Do you provide steam sanitization?",
         status: "unread",
+        priority: "normal",
         createdAt: new Date().toISOString()
       }
     ];
