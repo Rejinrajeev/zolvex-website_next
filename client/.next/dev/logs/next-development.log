@@ -1,15 +1,7 @@
-[00:00:00.874] Server  LOG     ✓ Ready in 699ms
-[00:00:57.295] Server  ERROR   (node:4061) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+[00:00:00.714] Server  LOG     ✓ Ready in 539ms
+[00:00:10.561] Server  ERROR   (node:48114) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-[00:15:29.624] Server  LOG     ✓ Compiled in 88ms
-[00:20:44.110] Server  LOG     ✓ Compiled in 59ms
-[00:39:58.408] Server  LOG     ✓ Compiled in 125ms
-[00:41:02.630] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:03:34.006] Browser WARN    Image with src "/images/work_img_5.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:55:02.317] Server  LOG     ✓ Compiled in 135ms
-[01:01:18.476] Browser WARN    Image with src "/images/hero_img.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:01:26.291] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:02:36.360] Browser WARN    Image with src "/images/work_img_2.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:03:34.740] Browser WARN    Image with src "/images/work_img_5.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
